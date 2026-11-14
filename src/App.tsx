@@ -1,5 +1,5 @@
 import Plot from "react-plotly.js"
-import './App.css'
+import '@/App.css'
 
 function App() {
 
