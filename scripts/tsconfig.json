@@ -1,0 +1,8 @@
+{
+  // Just so that scripts has type-checking in editor but doesn't block the full build.
+  "extends": "../tsconfig.node.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../node_modules/.tmp/tsconfig.scripts.tsbuildinfo"
+  },
+  "include": ["."]
+}

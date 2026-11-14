@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# PISA data files
+scripts/data/*
+!scripts/data/README.md
