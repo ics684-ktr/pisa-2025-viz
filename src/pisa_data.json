@@ -1,648 +1,738 @@
 {
-  "AIUSESCH": [
-    {
-      "country": "OECD average",
-      "caution": false,
-      "coverage": null,
+  "AIUSESCH": {
+    "oecd_average": {
       "aiusesch": -0.00124,
       "aiusesch_se": 0.00296
     },
-    {
-      "country": "Argentina",
-      "caution": false,
-      "coverage": "†",
-      "aiusesch": 0.23737,
-      "aiusesch_se": 0.02188
-    },
-    {
-      "country": "Armenia",
-      "caution": false,
-      "coverage": "‡",
-      "aiusesch": 0.20773,
-      "aiusesch_se": 0.02396
-    },
-    {
-      "country": "Australia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.02533,
-      "aiusesch_se": 0.01546
-    },
-    {
-      "country": "Austria",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.10681,
-      "aiusesch_se": 0.01693
-    },
-    {
-      "country": "Azerbaijan",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.19569,
-      "aiusesch_se": 0.01442
-    },
-    {
-      "country": "Belgium",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.04883,
-      "aiusesch_se": 0.01489
-    },
-    {
-      "country": "Brazil",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.09178,
-      "aiusesch_se": 0.01077
-    },
-    {
-      "country": "Brunei Darussalam",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.19858,
-      "aiusesch_se": 0.01052
-    },
-    {
-      "country": "B-S-J-Z (China)",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.27618,
-      "aiusesch_se": 0.01423
-    },
-    {
-      "country": "Bulgaria",
-      "caution": false,
-      "coverage": "†",
-      "aiusesch": 0.03877,
-      "aiusesch_se": 0.01808
-    },
-    {
-      "country": "Cambodia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": null,
-      "aiusesch_se": null
-    },
-    {
-      "country": "Canada",
-      "caution": true,
-      "coverage": null,
-      "aiusesch": -0.30282,
-      "aiusesch_se": 0.01274
-    },
-    {
-      "country": "Chile",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.21233,
-      "aiusesch_se": 0.01665
-    },
-    {
-      "country": "Colombia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.33904,
-      "aiusesch_se": 0.01786
-    },
-    {
-      "country": "Costa Rica",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.19505,
-      "aiusesch_se": 0.01528
-    },
-    {
-      "country": "Croatia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.10036,
-      "aiusesch_se": 0.01404
-    },
-    {
-      "country": "Cyprus",
-      "caution": false,
-      "coverage": "†",
-      "aiusesch": 0.00205,
-      "aiusesch_se": 0.01435
-    },
-    {
-      "country": "Czechia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.01567,
-      "aiusesch_se": 0.01763
-    },
-    {
-      "country": "Denmark",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.00546,
-      "aiusesch_se": 0.02779
-    },
-    {
-      "country": "Dominican Republic",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.30427,
-      "aiusesch_se": 0.01851
-    },
-    {
-      "country": "Dushanbe (Tajikistan)",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": null,
-      "aiusesch_se": null
-    },
-    {
-      "country": "Ecuador",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.27526,
-      "aiusesch_se": 0.0139
-    },
-    {
-      "country": "El Salvador",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.06218,
-      "aiusesch_se": 0.01556
-    },
-    {
-      "country": "Estonia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.01608,
-      "aiusesch_se": 0.01387
-    },
-    {
-      "country": "Finland",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.35225,
-      "aiusesch_se": 0.0171
-    },
-    {
-      "country": "France",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.13184,
-      "aiusesch_se": 0.01669
-    },
-    {
-      "country": "Georgia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.02198,
-      "aiusesch_se": 0.01492
-    },
-    {
-      "country": "Germany",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.09814,
-      "aiusesch_se": 0.0218
-    },
-    {
-      "country": "Greece",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.13853,
-      "aiusesch_se": 0.0139
-    },
-    {
-      "country": "Guatemala",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.20245,
-      "aiusesch_se": 0.01625
-    },
-    {
-      "country": "Hong Kong (China)",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.23944,
-      "aiusesch_se": 0.01507
-    },
-    {
-      "country": "Hungary",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.13466,
-      "aiusesch_se": 0.01783
-    },
-    {
-      "country": "Iceland",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.09431,
-      "aiusesch_se": 0.01969
-    },
-    {
-      "country": "Indonesia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.12899,
-      "aiusesch_se": 0.01607
-    },
-    {
-      "country": "Ireland",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.47694,
-      "aiusesch_se": 0.01777
-    },
-    {
-      "country": "Israel",
-      "caution": false,
-      "coverage": "†",
-      "aiusesch": 0.2012,
-      "aiusesch_se": 0.02277
-    },
-    {
-      "country": "Italy",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.14606,
-      "aiusesch_se": 0.01845
-    },
-    {
-      "country": "Japan",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.69136,
-      "aiusesch_se": 0.02212
-    },
-    {
-      "country": "Jordan",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.05184,
-      "aiusesch_se": 0.01733
-    },
-    {
-      "country": "Kazakhstan",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.22726,
-      "aiusesch_se": 0.00911
-    },
-    {
-      "country": "Kenya",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.09825,
-      "aiusesch_se": 0.01956
-    },
-    {
-      "country": "Korea",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.17365,
-      "aiusesch_se": 0.02973
-    },
-    {
-      "country": "Kosovo",
-      "caution": false,
-      "coverage": "†",
-      "aiusesch": 0.20347,
-      "aiusesch_se": 0.0152
-    },
-    {
-      "country": "Kurdistan Region (Iraq)",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": null,
-      "aiusesch_se": null
-    },
-    {
-      "country": "Kyrgyzstan",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.27537,
-      "aiusesch_se": 0.0171
-    },
-    {
-      "country": "Latvia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.12609,
-      "aiusesch_se": 0.01274
-    },
-    {
-      "country": "Lebanon",
-      "caution": false,
-      "coverage": "†",
-      "aiusesch": 0.2176,
-      "aiusesch_se": 0.01841
-    },
-    {
-      "country": "Lithuania",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.14494,
-      "aiusesch_se": 0.01351
-    },
-    {
-      "country": "Luxembourg",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.04753,
-      "aiusesch_se": 0.01222
-    },
-    {
-      "country": "Macao (China)",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.31735,
-      "aiusesch_se": 0.01189
-    },
-    {
-      "country": "Malaysia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.23737,
-      "aiusesch_se": 0.01707
-    },
-    {
-      "country": "Malta",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.22889,
-      "aiusesch_se": 0.01919
-    },
-    {
-      "country": "Mauritius",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": null,
-      "aiusesch_se": null
-    },
-    {
-      "country": "Mexico",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.16459,
-      "aiusesch_se": 0.01315
-    },
-    {
-      "country": "Moldova",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.17123,
-      "aiusesch_se": 0.01643
-    },
-    {
-      "country": "Mongolia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.23544,
-      "aiusesch_se": 0.0124
-    },
-    {
-      "country": "Montenegro",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.01338,
-      "aiusesch_se": 0.0151
-    },
-    {
-      "country": "Morocco",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.05122,
-      "aiusesch_se": 0.01464
-    },
-    {
-      "country": "Netherlands",
-      "caution": true,
-      "coverage": null,
-      "aiusesch": -0.09622,
-      "aiusesch_se": 0.01892
-    },
-    {
-      "country": "New Zealand",
-      "caution": true,
-      "coverage": null,
-      "aiusesch": -0.07289,
-      "aiusesch_se": 0.01955
-    },
-    {
-      "country": "North Macedonia",
-      "caution": false,
-      "coverage": "†",
-      "aiusesch": 0.12786,
-      "aiusesch_se": 0.01618
-    },
-    {
-      "country": "Norway",
-      "caution": true,
-      "coverage": null,
-      "aiusesch": 0.05777,
-      "aiusesch_se": 0.01548
-    },
-    {
-      "country": "Palestinian Authority",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.11375,
-      "aiusesch_se": 0.01848
-    },
-    {
-      "country": "Paraguay",
-      "caution": false,
-      "coverage": "†",
-      "aiusesch": 0.12184,
-      "aiusesch_se": 0.01679
-    },
-    {
-      "country": "Peru",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.28434,
-      "aiusesch_se": 0.01316
-    },
-    {
-      "country": "Philippines",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.29665,
-      "aiusesch_se": 0.0142
-    },
-    {
-      "country": "Poland",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.21818,
-      "aiusesch_se": 0.01642
-    },
-    {
-      "country": "Portugal",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.1572,
-      "aiusesch_se": 0.01423
-    },
-    {
-      "country": "Qatar",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.13992,
-      "aiusesch_se": 0.01809
-    },
-    {
-      "country": "Romania",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.12387,
-      "aiusesch_se": 0.01466
-    },
-    {
-      "country": "Rwanda",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": null,
-      "aiusesch_se": null
-    },
-    {
-      "country": "Saudi Arabia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.39352,
-      "aiusesch_se": 0.0194
-    },
-    {
-      "country": "Serbia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.21232,
-      "aiusesch_se": 0.02038
-    },
-    {
-      "country": "Singapore",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.37449,
-      "aiusesch_se": 0.01126
-    },
-    {
-      "country": "Slovak Republic",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.07296,
-      "aiusesch_se": 0.0185
-    },
-    {
-      "country": "Slovenia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.08443,
-      "aiusesch_se": 0.01565
-    },
-    {
-      "country": "Spain",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.2206,
-      "aiusesch_se": 0.01034
-    },
-    {
-      "country": "Sweden",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.08899,
-      "aiusesch_se": 0.02123
-    },
-    {
-      "country": "Switzerland",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.21173,
-      "aiusesch_se": 0.02175
-    },
-    {
-      "country": "Chinese Taipei",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.19737,
-      "aiusesch_se": 0.0163
-    },
-    {
-      "country": "Thailand",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.38024,
-      "aiusesch_se": 0.02147
-    },
-    {
-      "country": "Türkiye",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.3059,
-      "aiusesch_se": 0.01388
-    },
-    {
-      "country": "Ukrainian regions (17 of 27)",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.30609,
-      "aiusesch_se": 0.01773
-    },
-    {
-      "country": "United Arab Emirates",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.5538,
-      "aiusesch_se": 0.01059
-    },
-    {
-      "country": "United Kingdom",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": -0.4662,
-      "aiusesch_se": 0.01577
-    },
-    {
-      "country": "Uruguay",
-      "caution": false,
-      "coverage": "†",
-      "aiusesch": 0.3222,
-      "aiusesch_se": 0.01584
-    },
-    {
-      "country": "Uzbekistan",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.29376,
-      "aiusesch_se": 0.02034
-    },
-    {
-      "country": "Viet Nam",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": 0.42835,
-      "aiusesch_se": 0.01476
-    },
-    {
-      "country": "Zambia",
-      "caution": false,
-      "coverage": null,
-      "aiusesch": null,
-      "aiusesch_se": null
-    },
-    {
-      "country": "Albania",
-      "caution": true,
-      "coverage": null,
-      "aiusesch": 0.26209,
-      "aiusesch_se": 0.01569
-    },
-    {
-      "country": "United States",
-      "caution": true,
-      "coverage": "†",
-      "aiusesch": -0.29806,
-      "aiusesch_se": 0.03154
-    }
-  ]
+    "countries": [
+      {
+        "country": "Argentina",
+        "iso3": "ARG",
+        "caution": false,
+        "aiusesch": 0.23737,
+        "aiusesch_se": 0.02188,
+        "coverage": "†"
+      },
+      {
+        "country": "Armenia",
+        "iso3": "ARM",
+        "caution": false,
+        "aiusesch": 0.20773,
+        "aiusesch_se": 0.02396,
+        "coverage": "‡"
+      },
+      {
+        "country": "Australia",
+        "iso3": "AUS",
+        "caution": false,
+        "aiusesch": 0.02533,
+        "aiusesch_se": 0.01546,
+        "coverage": null
+      },
+      {
+        "country": "Austria",
+        "iso3": "AUT",
+        "caution": false,
+        "aiusesch": 0.10681,
+        "aiusesch_se": 0.01693,
+        "coverage": null
+      },
+      {
+        "country": "Azerbaijan",
+        "iso3": "AZE",
+        "caution": false,
+        "aiusesch": 0.19569,
+        "aiusesch_se": 0.01442,
+        "coverage": null
+      },
+      {
+        "country": "Belgium",
+        "iso3": "BEL",
+        "caution": false,
+        "aiusesch": -0.04883,
+        "aiusesch_se": 0.01489,
+        "coverage": null
+      },
+      {
+        "country": "Brazil",
+        "iso3": "BRA",
+        "caution": false,
+        "aiusesch": 0.09178,
+        "aiusesch_se": 0.01077,
+        "coverage": null
+      },
+      {
+        "country": "Brunei Darussalam",
+        "iso3": "BRN",
+        "caution": false,
+        "aiusesch": 0.19858,
+        "aiusesch_se": 0.01052,
+        "coverage": null
+      },
+      {
+        "country": "B-S-J-Z (China)",
+        "iso3": "CHN",
+        "caution": false,
+        "aiusesch": -0.27618,
+        "aiusesch_se": 0.01423,
+        "coverage": null
+      },
+      {
+        "country": "Bulgaria",
+        "iso3": "BGR",
+        "caution": false,
+        "aiusesch": 0.03877,
+        "aiusesch_se": 0.01808,
+        "coverage": "†"
+      },
+      {
+        "country": "Cambodia",
+        "iso3": "KHM",
+        "caution": false,
+        "aiusesch": null,
+        "aiusesch_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Canada",
+        "iso3": "CAN",
+        "caution": true,
+        "aiusesch": -0.30282,
+        "aiusesch_se": 0.01274,
+        "coverage": null
+      },
+      {
+        "country": "Chile",
+        "iso3": "CHL",
+        "caution": false,
+        "aiusesch": 0.21233,
+        "aiusesch_se": 0.01665,
+        "coverage": null
+      },
+      {
+        "country": "Colombia",
+        "iso3": "COL",
+        "caution": false,
+        "aiusesch": 0.33904,
+        "aiusesch_se": 0.01786,
+        "coverage": null
+      },
+      {
+        "country": "Costa Rica",
+        "iso3": "CRI",
+        "caution": false,
+        "aiusesch": 0.19505,
+        "aiusesch_se": 0.01528,
+        "coverage": null
+      },
+      {
+        "country": "Croatia",
+        "iso3": "HRV",
+        "caution": false,
+        "aiusesch": 0.10036,
+        "aiusesch_se": 0.01404,
+        "coverage": null
+      },
+      {
+        "country": "Cyprus",
+        "iso3": "CYP",
+        "caution": false,
+        "aiusesch": 0.00205,
+        "aiusesch_se": 0.01435,
+        "coverage": "†"
+      },
+      {
+        "country": "Czechia",
+        "iso3": "CZE",
+        "caution": false,
+        "aiusesch": 0.01567,
+        "aiusesch_se": 0.01763,
+        "coverage": null
+      },
+      {
+        "country": "Denmark",
+        "iso3": "DNK",
+        "caution": false,
+        "aiusesch": 0.00546,
+        "aiusesch_se": 0.02779,
+        "coverage": null
+      },
+      {
+        "country": "Dominican Republic",
+        "iso3": "DOM",
+        "caution": false,
+        "aiusesch": 0.30427,
+        "aiusesch_se": 0.01851,
+        "coverage": null
+      },
+      {
+        "country": "Dushanbe (Tajikistan)",
+        "iso3": "TJK",
+        "caution": false,
+        "aiusesch": null,
+        "aiusesch_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Ecuador",
+        "iso3": "ECU",
+        "caution": false,
+        "aiusesch": 0.27526,
+        "aiusesch_se": 0.0139,
+        "coverage": null
+      },
+      {
+        "country": "El Salvador",
+        "iso3": "SLV",
+        "caution": false,
+        "aiusesch": 0.06218,
+        "aiusesch_se": 0.01556,
+        "coverage": null
+      },
+      {
+        "country": "Estonia",
+        "iso3": "EST",
+        "caution": false,
+        "aiusesch": 0.01608,
+        "aiusesch_se": 0.01387,
+        "coverage": null
+      },
+      {
+        "country": "Finland",
+        "iso3": "FIN",
+        "caution": false,
+        "aiusesch": -0.35225,
+        "aiusesch_se": 0.0171,
+        "coverage": null
+      },
+      {
+        "country": "France",
+        "iso3": "FRA",
+        "caution": false,
+        "aiusesch": -0.13184,
+        "aiusesch_se": 0.01669,
+        "coverage": null
+      },
+      {
+        "country": "Georgia",
+        "iso3": "GEO",
+        "caution": false,
+        "aiusesch": 0.02198,
+        "aiusesch_se": 0.01492,
+        "coverage": null
+      },
+      {
+        "country": "Germany",
+        "iso3": "DEU",
+        "caution": false,
+        "aiusesch": 0.09814,
+        "aiusesch_se": 0.0218,
+        "coverage": null
+      },
+      {
+        "country": "Greece",
+        "iso3": "GRC",
+        "caution": false,
+        "aiusesch": -0.13853,
+        "aiusesch_se": 0.0139,
+        "coverage": null
+      },
+      {
+        "country": "Guatemala",
+        "iso3": "GTM",
+        "caution": false,
+        "aiusesch": 0.20245,
+        "aiusesch_se": 0.01625,
+        "coverage": null
+      },
+      {
+        "country": "Hong Kong (China)",
+        "iso3": "HKG",
+        "caution": false,
+        "aiusesch": 0.23944,
+        "aiusesch_se": 0.01507,
+        "coverage": null
+      },
+      {
+        "country": "Hungary",
+        "iso3": "HUN",
+        "caution": false,
+        "aiusesch": -0.13466,
+        "aiusesch_se": 0.01783,
+        "coverage": null
+      },
+      {
+        "country": "Iceland",
+        "iso3": "ISL",
+        "caution": false,
+        "aiusesch": -0.09431,
+        "aiusesch_se": 0.01969,
+        "coverage": null
+      },
+      {
+        "country": "Indonesia",
+        "iso3": "IDN",
+        "caution": false,
+        "aiusesch": 0.12899,
+        "aiusesch_se": 0.01607,
+        "coverage": null
+      },
+      {
+        "country": "Ireland",
+        "iso3": "IRL",
+        "caution": false,
+        "aiusesch": -0.47694,
+        "aiusesch_se": 0.01777,
+        "coverage": null
+      },
+      {
+        "country": "Israel",
+        "iso3": "ISR",
+        "caution": false,
+        "aiusesch": 0.2012,
+        "aiusesch_se": 0.02277,
+        "coverage": "†"
+      },
+      {
+        "country": "Italy",
+        "iso3": "ITA",
+        "caution": false,
+        "aiusesch": 0.14606,
+        "aiusesch_se": 0.01845,
+        "coverage": null
+      },
+      {
+        "country": "Japan",
+        "iso3": "JPN",
+        "caution": false,
+        "aiusesch": -0.69136,
+        "aiusesch_se": 0.02212,
+        "coverage": null
+      },
+      {
+        "country": "Jordan",
+        "iso3": "JOR",
+        "caution": false,
+        "aiusesch": 0.05184,
+        "aiusesch_se": 0.01733,
+        "coverage": null
+      },
+      {
+        "country": "Kazakhstan",
+        "iso3": "KAZ",
+        "caution": false,
+        "aiusesch": 0.22726,
+        "aiusesch_se": 0.00911,
+        "coverage": null
+      },
+      {
+        "country": "Kenya",
+        "iso3": "KEN",
+        "caution": false,
+        "aiusesch": 0.09825,
+        "aiusesch_se": 0.01956,
+        "coverage": null
+      },
+      {
+        "country": "Korea",
+        "iso3": "KOR",
+        "caution": false,
+        "aiusesch": 0.17365,
+        "aiusesch_se": 0.02973,
+        "coverage": null
+      },
+      {
+        "country": "Kosovo",
+        "iso3": "XKX",
+        "caution": false,
+        "aiusesch": 0.20347,
+        "aiusesch_se": 0.0152,
+        "coverage": "†"
+      },
+      {
+        "country": "Kurdistan Region (Iraq)",
+        "iso3": "IRQ",
+        "caution": false,
+        "aiusesch": null,
+        "aiusesch_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Kyrgyzstan",
+        "iso3": "KGZ",
+        "caution": false,
+        "aiusesch": 0.27537,
+        "aiusesch_se": 0.0171,
+        "coverage": null
+      },
+      {
+        "country": "Latvia",
+        "iso3": "LVA",
+        "caution": false,
+        "aiusesch": 0.12609,
+        "aiusesch_se": 0.01274,
+        "coverage": null
+      },
+      {
+        "country": "Lebanon",
+        "iso3": "LBN",
+        "caution": false,
+        "aiusesch": 0.2176,
+        "aiusesch_se": 0.01841,
+        "coverage": "†"
+      },
+      {
+        "country": "Lithuania",
+        "iso3": "LTU",
+        "caution": false,
+        "aiusesch": 0.14494,
+        "aiusesch_se": 0.01351,
+        "coverage": null
+      },
+      {
+        "country": "Luxembourg",
+        "iso3": "LUX",
+        "caution": false,
+        "aiusesch": 0.04753,
+        "aiusesch_se": 0.01222,
+        "coverage": null
+      },
+      {
+        "country": "Macao (China)",
+        "iso3": "MAC",
+        "caution": false,
+        "aiusesch": 0.31735,
+        "aiusesch_se": 0.01189,
+        "coverage": null
+      },
+      {
+        "country": "Malaysia",
+        "iso3": "MYS",
+        "caution": false,
+        "aiusesch": 0.23737,
+        "aiusesch_se": 0.01707,
+        "coverage": null
+      },
+      {
+        "country": "Malta",
+        "iso3": "MLT",
+        "caution": false,
+        "aiusesch": 0.22889,
+        "aiusesch_se": 0.01919,
+        "coverage": null
+      },
+      {
+        "country": "Mauritius",
+        "iso3": "MUS",
+        "caution": false,
+        "aiusesch": null,
+        "aiusesch_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Mexico",
+        "iso3": "MEX",
+        "caution": false,
+        "aiusesch": 0.16459,
+        "aiusesch_se": 0.01315,
+        "coverage": null
+      },
+      {
+        "country": "Moldova",
+        "iso3": "MDA",
+        "caution": false,
+        "aiusesch": 0.17123,
+        "aiusesch_se": 0.01643,
+        "coverage": null
+      },
+      {
+        "country": "Mongolia",
+        "iso3": "MNG",
+        "caution": false,
+        "aiusesch": 0.23544,
+        "aiusesch_se": 0.0124,
+        "coverage": null
+      },
+      {
+        "country": "Montenegro",
+        "iso3": "MNE",
+        "caution": false,
+        "aiusesch": 0.01338,
+        "aiusesch_se": 0.0151,
+        "coverage": null
+      },
+      {
+        "country": "Morocco",
+        "iso3": "MAR",
+        "caution": false,
+        "aiusesch": 0.05122,
+        "aiusesch_se": 0.01464,
+        "coverage": null
+      },
+      {
+        "country": "Netherlands",
+        "iso3": "NLD",
+        "caution": true,
+        "aiusesch": -0.09622,
+        "aiusesch_se": 0.01892,
+        "coverage": null
+      },
+      {
+        "country": "New Zealand",
+        "iso3": "NZL",
+        "caution": true,
+        "aiusesch": -0.07289,
+        "aiusesch_se": 0.01955,
+        "coverage": null
+      },
+      {
+        "country": "North Macedonia",
+        "iso3": "MKD",
+        "caution": false,
+        "aiusesch": 0.12786,
+        "aiusesch_se": 0.01618,
+        "coverage": "†"
+      },
+      {
+        "country": "Norway",
+        "iso3": "NOR",
+        "caution": true,
+        "aiusesch": 0.05777,
+        "aiusesch_se": 0.01548,
+        "coverage": null
+      },
+      {
+        "country": "Palestinian Authority",
+        "iso3": "PSE",
+        "caution": false,
+        "aiusesch": 0.11375,
+        "aiusesch_se": 0.01848,
+        "coverage": null
+      },
+      {
+        "country": "Paraguay",
+        "iso3": "PRY",
+        "caution": false,
+        "aiusesch": 0.12184,
+        "aiusesch_se": 0.01679,
+        "coverage": "†"
+      },
+      {
+        "country": "Peru",
+        "iso3": "PER",
+        "caution": false,
+        "aiusesch": 0.28434,
+        "aiusesch_se": 0.01316,
+        "coverage": null
+      },
+      {
+        "country": "Philippines",
+        "iso3": "PHL",
+        "caution": false,
+        "aiusesch": 0.29665,
+        "aiusesch_se": 0.0142,
+        "coverage": null
+      },
+      {
+        "country": "Poland",
+        "iso3": "POL",
+        "caution": false,
+        "aiusesch": 0.21818,
+        "aiusesch_se": 0.01642,
+        "coverage": null
+      },
+      {
+        "country": "Portugal",
+        "iso3": "PRT",
+        "caution": false,
+        "aiusesch": 0.1572,
+        "aiusesch_se": 0.01423,
+        "coverage": null
+      },
+      {
+        "country": "Qatar",
+        "iso3": "QAT",
+        "caution": false,
+        "aiusesch": 0.13992,
+        "aiusesch_se": 0.01809,
+        "coverage": null
+      },
+      {
+        "country": "Romania",
+        "iso3": "ROU",
+        "caution": false,
+        "aiusesch": 0.12387,
+        "aiusesch_se": 0.01466,
+        "coverage": null
+      },
+      {
+        "country": "Rwanda",
+        "iso3": "RWA",
+        "caution": false,
+        "aiusesch": null,
+        "aiusesch_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Saudi Arabia",
+        "iso3": "SAU",
+        "caution": false,
+        "aiusesch": 0.39352,
+        "aiusesch_se": 0.0194,
+        "coverage": null
+      },
+      {
+        "country": "Serbia",
+        "iso3": "SRB",
+        "caution": false,
+        "aiusesch": 0.21232,
+        "aiusesch_se": 0.02038,
+        "coverage": null
+      },
+      {
+        "country": "Singapore",
+        "iso3": "SGP",
+        "caution": false,
+        "aiusesch": 0.37449,
+        "aiusesch_se": 0.01126,
+        "coverage": null
+      },
+      {
+        "country": "Slovak Republic",
+        "iso3": "SVK",
+        "caution": false,
+        "aiusesch": 0.07296,
+        "aiusesch_se": 0.0185,
+        "coverage": null
+      },
+      {
+        "country": "Slovenia",
+        "iso3": "SVN",
+        "caution": false,
+        "aiusesch": 0.08443,
+        "aiusesch_se": 0.01565,
+        "coverage": null
+      },
+      {
+        "country": "Spain",
+        "iso3": "ESP",
+        "caution": false,
+        "aiusesch": 0.2206,
+        "aiusesch_se": 0.01034,
+        "coverage": null
+      },
+      {
+        "country": "Sweden",
+        "iso3": "SWE",
+        "caution": false,
+        "aiusesch": -0.08899,
+        "aiusesch_se": 0.02123,
+        "coverage": null
+      },
+      {
+        "country": "Switzerland",
+        "iso3": "CHE",
+        "caution": false,
+        "aiusesch": 0.21173,
+        "aiusesch_se": 0.02175,
+        "coverage": null
+      },
+      {
+        "country": "Chinese Taipei",
+        "iso3": "TWN",
+        "caution": false,
+        "aiusesch": -0.19737,
+        "aiusesch_se": 0.0163,
+        "coverage": null
+      },
+      {
+        "country": "Thailand",
+        "iso3": "THA",
+        "caution": false,
+        "aiusesch": 0.38024,
+        "aiusesch_se": 0.02147,
+        "coverage": null
+      },
+      {
+        "country": "Türkiye",
+        "iso3": "TUR",
+        "caution": false,
+        "aiusesch": 0.3059,
+        "aiusesch_se": 0.01388,
+        "coverage": null
+      },
+      {
+        "country": "Ukrainian regions (17 of 27)",
+        "iso3": "UKR",
+        "caution": false,
+        "aiusesch": 0.30609,
+        "aiusesch_se": 0.01773,
+        "coverage": null
+      },
+      {
+        "country": "United Arab Emirates",
+        "iso3": "ARE",
+        "caution": false,
+        "aiusesch": 0.5538,
+        "aiusesch_se": 0.01059,
+        "coverage": null
+      },
+      {
+        "country": "United Kingdom",
+        "iso3": "GBR",
+        "caution": false,
+        "aiusesch": -0.4662,
+        "aiusesch_se": 0.01577,
+        "coverage": null
+      },
+      {
+        "country": "Uruguay",
+        "iso3": "URY",
+        "caution": false,
+        "aiusesch": 0.3222,
+        "aiusesch_se": 0.01584,
+        "coverage": "†"
+      },
+      {
+        "country": "Uzbekistan",
+        "iso3": "UZB",
+        "caution": false,
+        "aiusesch": 0.29376,
+        "aiusesch_se": 0.02034,
+        "coverage": null
+      },
+      {
+        "country": "Viet Nam",
+        "iso3": "VNM",
+        "caution": false,
+        "aiusesch": 0.42835,
+        "aiusesch_se": 0.01476,
+        "coverage": null
+      },
+      {
+        "country": "Zambia",
+        "iso3": "ZMB",
+        "caution": false,
+        "aiusesch": null,
+        "aiusesch_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Albania",
+        "iso3": "ALB",
+        "caution": true,
+        "aiusesch": 0.26209,
+        "aiusesch_se": 0.01569,
+        "coverage": null
+      },
+      {
+        "country": "United States",
+        "iso3": "USA",
+        "caution": true,
+        "aiusesch": -0.29806,
+        "aiusesch_se": 0.03154,
+        "coverage": "†"
+      }
+    ]
+  }
 }

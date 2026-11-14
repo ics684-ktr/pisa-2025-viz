@@ -45,24 +45,82 @@ const aiusesch_json: Record<string, unknown>[] = XLSX.utils.sheet_to_json(aiuses
 const num = (v: unknown) => (typeof v === "number" ? v : null)
 const text = (v: unknown) => (typeof v === "string" ? v : "")
 
-/* Countries ending with "*" indicates that country didn't meet OECD's sampling criteria, so results should be treated with caution. So we filter out the "*" when parsing country names and note the caution.
-*/
-const records = aiusesch_json.map(r => ({
-  country: text(r.A).replace(/\*$/, ""),
-  caution: text(r.A).endsWith("*"),
-  coverage: text(r.D) || null,
-  aiusesch: num(r.B),      // AIUSESCH (students' AI use at school): country mean
-  aiusesch_se: num(r.C),   // ... and its standard error
-}))
+/* PISA's country codes, from "ISO codes for countries and economies used in this report"
+(PISA 2025 Notes on Participating Countries and Economies). Every country needs a code so
+it can be displayed on Plotly's maps. */
+const PISA_CODES: Record<string, string> = {
+  "Albania": "ALB", "Argentina": "ARG", "Armenia": "ARM", "Australia": "AUS", "Austria": "AUT",
+  "Azerbaijan": "AZE", "Belgium": "BEL", "Brazil": "BRA", "Brunei Darussalam": "BRN",
+  "B-S-J-Z (China)": "QCI", "Bulgaria": "BGR", "Cambodia": "KHM", "Canada": "CAN", "Chile": "CHL",
+  "Colombia": "COL", "Costa Rica": "CRI", "Croatia": "HRV", "Cyprus": "QCY", "Czechia": "CZE",
+  "Denmark": "DNK", "Dominican Republic": "DOM", "Dushanbe (Tajikistan)": "QTJ", "Ecuador": "ECU",
+  "El Salvador": "SLV", "Estonia": "EST", "Finland": "FIN", "France": "FRA", "Georgia": "GEO",
+  "Germany": "DEU", "Greece": "GRC", "Guatemala": "GTM", "Hong Kong (China)": "HKG",
+  "Hungary": "HUN", "Iceland": "ISL", "Indonesia": "IDN", "Ireland": "IRL", "Israel": "ISR",
+  "Italy": "ITA", "Japan": "JPN", "Jordan": "JOR", "Kazakhstan": "KAZ", "Kenya": "KEN",
+  "Korea": "KOR", "Kosovo": "KSV", "Kurdistan Region (Iraq)": "QKI", "Kyrgyzstan": "KGZ",
+  "Latvia": "LVA", "Lebanon": "LBN", "Lithuania": "LTU", "Luxembourg": "LUX",
+  "Macao (China)": "MAC", "Malaysia": "MYS", "Malta": "MLT", "Mauritius": "MUS", "Mexico": "MEX",
+  "Moldova": "MDA", "Mongolia": "MNG", "Montenegro": "MNE", "Morocco": "MAR", "Netherlands": "NLD",
+  "New Zealand": "NZL", "North Macedonia": "MKD", "Norway": "NOR", "Palestinian Authority": "PSE",
+  "Paraguay": "PRY", "Peru": "PER", "Philippines": "PHL", "Poland": "POL", "Portugal": "PRT",
+  "Qatar": "QAT", "Romania": "ROU", "Rwanda": "RWA", "Saudi Arabia": "SAU", "Serbia": "SRB",
+  "Singapore": "SGP", "Slovak Republic": "SVK", "Slovenia": "SVN", "Spain": "ESP", "Sweden": "SWE",
+  "Switzerland": "CHE", "Chinese Taipei": "TAP", "Thailand": "THA", "Türkiye": "TUR",
+  "Ukrainian regions (17 of 27)": "QUA", "United Arab Emirates": "ARE", "United Kingdom": "GBR",
+  "United States": "USA", "Uruguay": "URY", "Uzbekistan": "UZB", "Viet Nam": "VNM",
+  "Zambia": "ZMB",
+}
 
-const no_data = records.filter(r => r.aiusesch === null).map(r => r.country)
-const cautioned = records.filter(r => r.caution).map(r => r.country)
-console.log(`  ${records.length} rows (OECD average + ${records.length - 1} countries/economies)`)
+/* PISA codes that aren't real ISO3 codes, swapped for ones Plotly's map knows.
+Kosovo's "XKX" is a common stand-in, not an official ISO3 code either. */
+const MAP_CODES: Record<string, string> = {
+  QCI: "CHN", QCY: "CYP", QTJ: "TJK", KSV: "XKX", QKI: "IRQ", TAP: "TWN", QUA: "UKR",
+}
+
+/* The first row is always the OECD average; the rest are countries/economies. */
+const [oecd_average_row, ...country_rows] = aiusesch_json
+const oecd_average = {
+  aiusesch: num(oecd_average_row.B),
+  aiusesch_se: num(oecd_average_row.C),
+}
+
+/* Countries ending with "*" indicates that country didn't meet OECD's sampling criteria,
+so results should be treated with caution. So we filter out the "*" when parsing country
+names and note the caution.
+*/
+const countries = country_rows.map(r => {
+  const country = text(r.A).replace(/\*$/, "")
+  const pisa_code = PISA_CODES[country] ?? null   // null if the name is missing from PISA_CODES
+  const iso3 = pisa_code !== null ? (MAP_CODES[pisa_code] ?? pisa_code) : null
+  return {
+    country,
+    iso3,
+    caution: text(r.A).endsWith("*"),
+    aiusesch: num(r.B),      // AIUSESCH (students' AI use at school): country mean
+    aiusesch_se: num(r.C),   // ... and its standard error
+    coverage: text(r.D) || null,
+  }
+})
+
+const no_iso3 = countries.filter(r => r.iso3 === null).map(r => r.country)
+if (no_iso3.length > 0) {
+  console.error(`No country code for: ${no_iso3.join(", ")}. Add them to PISA_CODES.`)
+  process.exit(1)
+}
+
+const no_data = countries.filter(r => r.aiusesch === null).map(r => r.country)
+const cautioned = countries.filter(r => r.caution).map(r => r.country)
+console.log(`  OECD average: ${oecd_average.aiusesch} (SE ${oecd_average.aiusesch_se})`)
+console.log(`  ${countries.length} countries/economies`)
 console.log(`  ${no_data.length} with no AIUSESCH data: ${no_data.join(", ")}`)
 console.log(`  ${cautioned.length} flagged for caution: ${cautioned.join(", ")}`)
 
 const pisa_data = {
-  AIUSESCH: records
+  AIUSESCH: {
+    oecd_average,
+    countries,
+  },
 }
 
 fs.writeFileSync(
