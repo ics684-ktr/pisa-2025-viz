@@ -72,11 +72,19 @@ const PISA_CODES: Record<string, string> = {
   "Zambia": "ZMB",
 }
 
-/* PISA codes that aren't real ISO3 codes, swapped for ones Plotly's map knows.
+/* Each participant's PISA code. MAP_CODES below swaps the ones Plotly's map doesn't know.
 Kosovo's "XKX" is a common stand-in, not an official ISO3 code either. */
 const MAP_CODES: Record<string, string> = {
   QCI: "CHN", QCY: "CYP", QTJ: "TJK", KSV: "XKX", QKI: "IRQ", TAP: "TWN", QUA: "UKR",
 }
+
+/* All PISA 2025 participants. Write to the json for easy country lookup */
+const PARTICIPANTS = Object.entries(PISA_CODES).map(([country, pisa_code]) => ({
+  country,
+  iso3: MAP_CODES[pisa_code] ?? pisa_code,
+}))
+
+const ISO3_BY_NAME = new Map(PARTICIPANTS.map(p => [p.country, p.iso3]))
 
 /* The first row is always the OECD average; the rest are countries/economies. */
 const [oecd_average_row, ...country_rows] = aiusesch_json
@@ -91,11 +99,9 @@ names and note the caution.
 */
 const countries = country_rows.map(r => {
   const country = text(r.A).replace(/\*$/, "")
-  const pisa_code = PISA_CODES[country] ?? null   // null if the name is missing from PISA_CODES
-  const iso3 = pisa_code !== null ? (MAP_CODES[pisa_code] ?? pisa_code) : null
   return {
     country,
-    iso3,
+    iso3: ISO3_BY_NAME.get(country) ?? null,
     caution: text(r.A).endsWith("*"),
     aiusesch: num(r.B),      // AIUSESCH (students' AI use at school): country mean
     aiusesch_se: num(r.C),   // ... and its standard error
@@ -103,7 +109,7 @@ const countries = country_rows.map(r => {
   }
 })
 
-const no_iso3 = countries.filter(r => r.iso3 === null).map(r => r.country)
+const no_iso3 = countries.filter(r => !ISO3_BY_NAME.get(r.country)).map(r => r.country)
 if (no_iso3.length > 0) {
   console.error(`No country code for: ${no_iso3.join(", ")}. Add them to PISA_CODES.`)
   process.exit(1)
@@ -117,6 +123,7 @@ console.log(`  ${no_data.length} with no AIUSESCH data: ${no_data.join(", ")}`)
 console.log(`  ${cautioned.length} flagged for caution: ${cautioned.join(", ")}`)
 
 const pisa_data = {
+  PARTICIPANTS,
   AIUSESCH: {
     oecd_average,
     countries,
