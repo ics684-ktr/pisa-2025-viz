@@ -8,6 +8,8 @@ import Countries from "@/countries.json";
 import ValueFilter from "@/components/ValueFilter";
 import type { ValueRange } from "@/components/ValueFilter";
 
+type CountryWithData = typeof asShapes[0];
+
 type AIUseEntry = {
   country: string;
   iso3: string;
@@ -400,7 +402,7 @@ function App() {
         </div>
       </div>
 
-      {selectedCountry && (
+   {/*    {selectedCountry && (
         <aside aria-label="Selected country details">
           <h2>{selectedCountry.country}</h2>
 
@@ -415,7 +417,7 @@ function App() {
             <p>Caution: PISA sampling standards not met.</p>
           )}
         </aside>
-      )}
+      )} */}
       <main className="map-wrapper">
         <Plot
           data={filteredData}
@@ -437,7 +439,23 @@ function App() {
           config={config}
           useResizeHandler
           style={{ width: "100%", height: "100%" }}
+          onClick={(event) => {
+            if (!event?.points.length) return;
+            const point = event.points[0];
+
+            const iso3 = point.location ?? (point as typeof point & { customdata: string }).customdata;
+            const country = [...asShapes, ...asDots].find(c => c.iso3 === iso3) ??
+              withoutData.find(c => c.iso3 === iso3);
+            if (country) setSelectedCountry(country);
+          }}
         />
+        {selectedCountry && (
+          <div className="country-panel">
+            <button onClick={() => setSelectedCountry(null)}>✕</button>
+            <h2>{selectedCountry.country ?? selectedCountry.iso3}</h2>
+            <p>AI Use Index: {(selectedCountry as CountryWithData).aiusesch ?? "No data"}</p>
+          </div>
+      )}
       </main>
       <footer>
         <span>Source: OECD, PISA 2025 Results (Volume I)</span>
