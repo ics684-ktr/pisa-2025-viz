@@ -2,7 +2,7 @@
 .page {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  min-height: 100dvh;
   box-sizing: border-box;
   padding: 16px;
   background: #fcfcfb;
@@ -23,8 +23,9 @@
 }
 
 .map-wrapper {
-  flex: 1;
-  min-height: 0;
+  flex: 1 0 auto;
+  height: 65dvh;
+  min-height: 360px;
 }
 
 .page footer {
@@ -35,3 +36,262 @@
   font-size: 0.75rem;
   color: #52514e;
 }
+
+.country-search {
+  position: relative;
+  width: min(100%, 380px);
+  margin: 20px 0;
+  color: #0b0b0b;
+}
+
+.search-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #52514e;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  background: #fff;
+  border: 1px solid #d5d4ce;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 4%);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 15%);
+}
+
+.search-icon {
+  flex-shrink: 0;
+  color: #66655f;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #73726b;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  max-height: 280px;
+  overflow-y: auto;
+  margin: 8px 0 0;
+  padding: 6px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #e1e0d9;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgb(0 0 0 / 10%);
+}
+
+.search-results li + li {
+  margin-top: 2px;
+}
+
+.search-results button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #0b0b0b;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.search-results button:hover,
+.search-results button:focus-visible {
+  background: #eef3ff;
+}
+
+.search-results button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+}
+
+.search-country-code {
+  color: #66655f;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.search-empty {
+  padding: 14px 12px;
+  color: #66655f;
+  font-size: 0.9rem;
+}
+
+.value-filter {
+  width: min(100%, 460px);
+  box-sizing: border-box;
+  margin: 16px 0 8px;
+  padding: 16px;
+  border: 1px solid #e1e0d9;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 4%);
+}
+
+.value-filter legend {
+  padding: 0 6px;
+  color: #52514e;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.filter-controls {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filter-controls label {
+  display: grid;
+  flex: 1 1 120px;
+  gap: 6px;
+  color: #52514e;
+  font-size: 0.8rem;
+}
+
+.filter-controls input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid #d5d4ce;
+  border-radius: 8px;
+  background: #fcfcfb;
+  color: #0b0b0b;
+  font: inherit;
+}
+
+.filter-controls input:focus-visible,
+.filter-reset:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.filter-controls input[aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.filter-separator {
+  align-self: center;
+  color: #73726b;
+}
+
+.filter-reset {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #d5d4ce;
+  border-radius: 8px;
+  background: #fff;
+  color: #0b0b0b;
+  font: inherit;
+  cursor: pointer;
+}
+
+.filter-reset:hover {
+  background: #f0f0ed;
+}
+
+.map-controls .filter-group {
+  flex: 0 1 360px;
+  min-width: 0;
+}
+
+.filter-summary {
+  margin: 8px 0 0;
+  color: #52514e;
+  font-size: 0.85rem;
+}
+
+#filter-error {
+  margin-bottom: 0;
+  color: #b42318;
+  font-size: 0.85rem;
+}
+
+.map-controls {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.filter-group .filter-controls {
+  gap: 8px;
+}
+
+.filter-group .filter-controls label {
+  flex: 1 1 90px;
+  min-width: 0;
+}
+
+.filter-group .filter-summary {
+  margin: 6px 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.map-controls .country-search {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+}
+
+.map-controls .filter-group .value-filter {
+  width: 100%;
+  margin: 0;
+  padding: 10px 12px;
+}
+
+
+
+/* Stack the controls on smaller screens. */
+@media (max-width: 760px) {
+  .map-controls {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .map-controls .country-search,
+  .map-controls .filter-group {
+    flex: none;
+    width: 100%;
+  }
+}
+
