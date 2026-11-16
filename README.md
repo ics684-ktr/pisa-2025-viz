@@ -62,3 +62,6 @@ The OECD combines the four `ST438` questions into one index, `AIUSESCH` ("studen
 - **No AI data:** 6 of the 91 participants (Cambodia, Dushanbe, Kurdistan Region, Mauritius, Rwanda and Zambia) have no AI data. Importantly, they're "no data", not zero.
 - **Sampling caution:** 6 of the 85 countries with AI data (Albania, Canada, the Netherlands, New Zealand, Norway and the United States) didn't meet PISA's sampling standards.
 - **Not all country codes are ISO3:** PISA's codes are mostly standard ISO3, but 7 aren't: B-S-J-Z (China) `QCI`, Cyprus `QCY`, Dushanbe (Tajikistan) `QTJ`, Kosovo `KSV`, Kurdistan Region (Iraq) `QKI`, Chinese Taipei `TAP` and Ukrainian regions (17 of 27) `QUA`. The map can't place these, so `scripts/build-data.ts` swaps them for ones it can (e.g. `QCI` → `CHN`).
+
+### Country Latitude and Longitude
+`src/countries.json` is from https://github.com/mledoze/countries/blob/master/countries.json
