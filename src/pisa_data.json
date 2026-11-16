@@ -1100,5 +1100,741 @@
         "coverage": "†"
       }
     ]
+  },
+  "ASSESS_AI_OUTPUT": {
+    "oecd_average": {
+      "assess_ai_output": 62.60935,
+      "assess_ai_output_se": 0.13863
+    },
+    "countries": [
+      {
+        "country": "Argentina",
+        "iso3": "ARG",
+        "caution": false,
+        "assess_ai_output": 60.70915,
+        "assess_ai_output_se": 0.90294,
+        "coverage": "‡"
+      },
+      {
+        "country": "Armenia",
+        "iso3": "ARM",
+        "caution": false,
+        "assess_ai_output": 75.94875,
+        "assess_ai_output_se": 1.35536,
+        "coverage": "‡"
+      },
+      {
+        "country": "Australia",
+        "iso3": "AUS",
+        "caution": false,
+        "assess_ai_output": 68.32206,
+        "assess_ai_output_se": 0.60462,
+        "coverage": null
+      },
+      {
+        "country": "Austria",
+        "iso3": "AUT",
+        "caution": false,
+        "assess_ai_output": 62.77661,
+        "assess_ai_output_se": 0.83467,
+        "coverage": null
+      },
+      {
+        "country": "Azerbaijan",
+        "iso3": "AZE",
+        "caution": false,
+        "assess_ai_output": 76.09321,
+        "assess_ai_output_se": 0.78228,
+        "coverage": "†"
+      },
+      {
+        "country": "Belgium",
+        "iso3": "BEL",
+        "caution": false,
+        "assess_ai_output": 58.56818,
+        "assess_ai_output_se": 0.86941,
+        "coverage": null
+      },
+      {
+        "country": "Brazil",
+        "iso3": "BRA",
+        "caution": false,
+        "assess_ai_output": 51.23016,
+        "assess_ai_output_se": 0.63383,
+        "coverage": "†"
+      },
+      {
+        "country": "Brunei Darussalam",
+        "iso3": "BRN",
+        "caution": false,
+        "assess_ai_output": 73.44237,
+        "assess_ai_output_se": 0.61084,
+        "coverage": null
+      },
+      {
+        "country": "B-S-J-Z (China)",
+        "iso3": "CHN",
+        "caution": false,
+        "assess_ai_output": 44.63599,
+        "assess_ai_output_se": 0.77645,
+        "coverage": null
+      },
+      {
+        "country": "Bulgaria",
+        "iso3": "BGR",
+        "caution": false,
+        "assess_ai_output": 71.26589,
+        "assess_ai_output_se": 0.91191,
+        "coverage": "†"
+      },
+      {
+        "country": "Cambodia",
+        "iso3": "KHM",
+        "caution": false,
+        "assess_ai_output": null,
+        "assess_ai_output_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Canada",
+        "iso3": "CAN",
+        "caution": true,
+        "assess_ai_output": 56.21539,
+        "assess_ai_output_se": 0.57027,
+        "coverage": "†"
+      },
+      {
+        "country": "Chile",
+        "iso3": "CHL",
+        "caution": false,
+        "assess_ai_output": 61.53592,
+        "assess_ai_output_se": 0.79446,
+        "coverage": "†"
+      },
+      {
+        "country": "Colombia",
+        "iso3": "COL",
+        "caution": false,
+        "assess_ai_output": 63.52712,
+        "assess_ai_output_se": 0.84118,
+        "coverage": null
+      },
+      {
+        "country": "Costa Rica",
+        "iso3": "CRI",
+        "caution": false,
+        "assess_ai_output": 66.1426,
+        "assess_ai_output_se": 0.76353,
+        "coverage": "†"
+      },
+      {
+        "country": "Croatia",
+        "iso3": "HRV",
+        "caution": false,
+        "assess_ai_output": 69.22285,
+        "assess_ai_output_se": 0.74139,
+        "coverage": null
+      },
+      {
+        "country": "Cyprus",
+        "iso3": "CYP",
+        "caution": false,
+        "assess_ai_output": 67.63936,
+        "assess_ai_output_se": 0.86891,
+        "coverage": "†"
+      },
+      {
+        "country": "Czechia",
+        "iso3": "CZE",
+        "caution": false,
+        "assess_ai_output": 70.04108,
+        "assess_ai_output_se": 0.75616,
+        "coverage": null
+      },
+      {
+        "country": "Denmark",
+        "iso3": "DNK",
+        "caution": false,
+        "assess_ai_output": 69.05977,
+        "assess_ai_output_se": 1.1059,
+        "coverage": null
+      },
+      {
+        "country": "Dominican Republic",
+        "iso3": "DOM",
+        "caution": false,
+        "assess_ai_output": 64.69256,
+        "assess_ai_output_se": 0.92716,
+        "coverage": "†"
+      },
+      {
+        "country": "Dushanbe (Tajikistan)",
+        "iso3": "TJK",
+        "caution": false,
+        "assess_ai_output": null,
+        "assess_ai_output_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Ecuador",
+        "iso3": "ECU",
+        "caution": false,
+        "assess_ai_output": 61.20637,
+        "assess_ai_output_se": 0.65914,
+        "coverage": null
+      },
+      {
+        "country": "El Salvador",
+        "iso3": "SLV",
+        "caution": false,
+        "assess_ai_output": 60.53484,
+        "assess_ai_output_se": 0.93333,
+        "coverage": "†"
+      },
+      {
+        "country": "Estonia",
+        "iso3": "EST",
+        "caution": false,
+        "assess_ai_output": 72.5108,
+        "assess_ai_output_se": 0.76119,
+        "coverage": null
+      },
+      {
+        "country": "Finland",
+        "iso3": "FIN",
+        "caution": false,
+        "assess_ai_output": 60.97051,
+        "assess_ai_output_se": 0.68698,
+        "coverage": null
+      },
+      {
+        "country": "France",
+        "iso3": "FRA",
+        "caution": false,
+        "assess_ai_output": 46.84149,
+        "assess_ai_output_se": 0.88181,
+        "coverage": "†"
+      },
+      {
+        "country": "Georgia",
+        "iso3": "GEO",
+        "caution": false,
+        "assess_ai_output": 69.32696,
+        "assess_ai_output_se": 0.79125,
+        "coverage": "†"
+      },
+      {
+        "country": "Germany",
+        "iso3": "DEU",
+        "caution": false,
+        "assess_ai_output": 59.33892,
+        "assess_ai_output_se": 0.896,
+        "coverage": null
+      },
+      {
+        "country": "Greece",
+        "iso3": "GRC",
+        "caution": false,
+        "assess_ai_output": 60.74082,
+        "assess_ai_output_se": 0.7795,
+        "coverage": null
+      },
+      {
+        "country": "Guatemala",
+        "iso3": "GTM",
+        "caution": false,
+        "assess_ai_output": 52.55018,
+        "assess_ai_output_se": 0.80058,
+        "coverage": "†"
+      },
+      {
+        "country": "Hong Kong (China)",
+        "iso3": "HKG",
+        "caution": false,
+        "assess_ai_output": 69.33678,
+        "assess_ai_output_se": 0.84518,
+        "coverage": null
+      },
+      {
+        "country": "Hungary",
+        "iso3": "HUN",
+        "caution": false,
+        "assess_ai_output": 60.9787,
+        "assess_ai_output_se": 1.13239,
+        "coverage": null
+      },
+      {
+        "country": "Iceland",
+        "iso3": "ISL",
+        "caution": false,
+        "assess_ai_output": 72.84294,
+        "assess_ai_output_se": 0.84197,
+        "coverage": null
+      },
+      {
+        "country": "Indonesia",
+        "iso3": "IDN",
+        "caution": false,
+        "assess_ai_output": 73.16651,
+        "assess_ai_output_se": 0.86086,
+        "coverage": null
+      },
+      {
+        "country": "Ireland",
+        "iso3": "IRL",
+        "caution": false,
+        "assess_ai_output": 47.18393,
+        "assess_ai_output_se": 0.85623,
+        "coverage": null
+      },
+      {
+        "country": "Israel",
+        "iso3": "ISR",
+        "caution": false,
+        "assess_ai_output": 63.01207,
+        "assess_ai_output_se": 0.8385,
+        "coverage": "‡"
+      },
+      {
+        "country": "Italy",
+        "iso3": "ITA",
+        "caution": false,
+        "assess_ai_output": 73.66831,
+        "assess_ai_output_se": 0.7259,
+        "coverage": null
+      },
+      {
+        "country": "Japan",
+        "iso3": "JPN",
+        "caution": false,
+        "assess_ai_output": 31.16206,
+        "assess_ai_output_se": 1.28187,
+        "coverage": null
+      },
+      {
+        "country": "Jordan",
+        "iso3": "JOR",
+        "caution": false,
+        "assess_ai_output": 59.17116,
+        "assess_ai_output_se": 0.96116,
+        "coverage": "†"
+      },
+      {
+        "country": "Kazakhstan",
+        "iso3": "KAZ",
+        "caution": false,
+        "assess_ai_output": 80.18606,
+        "assess_ai_output_se": 0.48727,
+        "coverage": null
+      },
+      {
+        "country": "Kenya",
+        "iso3": "KEN",
+        "caution": false,
+        "assess_ai_output": 55.51239,
+        "assess_ai_output_se": 1.39395,
+        "coverage": "†"
+      },
+      {
+        "country": "Korea",
+        "iso3": "KOR",
+        "caution": false,
+        "assess_ai_output": 66.5166,
+        "assess_ai_output_se": 1.34659,
+        "coverage": null
+      },
+      {
+        "country": "Kosovo",
+        "iso3": "XKX",
+        "caution": false,
+        "assess_ai_output": 76.65283,
+        "assess_ai_output_se": 0.77479,
+        "coverage": "†"
+      },
+      {
+        "country": "Kurdistan Region (Iraq)",
+        "iso3": "IRQ",
+        "caution": false,
+        "assess_ai_output": null,
+        "assess_ai_output_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Kyrgyzstan",
+        "iso3": "KGZ",
+        "caution": false,
+        "assess_ai_output": 74.84989,
+        "assess_ai_output_se": 0.68589,
+        "coverage": "†"
+      },
+      {
+        "country": "Latvia",
+        "iso3": "LVA",
+        "caution": false,
+        "assess_ai_output": 79.11005,
+        "assess_ai_output_se": 0.58575,
+        "coverage": null
+      },
+      {
+        "country": "Lebanon",
+        "iso3": "LBN",
+        "caution": false,
+        "assess_ai_output": 73.66061,
+        "assess_ai_output_se": 1.22757,
+        "coverage": "‡"
+      },
+      {
+        "country": "Lithuania",
+        "iso3": "LTU",
+        "caution": false,
+        "assess_ai_output": 73.93757,
+        "assess_ai_output_se": 0.69109,
+        "coverage": null
+      },
+      {
+        "country": "Luxembourg",
+        "iso3": "LUX",
+        "caution": false,
+        "assess_ai_output": 65.79555,
+        "assess_ai_output_se": 0.55068,
+        "coverage": null
+      },
+      {
+        "country": "Macao (China)",
+        "iso3": "MAC",
+        "caution": false,
+        "assess_ai_output": 74.53961,
+        "assess_ai_output_se": 0.56608,
+        "coverage": null
+      },
+      {
+        "country": "Malaysia",
+        "iso3": "MYS",
+        "caution": false,
+        "assess_ai_output": 70.81136,
+        "assess_ai_output_se": 0.78207,
+        "coverage": null
+      },
+      {
+        "country": "Malta",
+        "iso3": "MLT",
+        "caution": false,
+        "assess_ai_output": 61.93543,
+        "assess_ai_output_se": 0.93165,
+        "coverage": "†"
+      },
+      {
+        "country": "Mauritius",
+        "iso3": "MUS",
+        "caution": false,
+        "assess_ai_output": null,
+        "assess_ai_output_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Mexico",
+        "iso3": "MEX",
+        "caution": false,
+        "assess_ai_output": 59.24912,
+        "assess_ai_output_se": 0.80443,
+        "coverage": null
+      },
+      {
+        "country": "Moldova",
+        "iso3": "MDA",
+        "caution": false,
+        "assess_ai_output": 74.2183,
+        "assess_ai_output_se": 0.79418,
+        "coverage": null
+      },
+      {
+        "country": "Mongolia",
+        "iso3": "MNG",
+        "caution": false,
+        "assess_ai_output": 74.26744,
+        "assess_ai_output_se": 0.58519,
+        "coverage": null
+      },
+      {
+        "country": "Montenegro",
+        "iso3": "MNE",
+        "caution": false,
+        "assess_ai_output": 57.90232,
+        "assess_ai_output_se": 0.88189,
+        "coverage": "†"
+      },
+      {
+        "country": "Morocco",
+        "iso3": "MAR",
+        "caution": false,
+        "assess_ai_output": 52.71764,
+        "assess_ai_output_se": 0.9431,
+        "coverage": "†"
+      },
+      {
+        "country": "Netherlands",
+        "iso3": "NLD",
+        "caution": true,
+        "assess_ai_output": 55.38697,
+        "assess_ai_output_se": 0.87579,
+        "coverage": null
+      },
+      {
+        "country": "New Zealand",
+        "iso3": "NZL",
+        "caution": true,
+        "assess_ai_output": 64.55915,
+        "assess_ai_output_se": 0.8875,
+        "coverage": null
+      },
+      {
+        "country": "North Macedonia",
+        "iso3": "MKD",
+        "caution": false,
+        "assess_ai_output": 75.4692,
+        "assess_ai_output_se": 0.86025,
+        "coverage": "†"
+      },
+      {
+        "country": "Norway",
+        "iso3": "NOR",
+        "caution": true,
+        "assess_ai_output": 74.32094,
+        "assess_ai_output_se": 0.6928,
+        "coverage": null
+      },
+      {
+        "country": "Palestinian Authority",
+        "iso3": "PSE",
+        "caution": false,
+        "assess_ai_output": 61.37049,
+        "assess_ai_output_se": 0.76502,
+        "coverage": "†"
+      },
+      {
+        "country": "Paraguay",
+        "iso3": "PRY",
+        "caution": false,
+        "assess_ai_output": 53.72527,
+        "assess_ai_output_se": 1.10486,
+        "coverage": "‡"
+      },
+      {
+        "country": "Peru",
+        "iso3": "PER",
+        "caution": false,
+        "assess_ai_output": 55.33279,
+        "assess_ai_output_se": 1.09026,
+        "coverage": "†"
+      },
+      {
+        "country": "Philippines",
+        "iso3": "PHL",
+        "caution": false,
+        "assess_ai_output": 70.79601,
+        "assess_ai_output_se": 0.65231,
+        "coverage": null
+      },
+      {
+        "country": "Poland",
+        "iso3": "POL",
+        "caution": false,
+        "assess_ai_output": 62.40198,
+        "assess_ai_output_se": 0.7088,
+        "coverage": null
+      },
+      {
+        "country": "Portugal",
+        "iso3": "PRT",
+        "caution": false,
+        "assess_ai_output": 57.40324,
+        "assess_ai_output_se": 0.78169,
+        "coverage": null
+      },
+      {
+        "country": "Qatar",
+        "iso3": "QAT",
+        "caution": false,
+        "assess_ai_output": 68.59977,
+        "assess_ai_output_se": 0.86917,
+        "coverage": "†"
+      },
+      {
+        "country": "Romania",
+        "iso3": "ROU",
+        "caution": false,
+        "assess_ai_output": 72.62725,
+        "assess_ai_output_se": 0.70826,
+        "coverage": null
+      },
+      {
+        "country": "Rwanda",
+        "iso3": "RWA",
+        "caution": false,
+        "assess_ai_output": null,
+        "assess_ai_output_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Saudi Arabia",
+        "iso3": "SAU",
+        "caution": false,
+        "assess_ai_output": 74.84838,
+        "assess_ai_output_se": 0.79667,
+        "coverage": "†"
+      },
+      {
+        "country": "Serbia",
+        "iso3": "SRB",
+        "caution": false,
+        "assess_ai_output": 61.60964,
+        "assess_ai_output_se": 0.8738,
+        "coverage": "†"
+      },
+      {
+        "country": "Singapore",
+        "iso3": "SGP",
+        "caution": false,
+        "assess_ai_output": 81.02528,
+        "assess_ai_output_se": 0.47295,
+        "coverage": null
+      },
+      {
+        "country": "Slovak Republic",
+        "iso3": "SVK",
+        "caution": false,
+        "assess_ai_output": 71.11274,
+        "assess_ai_output_se": 0.80493,
+        "coverage": null
+      },
+      {
+        "country": "Slovenia",
+        "iso3": "SVN",
+        "caution": false,
+        "assess_ai_output": 63.70648,
+        "assess_ai_output_se": 0.75701,
+        "coverage": null
+      },
+      {
+        "country": "Spain",
+        "iso3": "ESP",
+        "caution": false,
+        "assess_ai_output": 59.52722,
+        "assess_ai_output_se": 0.65549,
+        "coverage": null
+      },
+      {
+        "country": "Sweden",
+        "iso3": "SWE",
+        "caution": false,
+        "assess_ai_output": 64.89844,
+        "assess_ai_output_se": 0.93737,
+        "coverage": null
+      },
+      {
+        "country": "Switzerland",
+        "iso3": "CHE",
+        "caution": false,
+        "assess_ai_output": 69.01845,
+        "assess_ai_output_se": 0.75197,
+        "coverage": null
+      },
+      {
+        "country": "Chinese Taipei",
+        "iso3": "TWN",
+        "caution": false,
+        "assess_ai_output": 65.86668,
+        "assess_ai_output_se": 0.83172,
+        "coverage": null
+      },
+      {
+        "country": "Thailand",
+        "iso3": "THA",
+        "caution": false,
+        "assess_ai_output": 68.87644,
+        "assess_ai_output_se": 0.81558,
+        "coverage": null
+      },
+      {
+        "country": "Türkiye",
+        "iso3": "TUR",
+        "caution": false,
+        "assess_ai_output": 68.05768,
+        "assess_ai_output_se": 0.8321,
+        "coverage": null
+      },
+      {
+        "country": "Ukrainian regions (17 of 27)",
+        "iso3": "UKR",
+        "caution": false,
+        "assess_ai_output": 77.70708,
+        "assess_ai_output_se": 0.55316,
+        "coverage": null
+      },
+      {
+        "country": "United Arab Emirates",
+        "iso3": "ARE",
+        "caution": false,
+        "assess_ai_output": 81.71536,
+        "assess_ai_output_se": 0.32855,
+        "coverage": null
+      },
+      {
+        "country": "United Kingdom",
+        "iso3": "GBR",
+        "caution": false,
+        "assess_ai_output": 42.38162,
+        "assess_ai_output_se": 0.85256,
+        "coverage": null
+      },
+      {
+        "country": "Uruguay",
+        "iso3": "URY",
+        "caution": false,
+        "assess_ai_output": 65.3059,
+        "assess_ai_output_se": 0.86644,
+        "coverage": "†"
+      },
+      {
+        "country": "Uzbekistan",
+        "iso3": "UZB",
+        "caution": false,
+        "assess_ai_output": 80.57594,
+        "assess_ai_output_se": 0.77091,
+        "coverage": null
+      },
+      {
+        "country": "Viet Nam",
+        "iso3": "VNM",
+        "caution": false,
+        "assess_ai_output": 69.95105,
+        "assess_ai_output_se": 0.78501,
+        "coverage": null
+      },
+      {
+        "country": "Zambia",
+        "iso3": "ZMB",
+        "caution": false,
+        "assess_ai_output": null,
+        "assess_ai_output_se": null,
+        "coverage": null
+      },
+      {
+        "country": "Albania",
+        "iso3": "ALB",
+        "caution": true,
+        "assess_ai_output": 81.5578,
+        "assess_ai_output_se": 0.64068,
+        "coverage": null
+      },
+      {
+        "country": "United States",
+        "iso3": "USA",
+        "caution": true,
+        "assess_ai_output": 56.33204,
+        "assess_ai_output_se": 1.34396,
+        "coverage": "†"
+      }
+    ]
   }
 }

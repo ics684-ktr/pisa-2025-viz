@@ -14,7 +14,10 @@ XLSX.set_fs(fs)
 const DATA_DIR = "scripts/data"
 const OUTPUT_FILE = "src/pisa_data.json"
 const CHAPTER_4_SPREADSHEET_NAME = "xmra2f.xlsx"
-const AIUSESCH_SHEET_NAME = "Table I.B1.4.53"
+const TABLES = {
+  AIUSESCH: "Table I.B1.4.53",
+  ASSESS_AI_OUTPUT: "Table I.B1.4.68",
+}
 
 /* Every spreadsheet this script reads. Download links are in scripts/data/README.md. */
 const SPREADSHEETS = [CHAPTER_4_SPREADSHEET_NAME]
@@ -27,19 +30,14 @@ if (missing.length > 0) {
 }
 console.log(`Found spreadsheets in ${DATA_DIR}/: ${SPREADSHEETS.join(", ")}`)
 
-console.log(`Reading ${AIUSESCH_SHEET_NAME} from ${CHAPTER_4_SPREADSHEET_NAME}...`)
-const chapter_4_tables_xlsx = XLSX.readFile(
+const table_names = Object.values(TABLES)
+console.log(`Reading ${table_names.join(", ")} from ${CHAPTER_4_SPREADSHEET_NAME}...`)
+const chapter_4_workbook = XLSX.readFile(
   path.join(DATA_DIR, CHAPTER_4_SPREADSHEET_NAME),
   {
-    sheets: [AIUSESCH_SHEET_NAME]
+    sheets: table_names,
   },
 )
-
-const aiusesch_sheet = chapter_4_tables_xlsx.Sheets[AIUSESCH_SHEET_NAME]
-const aiusesch_json: Record<string, unknown>[] = XLSX.utils.sheet_to_json(aiusesch_sheet, {
-  range: "A10:D102",
-  header: "A",
-})
 
 /* Some values have "m" or "c" indicating missing or insufficient data. */
 const num = (v: unknown) => (typeof v === "number" ? v : null)
@@ -72,8 +70,9 @@ const PISA_CODES: Record<string, string> = {
   "Zambia": "ZMB",
 }
 
-/* Each participant's PISA code. MAP_CODES below swaps the ones Plotly's map doesn't know.
-Kosovo's "XKX" is a common stand-in, not an official ISO3 code either. */
+/* Seven PISA codes aren't ISO3 codes, so Plotly's map can't place them. MAP_CODES swaps each
+for its country's ISO3 code. Kosovo's "XKX" is a common stand-in, not an official ISO3 code,
+and Plotly's map doesn't draw Kosovo, so the app shows it as a dot. */
 const MAP_CODES: Record<string, string> = {
   QCI: "CHN", QCY: "CYP", QTJ: "TJK", KSV: "XKX", QKI: "IRQ", TAP: "TWN", QUA: "UKR",
 }
@@ -86,48 +85,77 @@ const PARTICIPANTS = Object.entries(PISA_CODES).map(([country, pisa_code]) => ({
 
 const ISO3_BY_NAME = new Map(PARTICIPANTS.map(p => [p.country, p.iso3]))
 
-/* The first row is always the OECD average; the rest are countries/economies. */
-const [oecd_average_row, ...country_rows] = aiusesch_json
-const oecd_average = {
-  aiusesch: num(oecd_average_row.B),
-  aiusesch_se: num(oecd_average_row.C),
-}
+/* Reads one OECD table into { oecd_average, countries }. `parser` picks the table's own
+columns out of a row; readTable adds the country name, iso3, caution and coverage. */
+function readTable(
+  table: string,
+  range: string,
+  parser: (r: Record<string, unknown>) => object,
+) {
+  console.log(`${table}:`)
+  const rows: Record<string, unknown>[] = XLSX.utils.sheet_to_json(chapter_4_workbook.Sheets[table], {
+    range,
+    header: "A",
+  })
 
-/* Countries ending with "*" indicates that country didn't meet OECD's sampling criteria,
-so results should be treated with caution. So we filter out the "*" when parsing country
-names and note the caution.
-*/
-const countries = country_rows.map(r => {
-  const country = text(r.A).replace(/\*$/, "")
-  return {
-    country,
-    iso3: ISO3_BY_NAME.get(country) ?? null,
-    caution: text(r.A).endsWith("*"),
-    aiusesch: num(r.B),      // AIUSESCH (students' AI use at school): country mean
-    aiusesch_se: num(r.C),   // ... and its standard error
-    coverage: text(r.D) || null,
+  /* The first row is always the OECD average; the rest are countries/economies. */
+  const [oecd_average_row, ...country_rows] = rows
+  const oecd_average = parser(oecd_average_row)
+
+  /* Countries ending with "*" didn't meet OECD's sampling criteria, so results should be
+  treated with caution. We strip the "*" from the name and record it as `caution`. */
+  const countries = country_rows.map(r => {
+    const country = text(r.A).replace(/\*$/, "")
+    return {
+      country,
+      iso3: ISO3_BY_NAME.get(country) ?? null,
+      caution: text(r.A).endsWith("*"),
+      ...parser(r),
+      // TODO: remove hard-coded coverage column when more columns are added.
+      // This should probably be provided in the caller's parser.
+      coverage: text(r.D) || null,
+    }
+  })
+
+  const no_iso3 = countries.filter(c => c.iso3 === null).map(c => c.country)
+  if (no_iso3.length > 0) {
+    console.error(`  No country code for: ${no_iso3.join(", ")}. Add them to PISA_CODES.`)
+    process.exit(1)
   }
-})
 
-const no_iso3 = countries.filter(r => !ISO3_BY_NAME.get(r.country)).map(r => r.country)
-if (no_iso3.length > 0) {
-  console.error(`No country code for: ${no_iso3.join(", ")}. Add them to PISA_CODES.`)
-  process.exit(1)
+  const no_data = country_rows
+    .filter(r => Object.values(parser(r)).every(v => v === null))
+    .map(r => text(r.A))
+  const cautioned = countries.filter(c => c.caution).map(c => c.country)
+  const average = Object.entries(oecd_average).map(([field, value]) => `${field} ${value}`)
+  console.log(`  OECD average: ${average.join(", ")}`)
+  console.log(`  ${countries.length} countries/economies`)
+  console.log(`  ${no_data.length} with no data: ${no_data.join(", ")}`)
+  console.log(`  ${cautioned.length} flagged for caution: ${cautioned.join(", ")}`)
+
+  return {
+    oecd_average,
+    countries,
+  }
 }
 
-const no_data = countries.filter(r => r.aiusesch === null).map(r => r.country)
-const cautioned = countries.filter(r => r.caution).map(r => r.country)
-console.log(`  OECD average: ${oecd_average.aiusesch} (SE ${oecd_average.aiusesch_se})`)
-console.log(`  ${countries.length} countries/economies`)
-console.log(`  ${no_data.length} with no AIUSESCH data: ${no_data.join(", ")}`)
-console.log(`  ${cautioned.length} flagged for caution: ${cautioned.join(", ")}`)
+/* OECD's index of AI usage levels. */
+const AIUSESCH = readTable(TABLES.AIUSESCH, "A10:D102", r => ({
+  aiusesch: num(r.B),      // AIUSESCH (students' AI use at school): country mean
+  aiusesch_se: num(r.C),   // ... and its standard error
+}))
+
+/* ST436Q16DA: % of students who "assess the quality of information generated by AI chatbots"
+in their school lessons "sometimes" or more often. */
+const ASSESS_AI_OUTPUT = readTable(TABLES.ASSESS_AI_OUTPUT, "A10:D102", r => ({
+  assess_ai_output: num(r.B),      // % of students
+  assess_ai_output_se: num(r.C),   // ... and its standard error
+}))
 
 const pisa_data = {
   PARTICIPANTS,
-  AIUSESCH: {
-    oecd_average,
-    countries,
-  },
+  AIUSESCH,
+  ASSESS_AI_OUTPUT,
 }
 
 fs.writeFileSync(
