@@ -41,6 +41,73 @@ const DOT_POSITIONS: Record<string, { lat: number; lon: number }> = {
   XKX: { lat: 42.593587, lon: 20.860719 },
 };
 
+//Lat lon for all countries for the zoom in effect when country is clicked
+const COUNTRY_CENTROIDS: Record<string, { lat: number; lon: number }> = {
+    AFG: { lat: 33.93911, lon: 67.709953 },
+  ALB: { lat: 41.153332, lon: 20.168331 },
+  DZA: { lat: 28.033886, lon: 1.659626 },
+  ARG: { lat: -38.416097, lon: -63.616672 },
+  AUS: { lat: -25.274398, lon: 133.775136 },
+  AUT: { lat: 47.516231, lon: 14.550072 },
+  BEL: { lat: 50.503887, lon: 4.469936 },
+  BRA: { lat: -14.235004, lon: -51.92528 },
+  CAN: { lat: 56.130366, lon: -106.346771 },
+  CHL: { lat: -35.675147, lon: -71.542969 },
+  CHN: { lat: 35.86166, lon: 104.195397 },
+  COL: { lat: 4.570868, lon: -74.297333 },
+  HRV: { lat: 45.1, lon: 15.2 },
+  CZE: { lat: 49.817492, lon: 15.472962 },
+  DNK: { lat: 56.26392, lon: 9.501785 },
+  EGY: { lat: 26.820553, lon: 30.802498 },
+  EST: { lat: 58.595272, lon: 25.013607 },
+  FIN: { lat: 61.92411, lon: 25.748151 },
+  FRA: { lat: 46.227638, lon: 2.213749 },
+  DEU: { lat: 51.165691, lon: 10.451526 },
+  GRC: { lat: 39.074208, lon: 21.824312 },
+  HUN: { lat: 47.162494, lon: 19.503304 },
+  IND: { lat: 20.593684, lon: 78.96288 },
+  IDN: { lat: -0.789275, lon: 113.921327 },
+  IRL: { lat: 53.41291, lon: -8.24389 },
+  ISR: { lat: 31.046051, lon: 34.851612 },
+  ITA: { lat: 41.87194, lon: 12.56738 },
+  JPN: { lat: 36.204824, lon: 138.252924 },
+  JOR: { lat: 30.585164, lon: 36.238414 },
+  KAZ: { lat: 48.019573, lon: 66.923684 },
+  KOR: { lat: 35.907757, lon: 127.766922 },
+  LVA: { lat: 56.879635, lon: 24.603189 },
+  LTU: { lat: 55.169438, lon: 23.881275 },
+  LUX: { lat: 49.815273, lon: 6.129583 },
+  MYS: { lat: 4.210484, lon: 101.975766 },
+  MEX: { lat: 23.634501, lon: -102.552784 },
+  MAR: { lat: 31.791702, lon: -7.09262 },
+  NLD: { lat: 52.132633, lon: 5.291266 },
+  NZL: { lat: -40.900557, lon: 174.885971 },
+  NOR: { lat: 60.472024, lon: 8.468946 },
+  POL: { lat: 51.919438, lon: 19.145136 },
+  PRT: { lat: 39.399872, lon: -8.224454 },
+  ROU: { lat: 45.943161, lon: 24.96676 },
+  SAU: { lat: 23.885942, lon: 45.079162 },
+  SRB: { lat: 44.016521, lon: 21.005859 },
+  SVK: { lat: 48.669026, lon: 19.699024 },
+  SVN: { lat: 46.151241, lon: 14.995463 },
+  ESP: { lat: 40.463667, lon: -3.74922 },
+  SWE: { lat: 60.128161, lon: 18.643501 },
+  CHE: { lat: 46.818188, lon: 8.227512 },
+  THA: { lat: 15.870032, lon: 100.992541 },
+  TUR: { lat: 38.963745, lon: 35.243322 },
+  UKR: { lat: 48.379433, lon: 31.16558 },
+  GBR: { lat: 55.378051, lon: -3.435973 },
+  USA: { lat: 37.09024, lon: -95.712891 },
+  URY: { lat: -32.522779, lon: -55.765835 },
+  UZB: { lat: 41.377491, lon: 64.585262 },
+  VNM: { lat: 14.058324, lon: 108.277199 },
+  HKG: { lat: 22.448829, lon: 114.097769 },
+  MAC: { lat: 22.129735, lon: 113.556038 },
+  SGP: { lat: 1.366587, lon: 103.816925 },
+  MLT: { lat: 35.892886, lon: 14.433005 },
+  XKX: { lat: 42.593587, lon: 20.860719 },
+};
+
 const withData = AIUseEntries.filter((e) => e.aiusesch !== null);
 const withoutData = AIUseEntries.filter((e) => e.aiusesch === null);
 const asShapes = withData.filter((e) => !(e.iso3 in DOT_POSITIONS));
@@ -111,6 +178,7 @@ const data: Data[] = [
     mode: "markers",
     lat: asDots.map((e) => DOT_POSITIONS[e.iso3].lat),
     lon: asDots.map((e) => DOT_POSITIONS[e.iso3].lon),
+    customdata: asDots.map((e) => e.iso3),
     marker: {
       size: 9,
       color: asDots.map((e) => e.aiusesch ?? 0),
@@ -382,7 +450,7 @@ function App() {
         <h1>How much do 15-year-olds use AI for school work?</h1>
         <p>
           Index of students' AI use at school (AIUSESCH), PISA 2025. 0 is the
-          OECD average. Hover over a country for details.
+          OECD average. Hover over or click a country for details.
         </p>
       </header>
       <div className="map-controls">
@@ -439,6 +507,7 @@ function App() {
           config={config}
           useResizeHandler
           style={{ width: "100%", height: "100%" }}
+          //event handler for clicking on the map
           onClick={(event) => {
             if (!event?.points.length) return;
             const point = event.points[0];
@@ -447,11 +516,16 @@ function App() {
             const country = [...asShapes, ...asDots].find(c => c.iso3 === iso3) ??
               withoutData.find(c => c.iso3 === iso3);
             if (country) setSelectedCountry(country);
+            const coords = COUNTRY_CENTROIDS[iso3];
+            if (coords) {
+              setView({ lat: coords.lat, lon: coords.lon, scale: 4});
+            }
           }}
         />
+        {/*info panel for the selected country*/}
         {selectedCountry && (
           <div className="country-panel">
-            <button onClick={() => setSelectedCountry(null)}>✕</button>
+            <button onClick={() => {setSelectedCountry(null); setView({ lat: 0, lon: 0, scale: 1 }); }}>✕</button>
             <h2>{selectedCountry.country ?? selectedCountry.iso3}</h2>
             <p>AI Use Index: {(selectedCountry as CountryWithData).aiusesch ?? "No data"}</p>
           </div>
