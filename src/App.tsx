@@ -276,9 +276,9 @@ function App() {
     iso3: string;
   } | null>(null);
 
-  const selectedEntry = AIUseEntries.find(
+ /*  const selectedEntry = AIUseEntries.find(
     (entry) => entry.iso3 === selectedCountry?.iso3
-  );
+  ); */
 
   const [view, setView] = useState({
     lat: 0,
