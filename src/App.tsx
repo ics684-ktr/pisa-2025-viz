@@ -4,7 +4,8 @@ import "@/App.css";
 import PisaData from "@/pisa_data.json";
 import { useEffect, useRef, useState } from "react";
 import CountrySearch from "@/components/CountrySearch";
-import Countries from "@/countries.json";
+import Countries from "@/countries_coordinates.json";
+
 import ValueFilter from "@/components/ValueFilter";
 import type { ValueRange } from "@/components/ValueFilter";
 
@@ -187,6 +188,10 @@ const config: Partial<Config> = {
 
 //Find and return the selected country's coordinates
 function getCountryCoordinates(iso3: string) {
+  //for smaller places
+  const dotPosition = DOT_POSITIONS[iso3];
+  if(dotPosition) return dotPosition;
+
   const country = Countries.find((item) => item.cca3 === iso3);
   //Return null if no country matches or fewer than two coordinates exist.
   if (!country || country.latlng.length < 2) return null;
