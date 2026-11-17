@@ -7,8 +7,10 @@ import CountrySearch from "@/components/CountrySearch";
 import Countries from "@/countries.json";
 import ValueFilter from "@/components/ValueFilter";
 import type { ValueRange } from "@/components/ValueFilter";
+import { linearRegression, linearRegressionLine } from "simple-statistics";
 
 type CountryWithData = typeof asShapes[0];
+type CountryWithScienceScore = typeof ScienceScoreEntries[0];
 
 type AIUseEntry = {
   country: string;
@@ -18,7 +20,29 @@ type AIUseEntry = {
   aiusesch: number | null;
   aiusesch_se: number | null;
 };
+
+type ScienceScoreEntry = {
+  country: string;
+  iso3: string;
+  caution: boolean;
+  science_score: number | null; 
+  science_score_se: number | null;
+  coverage: string | null;
+};
+
 const AIUseEntries: AIUseEntry[] = PisaData.AIUSESCH.countries;
+const ScienceScoreEntries: ScienceScoreEntry[] = PisaData.SCIENCE_SCORES.countries;
+const joinedData = (ScienceScoreEntries
+  .map(science => {
+    const ai = PisaData.AIUSESCH.countries.find(a => a.iso3 === science.iso3);
+    return ai ? { ...science, ...ai } : null;
+  })
+  .filter(d => d !== null && d?.science_score !== null && d?.aiusesch !== null)) as Array<ScienceScoreEntry & typeof PisaData.AIUSESCH.countries[0]>;
+
+  const reg = linearRegression(joinedData.map(d => [d.aiusesch!, d.science_score!]));
+  const line = linearRegressionLine(reg);
+  const minX = Math.min(...joinedData.map(d => d.aiusesch!));
+  const maxX = Math.max(...joinedData.map(d => d.aiusesch!));
 
 /* Colours, from the dataviz reference palette. */
 const COLORS = {
@@ -43,7 +67,7 @@ const DOT_POSITIONS: Record<string, { lat: number; lon: number }> = {
 
 //Lat lon for all countries for the zoom in effect when country is clicked
 const COUNTRY_CENTROIDS: Record<string, { lat: number; lon: number }> = {
-    AFG: { lat: 33.93911, lon: 67.709953 },
+  AFG: { lat: 33.93911, lon: 67.709953 },
   ALB: { lat: 41.153332, lon: 20.168331 },
   DZA: { lat: 28.033886, lon: 1.659626 },
   ARG: { lat: -38.416097, lon: -63.616672 },
@@ -289,7 +313,8 @@ function getCountryCoordinates(iso3: string) {
 /* The title and source are plain HTML rather than Plotly text,
 so they wrap properly on narrow screens. */
 function App() {
-  const [selectedCountry, setSelectedCountry] = useState<{
+  const [selectedCountry, setSelectedCountry] = useState<
+  CountryWithData | CountryWithScienceScore | {
     country: string;
     iso3: string;
   } | null>(null);
@@ -533,11 +558,57 @@ function App() {
             const iso3 = point.location ?? (point as typeof point & { customdata: string }).customdata;
             const country = [...asShapes, ...asDots].find(c => c.iso3 === iso3) ??
               withoutData.find(c => c.iso3 === iso3);
-            if (country) setSelectedCountry(country);
+           if (country) {
+              const scienceEntry = ScienceScoreEntries.find(s => s.iso3 === iso3);
+              setSelectedCountry({ ...country, ...scienceEntry });
+            }
             const coords = COUNTRY_CENTROIDS[iso3];
             if (coords) {
               setView({ lat: coords.lat, lon: coords.lon, scale: 4});
             }
+          }}
+        />
+        <Plot
+          data={[{
+            type: "scatter",
+            mode: "markers",
+            showlegend: false,  
+            x: joinedData.map(d => d.aiusesch),
+            y: joinedData.map(d => d.science_score),
+            error_y: { 
+              type: "data",
+              array: joinedData.map(d => d.science_score_se),
+              visible: true,
+            },
+            text: joinedData.map(d => d.country),
+            hovertemplate: "<b>%{text}</b><br>AI Use: %{x:.2f}<br>Science Score: %{y:.0f}<extra></extra>",
+            marker: { size: 8 },
+            },
+            {
+            type: "scatter",
+            mode: "lines+text",
+            showlegend: false,
+            x: [minX, maxX],
+            y: [line(minX), line(maxX)],
+            line: { color: "red", dash: "dash" },
+          }]}
+          
+          layout={{
+            width: 600,
+            height: 600,
+            title: { text: "AI Use vs Science Score" },
+            xaxis: { title: { text: "AI Use Index" } },
+            yaxis: { title: { text: "Science Score" } },
+            annotations: [{
+            x: maxX,
+            y: line(maxX),
+            xref: "x",
+            yref: "y",
+            text: `y = ${reg.m.toFixed(2)}x + ${reg.b.toFixed(2)}`,
+            showarrow: false,
+            yshift: 0, 
+            xshift: 15,
+          }]
           }}
         />
         {/*info panel for the selected country*/}
@@ -546,6 +617,7 @@ function App() {
             <button onClick={() => {setSelectedCountry(null); setView({ lat: 0, lon: 0, scale: 1 }); }}>✕</button>
             <h2>{selectedCountry.country ?? selectedCountry.iso3}</h2>
             <p>AI Use Index: {(selectedCountry as CountryWithData).aiusesch ?? "No data"}</p>
+            <p>Science Score: {(selectedCountry as CountryWithScienceScore).science_score?.toFixed(2) ?? "No data"}</p>
           </div>
       )}
       </main>

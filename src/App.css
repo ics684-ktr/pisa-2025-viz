@@ -23,10 +23,11 @@
 }
 
 .map-wrapper {
-  flex: 1 0 auto;
   height: 65dvh;
   min-height: 360px;
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 .page footer {
@@ -298,8 +299,8 @@
 
 .country-panel {
   position: absolute;
-  top: 5rem;
-  right: 1rem;
+  top: 1rem;
+  left: 1rem;
   background: white;
   border-radius: 8px;
   padding: 1rem;
