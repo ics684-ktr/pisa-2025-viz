@@ -1,5 +1,5 @@
 import Plot from "react-plotly.js";
-import type { Config, Data, Layout } from "plotly.js";
+import type { Config, Data, Layout, PlotDatum, PlotMouseEvent } from "plotly.js";
 import "@/App.css";
 import PisaData from "@/pisa_data.json";
 import { useEffect, useRef, useState } from "react";
@@ -10,64 +10,37 @@ import ValueFilter from "@/components/ValueFilter";
 import type { ValueRange } from "@/components/ValueFilter";
 import { linearRegression, linearRegressionLine } from "simple-statistics";
 
-type CountryWithData = typeof asShapes[0];
-type CountryWithScienceScore = typeof ScienceScoreEntries[0];
-
-type AIUseEntry = {
-  country: string;
-  iso3: string;
-  caution: boolean;
-  coverage: string | null;
-  aiusesch: number | null;
-  aiusesch_se: number | null;
-};
-
-type ScienceScoreEntry = {
-  country: string;
-  iso3: string;
-  caution: boolean;
-  science_score: number | null; 
-  science_score_se: number | null;
-  coverage: string | null;
-};
-
-/* pisa_data.json keys participants and each indicator's values by iso3.
-These rebuild the lists of entries used below. */
 type Estimate = { value: number | null; se: number | null; coverage?: string };
+
+type AIUseEntries = {
+  [iso3: string]: Estimate;
+};
+
+type ScienceScoreEntries = {
+  [iso3: string]: Estimate;
+};
+
 const Participants: Record<string, { name: string; caution: boolean }> = PisaData.PARTICIPANTS;
-const AIUse: Record<string, Estimate> = PisaData.INDICATORS.AIUSESCH.countries;
-const ScienceScores: Record<string, Estimate> = PisaData.INDICATORS.SCIENCE_SCORES.countries;
+const Indicators = PisaData.INDICATORS;
 
-const ParticipantList = Object.entries(Participants).map(([iso3, { name }]) => ({ country: name, iso3 }));
+const AIUseIndex: AIUseEntries = Indicators.AIUSESCH.countries;
+const ScienceScores: ScienceScoreEntries = Indicators.SCIENCE_SCORES.countries;
 
-const AIUseEntries: AIUseEntry[] = Object.entries(AIUse).map(([iso3, { value, se, coverage }]) => ({
-  country: Participants[iso3].name,
-  iso3,
-  caution: Participants[iso3].caution,
-  coverage: coverage ?? null,
-  aiusesch: value,
-  aiusesch_se: se,
-}));
-const ScienceScoreEntries: ScienceScoreEntry[] = Object.entries(ScienceScores).map(([iso3, { value, se, coverage }]) => ({
-  country: Participants[iso3].name,
-  iso3,
-  caution: Participants[iso3].caution,
-  coverage: coverage ?? null,
-  science_score: value,
-  science_score_se: se,
-}));
-const joinedData = (ScienceScoreEntries
-  .map(science => {
-    const ai = AIUseEntries.find(a => a.iso3 === science.iso3);
-    return ai ? { ...science, ...ai } : null;
+const joinedData = Object.entries(ScienceScores)
+  .map(([iso3, science_score]) => {
+    const country = Participants[iso3];
+    const aiusesch = AIUseIndex[iso3];
+    if (aiusesch.value === null || science_score.value === null) return null;
+    return { aiusesch, science_score, country };
   })
-  .filter(d => d !== null && d?.science_score !== null && d?.aiusesch !== null)) as Array<ScienceScoreEntry & AIUseEntry>;
+  .filter(d => d !== null);
 
-  const reg = linearRegression(joinedData.map(d => [d.aiusesch!, d.science_score!]));
-  const line = linearRegressionLine(reg);
-  const minX = Math.min(...joinedData.map(d => d.aiusesch!));
-  const maxX = Math.max(...joinedData.map(d => d.aiusesch!));
+const reg = linearRegression(joinedData.map(d => [d.aiusesch.value!, d.science_score.value!]));
+const line = linearRegressionLine(reg);
+const minX = Math.min(...joinedData.map(d => d.aiusesch.value!));
+const maxX = Math.max(...joinedData.map(d => d.aiusesch.value!));
 
+const COUNTRY_CODES = Object.keys(Participants);
 /* Colours, from the dataviz reference palette. */
 const COLORS = {
   surface: "#fcfcfb", // page and ocean
@@ -81,7 +54,12 @@ const COLORS = {
 or (Kosovo) not on its map at all. We show these as dots instead.
 Positions are the label points (LABEL_Y, LABEL_X) from Natural Earth's 1:50m
 Admin 0 countries, version 5.1.1: https://www.naturalearthdata.com */
-const DOT_POSITIONS: Record<string, { lat: number; lon: number }> = {
+const DOT_POSITIONS: {
+  [iso3: string]: {
+    lat: number;
+    lon: number
+  };
+} = {
   HKG: { lat: 22.448829, lon: 114.097769 },
   MAC: { lat: 22.129735, lon: 113.556038 },
   SGP: { lat: 1.366587, lon: 103.816925 },
@@ -174,15 +152,19 @@ const COUNTRY_CENTROIDS: Record<string, { lat: number; lon: number }> = {
   TWN: { lat: 23.69781, lon: 120.960515 },
 };
 
-const withData = AIUseEntries.filter((e) => e.aiusesch !== null);
-const withoutData = AIUseEntries.filter((e) => e.aiusesch === null);
-const asShapes = withData.filter((e) => !(e.iso3 in DOT_POSITIONS));
-const asDots = withData.filter((e) => e.iso3 in DOT_POSITIONS);
+// ISO3 codes of all participants WITH AI use data
+// !=/== instead of !==/=== is intentional
+const withData = COUNTRY_CODES.filter(iso3 => AIUseIndex[iso3].value != null);
+// ISO3 codes of all participants WITHOUT AI use data
+const withoutData = COUNTRY_CODES.filter(iso3 => AIUseIndex[iso3].value == null);
+
+const asShapes = withData.filter((code) => !(code in DOT_POSITIONS));
+const asDots = withData.filter((code) => code in DOT_POSITIONS);
 
 /* Make the scale symmetric around 0 and just wide enough for the most extreme country,
 rounded up to the next 0.1 (e.g. Japan at -0.69 gives -0.7 to +0.7). */
 const largestValue = Math.max(
-  ...withData.map((e) => Math.abs(e.aiusesch ?? 0))
+  ...withData.map((code) => Math.abs(AIUseIndex[code]?.value ?? 0))
 );
 const SCALE_LIMIT = Math.ceil(largestValue * 10) / 10;
 const ticks = [-SCALE_LIMIT, 0, SCALE_LIMIT];
@@ -193,20 +175,23 @@ const signed = (v: number) =>
   (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(2);
 
 /* The text that shows when you hover over a country. */
-function hoverText(entry: AIUseEntry): string {
-  const lines = [`<b>${entry.country}</b>`];
-  if (entry.aiusesch === null || entry.aiusesch_se === null) {
+function hoverText(code: string): string {
+  const country = Participants[code];
+  const aiusesch = AIUseIndex[code];
+
+  const lines = [`<b>${country.name}</b>`];
+  if (aiusesch.value === null || aiusesch.se === null) {
     lines.push("Took part in PISA 2025, but has no AI data");
   } else {
     // ± 1.96 standard errors is the 95% confidence interval
     // https://medium.com/@alfie.baines/statistical-significance-in-1000-words-why-1-96-rules-research-c11d515b17e7
     lines.push(
-      `AI use index: ${signed(entry.aiusesch)} ± ${(
-        1.96 * entry.aiusesch_se
+      `AI use index: ${signed(aiusesch.value)} ± ${(
+        1.96 * aiusesch.se
       ).toFixed(2)}`
     );
   }
-  if (entry.caution) lines.push("Caution: PISA sampling standards not met");
+  if (country.caution) lines.push("Caution: PISA sampling standards not met");
   return lines.join("<br>");
 }
 
@@ -216,7 +201,7 @@ const data: Data[] = [
     name: "No AI data",
     showlegend: true,
     locationmode: "ISO-3",
-    locations: withoutData.map((e) => e.iso3),
+    locations: withoutData,
     z: withoutData.map(() => 0),
     colorscale: [
       [0, COLORS.noData],
@@ -231,8 +216,8 @@ const data: Data[] = [
     type: "choropleth",
     name: "AI use index",
     locationmode: "ISO-3",
-    locations: asShapes.map((e) => e.iso3),
-    z: asShapes.map((e) => e.aiusesch),
+    locations: asShapes,
+    z: asShapes.map((e) => AIUseIndex[e].value),
     coloraxis: "coloraxis",
     marker: { line: { color: COLORS.surface, width: 0.5 } },
     hovertext: asShapes.map(hoverText),
@@ -242,12 +227,12 @@ const data: Data[] = [
     type: "scattergeo",
     name: "Small places",
     mode: "markers",
-    lat: asDots.map((e) => DOT_POSITIONS[e.iso3].lat),
-    lon: asDots.map((e) => DOT_POSITIONS[e.iso3].lon),
-    customdata: asDots.map((e) => e.iso3),
+    lat: asDots.map((code) => DOT_POSITIONS[code].lat),
+    lon: asDots.map((code) => DOT_POSITIONS[code].lon),
+    customdata: asDots.map((code) => code),
     marker: {
       size: 9,
-      color: asDots.map((e) => e.aiusesch ?? 0),
+      color: asDots.map((code) => AIUseIndex[code].value ?? 0),
       coloraxis: "coloraxis",
       line: { color: COLORS.textSecondary, width: 1 },
     },
@@ -325,7 +310,7 @@ const config: Partial<Config> = {
 function getCountryCoordinates(iso3: string) {
   //for smaller places
   const dotPosition = DOT_POSITIONS[iso3];
-  if(dotPosition) return dotPosition;
+  if (dotPosition) return dotPosition;
 
   const country = Countries.find((item) => item.cca3 === iso3);
   //Return null if no country matches or fewer than two coordinates exist.
@@ -341,15 +326,11 @@ function getCountryCoordinates(iso3: string) {
 /* The title and source are plain HTML rather than Plotly text,
 so they wrap properly on narrow screens. */
 function App() {
-  const [selectedCountry, setSelectedCountry] = useState<
-  CountryWithData | CountryWithScienceScore | {
-    country: string;
-    iso3: string;
-  } | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
 
- /*  const selectedEntry = AIUseEntries.find(
-    (entry) => entry.iso3 === selectedCountry?.iso3
-  ); */
+  /*  const selectedEntry = AIUseEntries.find(
+     (entry) => entry.iso3 === selectedCountry?.iso3
+   ); */
 
   const [view, setView] = useState({
     lat: 0,
@@ -415,13 +396,8 @@ function App() {
 
   //Update the selected country and smoothly move and zoom the map to it.
   function handleSelectCountry(country: { country: string; iso3: string }) {
-    const aiEntry = AIUseEntries.find((entry) => entry.iso3 === country.iso3);
-    const scienceEntry = ScienceScoreEntries.find(
-      (entry) => entry.iso3 === country.iso3
-    );
-    
-    setSelectedCountry({ ...scienceEntry, ...aiEntry, ...country });
-    
+    setSelectedCountry(country.iso3);
+
     //find the coordinate of the country that users selected
     const coordinates = getCountryCoordinates(country.iso3);
 
@@ -450,10 +426,10 @@ function App() {
   const filterActive = !invalidRange && (range.min !== "" || range.max !== "");
 
   //checks the filteirng
-  function matchesRange(entry: AIUseEntry) {
+  function matchesRange(code: string) {
     if (!filterActive) return true;
 
-    const value = entry.aiusesch;
+    const value = AIUseIndex[code].value;
     if (value === null || !Number.isFinite(value)) return false;
 
     return (
@@ -485,7 +461,7 @@ function App() {
       ({ width, color }): Data => ({
         type: "choropleth",
         locationmode: "ISO-3",
-        locations: matchingShapes.map((entry) => entry.iso3),
+        locations: matchingShapes,
         z: matchingShapes.map(() => 0),
         zmin: 0,
         zmax: 1,
@@ -506,8 +482,8 @@ function App() {
     {
       type: "scattergeo",
       mode: "markers",
-      lat: matchingDots.map((entry) => DOT_POSITIONS[entry.iso3].lat),
-      lon: matchingDots.map((entry) => DOT_POSITIONS[entry.iso3].lon),
+      lat: matchingDots.map((entry) => DOT_POSITIONS[entry].lat),
+      lon: matchingDots.map((entry) => DOT_POSITIONS[entry].lon),
       marker: {
         size: 14,
         symbol: "circle-open",
@@ -530,22 +506,25 @@ function App() {
       </header>
       <div className="map-controls">
         <CountrySearch
-          participants={ParticipantList}
+          participants={Object.entries(Participants).map(([iso3, country]) => ({
+            iso3,
+            country: country.name,
+          }))}
           onSelectCountry={handleSelectCountry}
         />
         <div className="filter-group">
-        <ValueFilter range={range} onChange={setRange} invalid={invalidRange} />
-        <p className="filter-summary" role="status">
-        {invalidRange
-          ? "Filter paused: fix the range to apply it."
-          : filterActive
-          ? `${matchingCount} of ${withData.length} countries with AI data match. Gray also includes countries with missing data.`
-          : "Showing all countries."}
-        </p>
+          <ValueFilter range={range} onChange={setRange} invalid={invalidRange} />
+          <p className="filter-summary" role="status">
+            {invalidRange
+              ? "Filter paused: fix the range to apply it."
+              : filterActive
+                ? `${matchingCount} of ${withData.length} countries with AI data match. Gray also includes countries with missing data.`
+                : "Showing all countries."}
+          </p>
         </div>
       </div>
 
-   {/*    {selectedCountry && (
+      {/*    {selectedCountry && (
         <aside aria-label="Selected country details">
           <h2>{selectedCountry.country}</h2>
 
@@ -583,20 +562,18 @@ function App() {
           useResizeHandler
           style={{ width: "100%", height: "100%" }}
           //event handler for clicking on the map
-          onClick={(event) => {
+          onClick={(event: PlotMouseEvent) => {
             if (!event?.points.length) return;
-            const point = event.points[0];
+            const point: (PlotDatum & { location?: string }) | undefined = event.points[0];
 
-            const iso3 = point.location ?? (point as typeof point & { customdata: string }).customdata;
-            const country = [...asShapes, ...asDots].find(c => c.iso3 === iso3) ??
-              withoutData.find(c => c.iso3 === iso3);
-           if (country) {
-              const scienceEntry = ScienceScoreEntries.find(s => s.iso3 === iso3);
-              setSelectedCountry({ ...country, ...scienceEntry });
-            }
+            const iso3 = point.location ?? (
+              typeof point.customdata === "string" ? point.customdata : null
+            );
+            if (!iso3) return;
+            setSelectedCountry(iso3)
             const coords = COUNTRY_CENTROIDS[iso3];
             if (coords) {
-              setView({ lat: coords.lat, lon: coords.lon, scale: 4});
+              setView({ lat: coords.lat, lon: coords.lon, scale: 4 });
             }
           }}
         />
@@ -604,19 +581,19 @@ function App() {
           data={[{
             type: "scatter",
             mode: "markers",
-            showlegend: false,  
-            x: joinedData.map(d => d.aiusesch),
-            y: joinedData.map(d => d.science_score),
-            error_y: { 
+            showlegend: false,
+            x: joinedData.map(d => d.aiusesch.value),
+            y: joinedData.map(d => d.science_score.value),
+            error_y: {
               type: "data",
-              array: joinedData.map(d => d.science_score_se),
+              array: joinedData.map(d => d.science_score.se),
               visible: true,
             },
-            text: joinedData.map(d => d.country),
+            text: joinedData.map(d => d.country.name),
             hovertemplate: "<b>%{text}</b><br>AI Use: %{x:.2f}<br>Science Score: %{y:.0f}<extra></extra>",
             marker: { size: 8 },
-            },
-            {
+          },
+          {
             type: "scatter",
             mode: "lines+text",
             showlegend: false,
@@ -624,7 +601,7 @@ function App() {
             y: [line(minX), line(maxX)],
             line: { color: "red", dash: "dash" },
           }]}
-          
+
           layout={{
             width: 600,
             height: 600,
@@ -632,26 +609,26 @@ function App() {
             xaxis: { title: { text: "AI Use Index" } },
             yaxis: { title: { text: "Science Score" } },
             annotations: [{
-            x: maxX,
-            y: line(maxX),
-            xref: "x",
-            yref: "y",
-            text: `y = ${reg.m.toFixed(2)}x + ${reg.b.toFixed(2)}`,
-            showarrow: false,
-            yshift: 0, 
-            xshift: 15,
-          }]
+              x: maxX,
+              y: line(maxX),
+              xref: "x",
+              yref: "y",
+              text: `y = ${reg.m.toFixed(2)}x + ${reg.b.toFixed(2)}`,
+              showarrow: false,
+              yshift: 0,
+              xshift: 15,
+            }]
           }}
         />
         {/*info panel for the selected country*/}
         {selectedCountry && (
           <div className="country-panel">
-            <button onClick={() => {setSelectedCountry(null); setView({ lat: 0, lon: 0, scale: 1 }); }}>✕</button>
-            <h2>{selectedCountry.country ?? selectedCountry.iso3}</h2>
-            <p>AI Use Index: {(selectedCountry as CountryWithData).aiusesch ?? "No data"}</p>
-            <p>Science Score: {(selectedCountry as CountryWithScienceScore).science_score?.toFixed(2) ?? "No data"}</p>
+            <button onClick={() => { setSelectedCountry(null); setView({ lat: 0, lon: 0, scale: 1 }); }}>✕</button>
+            <h2>{Participants[selectedCountry].name ?? selectedCountry}</h2>
+            <p>AI Use Index: {AIUseIndex[selectedCountry].value?.toFixed(2) ?? "No data"}</p>
+            <p>Science Score: {ScienceScores[selectedCountry].value?.toFixed(2) ?? "No data"}</p>
           </div>
-      )}
+        )}
       </main>
       <footer>
         <span>Source: OECD, PISA 2025 Results (Volume I)</span>
