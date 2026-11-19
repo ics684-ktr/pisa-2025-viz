@@ -42,7 +42,7 @@ export default function CountrySearch({
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          if (matches.length === 1) selectCountry(matches[0]);
+          if (matches[0] && matches.length === 1) selectCountry(matches[0]);
         }}
       >
         <label htmlFor="country-search" className="search-label">

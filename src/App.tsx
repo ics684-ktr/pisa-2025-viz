@@ -30,7 +30,11 @@ const joinedData = Object.entries(ScienceScores)
   .map(([iso3, science_score]) => {
     const country = Participants[iso3];
     const aiusesch = AIUseIndex[iso3];
-    if (aiusesch.value === null || science_score.value === null) return null;
+    if (!country ||
+      !aiusesch ||
+      aiusesch.value === null ||
+      science_score.value === null
+    ) return null;
     return { aiusesch, science_score, country };
   })
   .filter(d => d !== null);
@@ -154,9 +158,9 @@ const COUNTRY_CENTROIDS: Record<string, { lat: number; lon: number }> = {
 
 // ISO3 codes of all participants WITH AI use data
 // !=/== instead of !==/=== is intentional
-const withData = COUNTRY_CODES.filter(iso3 => AIUseIndex[iso3].value != null);
+const withData = COUNTRY_CODES.filter(iso3 => AIUseIndex[iso3]?.value != null);
 // ISO3 codes of all participants WITHOUT AI use data
-const withoutData = COUNTRY_CODES.filter(iso3 => AIUseIndex[iso3].value == null);
+const withoutData = COUNTRY_CODES.filter(iso3 => AIUseIndex[iso3]?.value == null);
 
 const asShapes = withData.filter((code) => !(code in DOT_POSITIONS));
 const asDots = withData.filter((code) => code in DOT_POSITIONS);
@@ -178,6 +182,7 @@ const signed = (v: number) =>
 function hoverText(code: string): string {
   const country = Participants[code];
   const aiusesch = AIUseIndex[code];
+  if (!country || ! aiusesch) return "";
 
   const lines = [`<b>${country.name}</b>`];
   if (aiusesch.value === null || aiusesch.se === null) {
@@ -217,7 +222,7 @@ const data: Data[] = [
     name: "AI use index",
     locationmode: "ISO-3",
     locations: asShapes,
-    z: asShapes.map((e) => AIUseIndex[e].value),
+    z: asShapes.map((e) => AIUseIndex[e]?.value ?? null),
     coloraxis: "coloraxis",
     marker: { line: { color: COLORS.surface, width: 0.5 } },
     hovertext: asShapes.map(hoverText),
@@ -227,12 +232,12 @@ const data: Data[] = [
     type: "scattergeo",
     name: "Small places",
     mode: "markers",
-    lat: asDots.map((code) => DOT_POSITIONS[code].lat),
-    lon: asDots.map((code) => DOT_POSITIONS[code].lon),
+    lat: asDots.map((code) => DOT_POSITIONS[code]?.lat ?? null),
+    lon: asDots.map((code) => DOT_POSITIONS[code]?.lon ?? null),
     customdata: asDots.map((code) => code),
     marker: {
       size: 9,
-      color: asDots.map((code) => AIUseIndex[code].value ?? 0),
+      color: asDots.map((code) => AIUseIndex[code]?.value ?? 0),
       coloraxis: "coloraxis",
       line: { color: COLORS.textSecondary, width: 1 },
     },
@@ -313,13 +318,17 @@ function getCountryCoordinates(iso3: string) {
   if (dotPosition) return dotPosition;
 
   const country = Countries.find((item) => item.cca3 === iso3);
+  const lat = country?.latlng[0], lon = country?.latlng[1];
   //Return null if no country matches or fewer than two coordinates exist.
-  if (!country || country.latlng.length < 2) return null;
+  if (!country ||
+    lat === undefined ||
+    lon === undefined
+  ) return null;
 
   //Return latitude and longitude from the coordinate array.
   return {
-    lat: country.latlng[0],
-    lon: country.latlng[1],
+    lat,
+    lon,
   };
 }
 
@@ -429,7 +438,7 @@ function App() {
   function matchesRange(code: string) {
     if (!filterActive) return true;
 
-    const value = AIUseIndex[code].value;
+    const value = AIUseIndex[code]?.value ?? null;
     if (value === null || !Number.isFinite(value)) return false;
 
     return (
@@ -482,8 +491,8 @@ function App() {
     {
       type: "scattergeo",
       mode: "markers",
-      lat: matchingDots.map((entry) => DOT_POSITIONS[entry].lat),
-      lon: matchingDots.map((entry) => DOT_POSITIONS[entry].lon),
+      lat: matchingDots.map((entry) => DOT_POSITIONS[entry]?.lat ?? null),
+      lon: matchingDots.map((entry) => DOT_POSITIONS[entry]?.lon ?? null),
       marker: {
         size: 14,
         symbol: "circle-open",
@@ -566,8 +575,8 @@ function App() {
             if (!event?.points.length) return;
             const point: (PlotDatum & { location?: string }) | undefined = event.points[0];
 
-            const iso3 = point.location ?? (
-              typeof point.customdata === "string" ? point.customdata : null
+            const iso3 = point?.location ?? (
+              typeof point?.customdata === "string" ? point.customdata : null
             );
             if (!iso3) return;
             setSelectedCountry(iso3)
@@ -624,9 +633,9 @@ function App() {
         {selectedCountry && (
           <div className="country-panel">
             <button onClick={() => { setSelectedCountry(null); setView({ lat: 0, lon: 0, scale: 1 }); }}>✕</button>
-            <h2>{Participants[selectedCountry].name ?? selectedCountry}</h2>
-            <p>AI Use Index: {AIUseIndex[selectedCountry].value?.toFixed(2) ?? "No data"}</p>
-            <p>Science Score: {ScienceScores[selectedCountry].value?.toFixed(2) ?? "No data"}</p>
+            <h2>{Participants[selectedCountry]?.name ?? selectedCountry}</h2>
+            <p>AI Use Index: {AIUseIndex[selectedCountry]?.value?.toFixed(2) ?? "No data"}</p>
+            <p>Science Score: {ScienceScores[selectedCountry]?.value?.toFixed(2) ?? "No data"}</p>
           </div>
         )}
       </main>
