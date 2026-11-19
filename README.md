@@ -17,6 +17,51 @@ npm run dev
 2. Run `npm run build:data`, which reads the spreadsheets and builds `src/pisa_data.json`.
 3. Check the diff of `src/pisa_data.json`, update any code that uses it, then commit it. If some numbers changed, it may mean your spreadsheet versions were different than the ones used to generate the previous one (this may be intended).
 
+### Structure of `pisa_data.json`
+The file has `PARTICIPANTS` and `VARIABLES`. `PARTICIPANTS` is a list of all 91 participants, each keyed by its ISO3 code. `VARIABLES` consists of every variable the site uses, read directly from OECD's tables provided in the full report.
+
+```json
+{
+  "PARTICIPANTS": {
+    "ALB": { "name": "Albania", "caution": true },
+    "ARG": { "name": "Argentina", "caution": false },
+    ...
+  },
+  "VARIABLES": {
+    "AIUSESCH": {
+      "label": "Index of students' AI use for schoolwork",
+      "source": { "table": "Table I.B1.4.53", "statlink": "https://stat.link/xmra2f" },
+      "oecd_average": { "value": -0.00124, "se": 0.00296 },
+      "countries": {
+        "ARG": { "value": 0.23737, "se": 0.02188, "coverage": "†" },
+        "KHM": { "value": null, "se": null },
+        ...
+      }
+    },
+    ...
+  }
+}
+```
+
+**`PARTICIPANTS`** lists all 91 participants:
+- `name`: the name the OECD uses, e.g. "Hong Kong (China)".
+- `caution`: `true` for the 6 participants that didn't meet PISA's sampling standards: Albania, Canada, the Netherlands, New Zealand, Norway and the United States.
+
+**Each variable in `VARIABLES`** has:
+- `label`: human-readable label.
+- `source`: its source spreadsheet and the link to it.
+- `oecd_average`: the OECD average for this variable.
+- `countries`: the values for each participant, keyed by ISO3.
+
+**Each participant's values** are usually:
+- `value`: the estimate (a mean, index or %). `null` when the OECD has no data or too few students.
+- `se`: its standard error. A 95% confidence interval is `value ± 1.96 * se`.
+- `coverage`: `"†"` if the estimate covers 50–75% of the population, `"‡"` if under 50%. Only present when the table marks it.
+
+Things to keep in mind:
+- **Missing vs. `null`:** a participant missing from a variable's `countries` means that country wasn't in that table. One with `null` values was in the table but has no data.
+- **ISO3 codes are the map's codes,** not always PISA's: 7 PISA codes are swapped so Plotly can place them (see [Gaps/caveats](#gapscaveats)).
+
 ## About PISA
 PISA (Programme for International Student Assessment) is an assessment of 15-year-olds in school run by the OECD (Organization for Economic Co-operation and Development). It's run every three years and 2025 is the ninth run. 91 countries and economies took part: 38 OECD members and 53 partners, 85 of which (all 38 OECD members and 47 partners) have data on students' AI use. The results came out in September 2026.
 
@@ -64,4 +109,4 @@ The OECD combines the four `ST438` questions into one index, `AIUSESCH` ("studen
 - **Not all country codes are ISO3:** PISA's codes are mostly standard ISO3, but 7 aren't: B-S-J-Z (China) `QCI`, Cyprus `QCY`, Dushanbe (Tajikistan) `QTJ`, Kosovo `KSV`, Kurdistan Region (Iraq) `QKI`, Chinese Taipei `TAP` and Ukrainian regions (17 of 27) `QUA`. The map can't place these, so `scripts/build-data.ts` swaps them for ones it can (e.g. `QCI` → `CHN`).
 
 ### Country Latitude and Longitude
-`src/countries.json` is from https://github.com/mledoze/countries/blob/master/countries.json
+`src/countries_coordinates.json` is from https://github.com/mledoze/countries/blob/master/countries.json
