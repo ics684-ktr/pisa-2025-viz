@@ -1,2560 +1,1544 @@
 {
-  "PARTICIPANTS": [
-    {
-      "country": "Albania",
-      "iso3": "ALB"
-    },
-    {
-      "country": "Argentina",
-      "iso3": "ARG"
-    },
-    {
-      "country": "Armenia",
-      "iso3": "ARM"
-    },
-    {
-      "country": "Australia",
-      "iso3": "AUS"
-    },
-    {
-      "country": "Austria",
-      "iso3": "AUT"
-    },
-    {
-      "country": "Azerbaijan",
-      "iso3": "AZE"
-    },
-    {
-      "country": "Belgium",
-      "iso3": "BEL"
-    },
-    {
-      "country": "Brazil",
-      "iso3": "BRA"
-    },
-    {
-      "country": "Brunei Darussalam",
-      "iso3": "BRN"
-    },
-    {
-      "country": "B-S-J-Z (China)",
-      "iso3": "CHN"
-    },
-    {
-      "country": "Bulgaria",
-      "iso3": "BGR"
-    },
-    {
-      "country": "Cambodia",
-      "iso3": "KHM"
-    },
-    {
-      "country": "Canada",
-      "iso3": "CAN"
-    },
-    {
-      "country": "Chile",
-      "iso3": "CHL"
-    },
-    {
-      "country": "Colombia",
-      "iso3": "COL"
-    },
-    {
-      "country": "Costa Rica",
-      "iso3": "CRI"
-    },
-    {
-      "country": "Croatia",
-      "iso3": "HRV"
-    },
-    {
-      "country": "Cyprus",
-      "iso3": "CYP"
-    },
-    {
-      "country": "Czechia",
-      "iso3": "CZE"
-    },
-    {
-      "country": "Denmark",
-      "iso3": "DNK"
-    },
-    {
-      "country": "Dominican Republic",
-      "iso3": "DOM"
-    },
-    {
-      "country": "Dushanbe (Tajikistan)",
-      "iso3": "TJK"
-    },
-    {
-      "country": "Ecuador",
-      "iso3": "ECU"
-    },
-    {
-      "country": "El Salvador",
-      "iso3": "SLV"
-    },
-    {
-      "country": "Estonia",
-      "iso3": "EST"
-    },
-    {
-      "country": "Finland",
-      "iso3": "FIN"
+  "PARTICIPANTS": {
+    "ALB": {
+      "name": "Albania",
+      "caution": true
+    },
+    "ARG": {
+      "name": "Argentina",
+      "caution": false
+    },
+    "ARM": {
+      "name": "Armenia",
+      "caution": false
+    },
+    "AUS": {
+      "name": "Australia",
+      "caution": false
+    },
+    "AUT": {
+      "name": "Austria",
+      "caution": false
+    },
+    "AZE": {
+      "name": "Azerbaijan",
+      "caution": false
+    },
+    "BEL": {
+      "name": "Belgium",
+      "caution": false
+    },
+    "BRA": {
+      "name": "Brazil",
+      "caution": false
+    },
+    "BRN": {
+      "name": "Brunei Darussalam",
+      "caution": false
+    },
+    "CHN": {
+      "name": "B-S-J-Z (China)",
+      "caution": false
+    },
+    "BGR": {
+      "name": "Bulgaria",
+      "caution": false
+    },
+    "KHM": {
+      "name": "Cambodia",
+      "caution": false
+    },
+    "CAN": {
+      "name": "Canada",
+      "caution": true
+    },
+    "CHL": {
+      "name": "Chile",
+      "caution": false
+    },
+    "COL": {
+      "name": "Colombia",
+      "caution": false
+    },
+    "CRI": {
+      "name": "Costa Rica",
+      "caution": false
+    },
+    "HRV": {
+      "name": "Croatia",
+      "caution": false
+    },
+    "CYP": {
+      "name": "Cyprus",
+      "caution": false
+    },
+    "CZE": {
+      "name": "Czechia",
+      "caution": false
+    },
+    "DNK": {
+      "name": "Denmark",
+      "caution": false
+    },
+    "DOM": {
+      "name": "Dominican Republic",
+      "caution": false
+    },
+    "TJK": {
+      "name": "Dushanbe (Tajikistan)",
+      "caution": false
+    },
+    "ECU": {
+      "name": "Ecuador",
+      "caution": false
+    },
+    "SLV": {
+      "name": "El Salvador",
+      "caution": false
+    },
+    "EST": {
+      "name": "Estonia",
+      "caution": false
+    },
+    "FIN": {
+      "name": "Finland",
+      "caution": false
     },
-    {
-      "country": "France",
-      "iso3": "FRA"
+    "FRA": {
+      "name": "France",
+      "caution": false
     },
-    {
-      "country": "Georgia",
-      "iso3": "GEO"
+    "GEO": {
+      "name": "Georgia",
+      "caution": false
     },
-    {
-      "country": "Germany",
-      "iso3": "DEU"
+    "DEU": {
+      "name": "Germany",
+      "caution": false
     },
-    {
-      "country": "Greece",
-      "iso3": "GRC"
+    "GRC": {
+      "name": "Greece",
+      "caution": false
     },
-    {
-      "country": "Guatemala",
-      "iso3": "GTM"
+    "GTM": {
+      "name": "Guatemala",
+      "caution": false
     },
-    {
-      "country": "Hong Kong (China)",
-      "iso3": "HKG"
+    "HKG": {
+      "name": "Hong Kong (China)",
+      "caution": false
     },
-    {
-      "country": "Hungary",
-      "iso3": "HUN"
+    "HUN": {
+      "name": "Hungary",
+      "caution": false
     },
-    {
-      "country": "Iceland",
-      "iso3": "ISL"
+    "ISL": {
+      "name": "Iceland",
+      "caution": false
     },
-    {
-      "country": "Indonesia",
-      "iso3": "IDN"
+    "IDN": {
+      "name": "Indonesia",
+      "caution": false
     },
-    {
-      "country": "Ireland",
-      "iso3": "IRL"
+    "IRL": {
+      "name": "Ireland",
+      "caution": false
     },
-    {
-      "country": "Israel",
-      "iso3": "ISR"
+    "ISR": {
+      "name": "Israel",
+      "caution": false
     },
-    {
-      "country": "Italy",
-      "iso3": "ITA"
+    "ITA": {
+      "name": "Italy",
+      "caution": false
     },
-    {
-      "country": "Japan",
-      "iso3": "JPN"
+    "JPN": {
+      "name": "Japan",
+      "caution": false
     },
-    {
-      "country": "Jordan",
-      "iso3": "JOR"
+    "JOR": {
+      "name": "Jordan",
+      "caution": false
     },
-    {
-      "country": "Kazakhstan",
-      "iso3": "KAZ"
+    "KAZ": {
+      "name": "Kazakhstan",
+      "caution": false
     },
-    {
-      "country": "Kenya",
-      "iso3": "KEN"
+    "KEN": {
+      "name": "Kenya",
+      "caution": false
     },
-    {
-      "country": "Korea",
-      "iso3": "KOR"
+    "KOR": {
+      "name": "Korea",
+      "caution": false
     },
-    {
-      "country": "Kosovo",
-      "iso3": "XKX"
+    "XKX": {
+      "name": "Kosovo",
+      "caution": false
     },
-    {
-      "country": "Kurdistan Region (Iraq)",
-      "iso3": "IRQ"
+    "IRQ": {
+      "name": "Kurdistan Region (Iraq)",
+      "caution": false
     },
-    {
-      "country": "Kyrgyzstan",
-      "iso3": "KGZ"
+    "KGZ": {
+      "name": "Kyrgyzstan",
+      "caution": false
     },
-    {
-      "country": "Latvia",
-      "iso3": "LVA"
+    "LVA": {
+      "name": "Latvia",
+      "caution": false
     },
-    {
-      "country": "Lebanon",
-      "iso3": "LBN"
+    "LBN": {
+      "name": "Lebanon",
+      "caution": false
     },
-    {
-      "country": "Lithuania",
-      "iso3": "LTU"
+    "LTU": {
+      "name": "Lithuania",
+      "caution": false
     },
-    {
-      "country": "Luxembourg",
-      "iso3": "LUX"
+    "LUX": {
+      "name": "Luxembourg",
+      "caution": false
     },
-    {
-      "country": "Macao (China)",
-      "iso3": "MAC"
+    "MAC": {
+      "name": "Macao (China)",
+      "caution": false
     },
-    {
-      "country": "Malaysia",
-      "iso3": "MYS"
+    "MYS": {
+      "name": "Malaysia",
+      "caution": false
     },
-    {
-      "country": "Malta",
-      "iso3": "MLT"
+    "MLT": {
+      "name": "Malta",
+      "caution": false
     },
-    {
-      "country": "Mauritius",
-      "iso3": "MUS"
+    "MUS": {
+      "name": "Mauritius",
+      "caution": false
     },
-    {
-      "country": "Mexico",
-      "iso3": "MEX"
+    "MEX": {
+      "name": "Mexico",
+      "caution": false
     },
-    {
-      "country": "Moldova",
-      "iso3": "MDA"
+    "MDA": {
+      "name": "Moldova",
+      "caution": false
     },
-    {
-      "country": "Mongolia",
-      "iso3": "MNG"
+    "MNG": {
+      "name": "Mongolia",
+      "caution": false
     },
-    {
-      "country": "Montenegro",
-      "iso3": "MNE"
+    "MNE": {
+      "name": "Montenegro",
+      "caution": false
     },
-    {
-      "country": "Morocco",
-      "iso3": "MAR"
+    "MAR": {
+      "name": "Morocco",
+      "caution": false
     },
-    {
-      "country": "Netherlands",
-      "iso3": "NLD"
+    "NLD": {
+      "name": "Netherlands",
+      "caution": true
     },
-    {
-      "country": "New Zealand",
-      "iso3": "NZL"
+    "NZL": {
+      "name": "New Zealand",
+      "caution": true
     },
-    {
-      "country": "North Macedonia",
-      "iso3": "MKD"
+    "MKD": {
+      "name": "North Macedonia",
+      "caution": false
     },
-    {
-      "country": "Norway",
-      "iso3": "NOR"
+    "NOR": {
+      "name": "Norway",
+      "caution": true
     },
-    {
-      "country": "Palestinian Authority",
-      "iso3": "PSE"
+    "PSE": {
+      "name": "Palestinian Authority",
+      "caution": false
     },
-    {
-      "country": "Paraguay",
-      "iso3": "PRY"
+    "PRY": {
+      "name": "Paraguay",
+      "caution": false
     },
-    {
-      "country": "Peru",
-      "iso3": "PER"
+    "PER": {
+      "name": "Peru",
+      "caution": false
     },
-    {
-      "country": "Philippines",
-      "iso3": "PHL"
+    "PHL": {
+      "name": "Philippines",
+      "caution": false
     },
-    {
-      "country": "Poland",
-      "iso3": "POL"
+    "POL": {
+      "name": "Poland",
+      "caution": false
     },
-    {
-      "country": "Portugal",
-      "iso3": "PRT"
+    "PRT": {
+      "name": "Portugal",
+      "caution": false
     },
-    {
-      "country": "Qatar",
-      "iso3": "QAT"
+    "QAT": {
+      "name": "Qatar",
+      "caution": false
     },
-    {
-      "country": "Romania",
-      "iso3": "ROU"
+    "ROU": {
+      "name": "Romania",
+      "caution": false
     },
-    {
-      "country": "Rwanda",
-      "iso3": "RWA"
+    "RWA": {
+      "name": "Rwanda",
+      "caution": false
     },
-    {
-      "country": "Saudi Arabia",
-      "iso3": "SAU"
+    "SAU": {
+      "name": "Saudi Arabia",
+      "caution": false
     },
-    {
-      "country": "Serbia",
-      "iso3": "SRB"
+    "SRB": {
+      "name": "Serbia",
+      "caution": false
     },
-    {
-      "country": "Singapore",
-      "iso3": "SGP"
+    "SGP": {
+      "name": "Singapore",
+      "caution": false
     },
-    {
-      "country": "Slovak Republic",
-      "iso3": "SVK"
+    "SVK": {
+      "name": "Slovak Republic",
+      "caution": false
     },
-    {
-      "country": "Slovenia",
-      "iso3": "SVN"
+    "SVN": {
+      "name": "Slovenia",
+      "caution": false
     },
-    {
-      "country": "Spain",
-      "iso3": "ESP"
+    "ESP": {
+      "name": "Spain",
+      "caution": false
     },
-    {
-      "country": "Sweden",
-      "iso3": "SWE"
+    "SWE": {
+      "name": "Sweden",
+      "caution": false
     },
-    {
-      "country": "Switzerland",
-      "iso3": "CHE"
+    "CHE": {
+      "name": "Switzerland",
+      "caution": false
     },
-    {
-      "country": "Chinese Taipei",
-      "iso3": "TWN"
+    "TWN": {
+      "name": "Chinese Taipei",
+      "caution": false
     },
-    {
-      "country": "Thailand",
-      "iso3": "THA"
+    "THA": {
+      "name": "Thailand",
+      "caution": false
     },
-    {
-      "country": "Türkiye",
-      "iso3": "TUR"
+    "TUR": {
+      "name": "Türkiye",
+      "caution": false
     },
-    {
-      "country": "Ukrainian regions (17 of 27)",
-      "iso3": "UKR"
+    "UKR": {
+      "name": "Ukrainian regions (17 of 27)",
+      "caution": false
     },
-    {
-      "country": "United Arab Emirates",
-      "iso3": "ARE"
+    "ARE": {
+      "name": "United Arab Emirates",
+      "caution": false
     },
-    {
-      "country": "United Kingdom",
-      "iso3": "GBR"
+    "GBR": {
+      "name": "United Kingdom",
+      "caution": false
     },
-    {
-      "country": "United States",
-      "iso3": "USA"
+    "USA": {
+      "name": "United States",
+      "caution": true
     },
-    {
-      "country": "Uruguay",
-      "iso3": "URY"
+    "URY": {
+      "name": "Uruguay",
+      "caution": false
     },
-    {
-      "country": "Uzbekistan",
-      "iso3": "UZB"
+    "UZB": {
+      "name": "Uzbekistan",
+      "caution": false
     },
-    {
-      "country": "Viet Nam",
-      "iso3": "VNM"
+    "VNM": {
+      "name": "Viet Nam",
+      "caution": false
     },
-    {
-      "country": "Zambia",
-      "iso3": "ZMB"
+    "ZMB": {
+      "name": "Zambia",
+      "caution": false
     }
-  ],
-  "AIUSESCH": {
-    "oecd_average": {
-      "aiusesch": -0.00124,
-      "aiusesch_se": 0.00296
-    },
-    "countries": [
-      {
-        "country": "Argentina",
-        "iso3": "ARG",
-        "caution": false,
-        "aiusesch": 0.23737,
-        "aiusesch_se": 0.02188,
-        "coverage": "†"
-      },
-      {
-        "country": "Armenia",
-        "iso3": "ARM",
-        "caution": false,
-        "aiusesch": 0.20773,
-        "aiusesch_se": 0.02396,
-        "coverage": "‡"
-      },
-      {
-        "country": "Australia",
-        "iso3": "AUS",
-        "caution": false,
-        "aiusesch": 0.02533,
-        "aiusesch_se": 0.01546,
-        "coverage": null
-      },
-      {
-        "country": "Austria",
-        "iso3": "AUT",
-        "caution": false,
-        "aiusesch": 0.10681,
-        "aiusesch_se": 0.01693,
-        "coverage": null
-      },
-      {
-        "country": "Azerbaijan",
-        "iso3": "AZE",
-        "caution": false,
-        "aiusesch": 0.19569,
-        "aiusesch_se": 0.01442,
-        "coverage": null
-      },
-      {
-        "country": "Belgium",
-        "iso3": "BEL",
-        "caution": false,
-        "aiusesch": -0.04883,
-        "aiusesch_se": 0.01489,
-        "coverage": null
-      },
-      {
-        "country": "Brazil",
-        "iso3": "BRA",
-        "caution": false,
-        "aiusesch": 0.09178,
-        "aiusesch_se": 0.01077,
-        "coverage": null
-      },
-      {
-        "country": "Brunei Darussalam",
-        "iso3": "BRN",
-        "caution": false,
-        "aiusesch": 0.19858,
-        "aiusesch_se": 0.01052,
-        "coverage": null
-      },
-      {
-        "country": "B-S-J-Z (China)",
-        "iso3": "CHN",
-        "caution": false,
-        "aiusesch": -0.27618,
-        "aiusesch_se": 0.01423,
-        "coverage": null
-      },
-      {
-        "country": "Bulgaria",
-        "iso3": "BGR",
-        "caution": false,
-        "aiusesch": 0.03877,
-        "aiusesch_se": 0.01808,
-        "coverage": "†"
-      },
-      {
-        "country": "Cambodia",
-        "iso3": "KHM",
-        "caution": false,
-        "aiusesch": null,
-        "aiusesch_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Canada",
-        "iso3": "CAN",
-        "caution": true,
-        "aiusesch": -0.30282,
-        "aiusesch_se": 0.01274,
-        "coverage": null
-      },
-      {
-        "country": "Chile",
-        "iso3": "CHL",
-        "caution": false,
-        "aiusesch": 0.21233,
-        "aiusesch_se": 0.01665,
-        "coverage": null
-      },
-      {
-        "country": "Colombia",
-        "iso3": "COL",
-        "caution": false,
-        "aiusesch": 0.33904,
-        "aiusesch_se": 0.01786,
-        "coverage": null
-      },
-      {
-        "country": "Costa Rica",
-        "iso3": "CRI",
-        "caution": false,
-        "aiusesch": 0.19505,
-        "aiusesch_se": 0.01528,
-        "coverage": null
-      },
-      {
-        "country": "Croatia",
-        "iso3": "HRV",
-        "caution": false,
-        "aiusesch": 0.10036,
-        "aiusesch_se": 0.01404,
-        "coverage": null
-      },
-      {
-        "country": "Cyprus",
-        "iso3": "CYP",
-        "caution": false,
-        "aiusesch": 0.00205,
-        "aiusesch_se": 0.01435,
-        "coverage": "†"
-      },
-      {
-        "country": "Czechia",
-        "iso3": "CZE",
-        "caution": false,
-        "aiusesch": 0.01567,
-        "aiusesch_se": 0.01763,
-        "coverage": null
-      },
-      {
-        "country": "Denmark",
-        "iso3": "DNK",
-        "caution": false,
-        "aiusesch": 0.00546,
-        "aiusesch_se": 0.02779,
-        "coverage": null
-      },
-      {
-        "country": "Dominican Republic",
-        "iso3": "DOM",
-        "caution": false,
-        "aiusesch": 0.30427,
-        "aiusesch_se": 0.01851,
-        "coverage": null
-      },
-      {
-        "country": "Dushanbe (Tajikistan)",
-        "iso3": "TJK",
-        "caution": false,
-        "aiusesch": null,
-        "aiusesch_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Ecuador",
-        "iso3": "ECU",
-        "caution": false,
-        "aiusesch": 0.27526,
-        "aiusesch_se": 0.0139,
-        "coverage": null
-      },
-      {
-        "country": "El Salvador",
-        "iso3": "SLV",
-        "caution": false,
-        "aiusesch": 0.06218,
-        "aiusesch_se": 0.01556,
-        "coverage": null
-      },
-      {
-        "country": "Estonia",
-        "iso3": "EST",
-        "caution": false,
-        "aiusesch": 0.01608,
-        "aiusesch_se": 0.01387,
-        "coverage": null
-      },
-      {
-        "country": "Finland",
-        "iso3": "FIN",
-        "caution": false,
-        "aiusesch": -0.35225,
-        "aiusesch_se": 0.0171,
-        "coverage": null
-      },
-      {
-        "country": "France",
-        "iso3": "FRA",
-        "caution": false,
-        "aiusesch": -0.13184,
-        "aiusesch_se": 0.01669,
-        "coverage": null
-      },
-      {
-        "country": "Georgia",
-        "iso3": "GEO",
-        "caution": false,
-        "aiusesch": 0.02198,
-        "aiusesch_se": 0.01492,
-        "coverage": null
-      },
-      {
-        "country": "Germany",
-        "iso3": "DEU",
-        "caution": false,
-        "aiusesch": 0.09814,
-        "aiusesch_se": 0.0218,
-        "coverage": null
-      },
-      {
-        "country": "Greece",
-        "iso3": "GRC",
-        "caution": false,
-        "aiusesch": -0.13853,
-        "aiusesch_se": 0.0139,
-        "coverage": null
-      },
-      {
-        "country": "Guatemala",
-        "iso3": "GTM",
-        "caution": false,
-        "aiusesch": 0.20245,
-        "aiusesch_se": 0.01625,
-        "coverage": null
-      },
-      {
-        "country": "Hong Kong (China)",
-        "iso3": "HKG",
-        "caution": false,
-        "aiusesch": 0.23944,
-        "aiusesch_se": 0.01507,
-        "coverage": null
-      },
-      {
-        "country": "Hungary",
-        "iso3": "HUN",
-        "caution": false,
-        "aiusesch": -0.13466,
-        "aiusesch_se": 0.01783,
-        "coverage": null
-      },
-      {
-        "country": "Iceland",
-        "iso3": "ISL",
-        "caution": false,
-        "aiusesch": -0.09431,
-        "aiusesch_se": 0.01969,
-        "coverage": null
-      },
-      {
-        "country": "Indonesia",
-        "iso3": "IDN",
-        "caution": false,
-        "aiusesch": 0.12899,
-        "aiusesch_se": 0.01607,
-        "coverage": null
-      },
-      {
-        "country": "Ireland",
-        "iso3": "IRL",
-        "caution": false,
-        "aiusesch": -0.47694,
-        "aiusesch_se": 0.01777,
-        "coverage": null
-      },
-      {
-        "country": "Israel",
-        "iso3": "ISR",
-        "caution": false,
-        "aiusesch": 0.2012,
-        "aiusesch_se": 0.02277,
-        "coverage": "†"
-      },
-      {
-        "country": "Italy",
-        "iso3": "ITA",
-        "caution": false,
-        "aiusesch": 0.14606,
-        "aiusesch_se": 0.01845,
-        "coverage": null
-      },
-      {
-        "country": "Japan",
-        "iso3": "JPN",
-        "caution": false,
-        "aiusesch": -0.69136,
-        "aiusesch_se": 0.02212,
-        "coverage": null
-      },
-      {
-        "country": "Jordan",
-        "iso3": "JOR",
-        "caution": false,
-        "aiusesch": 0.05184,
-        "aiusesch_se": 0.01733,
-        "coverage": null
-      },
-      {
-        "country": "Kazakhstan",
-        "iso3": "KAZ",
-        "caution": false,
-        "aiusesch": 0.22726,
-        "aiusesch_se": 0.00911,
-        "coverage": null
-      },
-      {
-        "country": "Kenya",
-        "iso3": "KEN",
-        "caution": false,
-        "aiusesch": 0.09825,
-        "aiusesch_se": 0.01956,
-        "coverage": null
-      },
-      {
-        "country": "Korea",
-        "iso3": "KOR",
-        "caution": false,
-        "aiusesch": 0.17365,
-        "aiusesch_se": 0.02973,
-        "coverage": null
-      },
-      {
-        "country": "Kosovo",
-        "iso3": "XKX",
-        "caution": false,
-        "aiusesch": 0.20347,
-        "aiusesch_se": 0.0152,
-        "coverage": "†"
-      },
-      {
-        "country": "Kurdistan Region (Iraq)",
-        "iso3": "IRQ",
-        "caution": false,
-        "aiusesch": null,
-        "aiusesch_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Kyrgyzstan",
-        "iso3": "KGZ",
-        "caution": false,
-        "aiusesch": 0.27537,
-        "aiusesch_se": 0.0171,
-        "coverage": null
-      },
-      {
-        "country": "Latvia",
-        "iso3": "LVA",
-        "caution": false,
-        "aiusesch": 0.12609,
-        "aiusesch_se": 0.01274,
-        "coverage": null
-      },
-      {
-        "country": "Lebanon",
-        "iso3": "LBN",
-        "caution": false,
-        "aiusesch": 0.2176,
-        "aiusesch_se": 0.01841,
-        "coverage": "†"
-      },
-      {
-        "country": "Lithuania",
-        "iso3": "LTU",
-        "caution": false,
-        "aiusesch": 0.14494,
-        "aiusesch_se": 0.01351,
-        "coverage": null
-      },
-      {
-        "country": "Luxembourg",
-        "iso3": "LUX",
-        "caution": false,
-        "aiusesch": 0.04753,
-        "aiusesch_se": 0.01222,
-        "coverage": null
-      },
-      {
-        "country": "Macao (China)",
-        "iso3": "MAC",
-        "caution": false,
-        "aiusesch": 0.31735,
-        "aiusesch_se": 0.01189,
-        "coverage": null
-      },
-      {
-        "country": "Malaysia",
-        "iso3": "MYS",
-        "caution": false,
-        "aiusesch": 0.23737,
-        "aiusesch_se": 0.01707,
-        "coverage": null
-      },
-      {
-        "country": "Malta",
-        "iso3": "MLT",
-        "caution": false,
-        "aiusesch": 0.22889,
-        "aiusesch_se": 0.01919,
-        "coverage": null
-      },
-      {
-        "country": "Mauritius",
-        "iso3": "MUS",
-        "caution": false,
-        "aiusesch": null,
-        "aiusesch_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Mexico",
-        "iso3": "MEX",
-        "caution": false,
-        "aiusesch": 0.16459,
-        "aiusesch_se": 0.01315,
-        "coverage": null
-      },
-      {
-        "country": "Moldova",
-        "iso3": "MDA",
-        "caution": false,
-        "aiusesch": 0.17123,
-        "aiusesch_se": 0.01643,
-        "coverage": null
-      },
-      {
-        "country": "Mongolia",
-        "iso3": "MNG",
-        "caution": false,
-        "aiusesch": 0.23544,
-        "aiusesch_se": 0.0124,
-        "coverage": null
-      },
-      {
-        "country": "Montenegro",
-        "iso3": "MNE",
-        "caution": false,
-        "aiusesch": 0.01338,
-        "aiusesch_se": 0.0151,
-        "coverage": null
-      },
-      {
-        "country": "Morocco",
-        "iso3": "MAR",
-        "caution": false,
-        "aiusesch": 0.05122,
-        "aiusesch_se": 0.01464,
-        "coverage": null
-      },
-      {
-        "country": "Netherlands",
-        "iso3": "NLD",
-        "caution": true,
-        "aiusesch": -0.09622,
-        "aiusesch_se": 0.01892,
-        "coverage": null
-      },
-      {
-        "country": "New Zealand",
-        "iso3": "NZL",
-        "caution": true,
-        "aiusesch": -0.07289,
-        "aiusesch_se": 0.01955,
-        "coverage": null
-      },
-      {
-        "country": "North Macedonia",
-        "iso3": "MKD",
-        "caution": false,
-        "aiusesch": 0.12786,
-        "aiusesch_se": 0.01618,
-        "coverage": "†"
-      },
-      {
-        "country": "Norway",
-        "iso3": "NOR",
-        "caution": true,
-        "aiusesch": 0.05777,
-        "aiusesch_se": 0.01548,
-        "coverage": null
-      },
-      {
-        "country": "Palestinian Authority",
-        "iso3": "PSE",
-        "caution": false,
-        "aiusesch": 0.11375,
-        "aiusesch_se": 0.01848,
-        "coverage": null
-      },
-      {
-        "country": "Paraguay",
-        "iso3": "PRY",
-        "caution": false,
-        "aiusesch": 0.12184,
-        "aiusesch_se": 0.01679,
-        "coverage": "†"
-      },
-      {
-        "country": "Peru",
-        "iso3": "PER",
-        "caution": false,
-        "aiusesch": 0.28434,
-        "aiusesch_se": 0.01316,
-        "coverage": null
-      },
-      {
-        "country": "Philippines",
-        "iso3": "PHL",
-        "caution": false,
-        "aiusesch": 0.29665,
-        "aiusesch_se": 0.0142,
-        "coverage": null
-      },
-      {
-        "country": "Poland",
-        "iso3": "POL",
-        "caution": false,
-        "aiusesch": 0.21818,
-        "aiusesch_se": 0.01642,
-        "coverage": null
-      },
-      {
-        "country": "Portugal",
-        "iso3": "PRT",
-        "caution": false,
-        "aiusesch": 0.1572,
-        "aiusesch_se": 0.01423,
-        "coverage": null
-      },
-      {
-        "country": "Qatar",
-        "iso3": "QAT",
-        "caution": false,
-        "aiusesch": 0.13992,
-        "aiusesch_se": 0.01809,
-        "coverage": null
-      },
-      {
-        "country": "Romania",
-        "iso3": "ROU",
-        "caution": false,
-        "aiusesch": 0.12387,
-        "aiusesch_se": 0.01466,
-        "coverage": null
-      },
-      {
-        "country": "Rwanda",
-        "iso3": "RWA",
-        "caution": false,
-        "aiusesch": null,
-        "aiusesch_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Saudi Arabia",
-        "iso3": "SAU",
-        "caution": false,
-        "aiusesch": 0.39352,
-        "aiusesch_se": 0.0194,
-        "coverage": null
-      },
-      {
-        "country": "Serbia",
-        "iso3": "SRB",
-        "caution": false,
-        "aiusesch": 0.21232,
-        "aiusesch_se": 0.02038,
-        "coverage": null
-      },
-      {
-        "country": "Singapore",
-        "iso3": "SGP",
-        "caution": false,
-        "aiusesch": 0.37449,
-        "aiusesch_se": 0.01126,
-        "coverage": null
-      },
-      {
-        "country": "Slovak Republic",
-        "iso3": "SVK",
-        "caution": false,
-        "aiusesch": 0.07296,
-        "aiusesch_se": 0.0185,
-        "coverage": null
-      },
-      {
-        "country": "Slovenia",
-        "iso3": "SVN",
-        "caution": false,
-        "aiusesch": 0.08443,
-        "aiusesch_se": 0.01565,
-        "coverage": null
-      },
-      {
-        "country": "Spain",
-        "iso3": "ESP",
-        "caution": false,
-        "aiusesch": 0.2206,
-        "aiusesch_se": 0.01034,
-        "coverage": null
-      },
-      {
-        "country": "Sweden",
-        "iso3": "SWE",
-        "caution": false,
-        "aiusesch": -0.08899,
-        "aiusesch_se": 0.02123,
-        "coverage": null
-      },
-      {
-        "country": "Switzerland",
-        "iso3": "CHE",
-        "caution": false,
-        "aiusesch": 0.21173,
-        "aiusesch_se": 0.02175,
-        "coverage": null
-      },
-      {
-        "country": "Chinese Taipei",
-        "iso3": "TWN",
-        "caution": false,
-        "aiusesch": -0.19737,
-        "aiusesch_se": 0.0163,
-        "coverage": null
-      },
-      {
-        "country": "Thailand",
-        "iso3": "THA",
-        "caution": false,
-        "aiusesch": 0.38024,
-        "aiusesch_se": 0.02147,
-        "coverage": null
-      },
-      {
-        "country": "Türkiye",
-        "iso3": "TUR",
-        "caution": false,
-        "aiusesch": 0.3059,
-        "aiusesch_se": 0.01388,
-        "coverage": null
-      },
-      {
-        "country": "Ukrainian regions (17 of 27)",
-        "iso3": "UKR",
-        "caution": false,
-        "aiusesch": 0.30609,
-        "aiusesch_se": 0.01773,
-        "coverage": null
-      },
-      {
-        "country": "United Arab Emirates",
-        "iso3": "ARE",
-        "caution": false,
-        "aiusesch": 0.5538,
-        "aiusesch_se": 0.01059,
-        "coverage": null
-      },
-      {
-        "country": "United Kingdom",
-        "iso3": "GBR",
-        "caution": false,
-        "aiusesch": -0.4662,
-        "aiusesch_se": 0.01577,
-        "coverage": null
-      },
-      {
-        "country": "Uruguay",
-        "iso3": "URY",
-        "caution": false,
-        "aiusesch": 0.3222,
-        "aiusesch_se": 0.01584,
-        "coverage": "†"
-      },
-      {
-        "country": "Uzbekistan",
-        "iso3": "UZB",
-        "caution": false,
-        "aiusesch": 0.29376,
-        "aiusesch_se": 0.02034,
-        "coverage": null
-      },
-      {
-        "country": "Viet Nam",
-        "iso3": "VNM",
-        "caution": false,
-        "aiusesch": 0.42835,
-        "aiusesch_se": 0.01476,
-        "coverage": null
-      },
-      {
-        "country": "Zambia",
-        "iso3": "ZMB",
-        "caution": false,
-        "aiusesch": null,
-        "aiusesch_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Albania",
-        "iso3": "ALB",
-        "caution": true,
-        "aiusesch": 0.26209,
-        "aiusesch_se": 0.01569,
-        "coverage": null
-      },
-      {
-        "country": "United States",
-        "iso3": "USA",
-        "caution": true,
-        "aiusesch": -0.29806,
-        "aiusesch_se": 0.03154,
-        "coverage": "†"
-      }
-    ]
   },
-  "ASSESS_AI_OUTPUT": {
-    "oecd_average": {
-      "assess_ai_output": 62.60935,
-      "assess_ai_output_se": 0.13863
-    },
-    "countries": [
-      {
-        "country": "Argentina",
-        "iso3": "ARG",
-        "caution": false,
-        "assess_ai_output": 60.70915,
-        "assess_ai_output_se": 0.90294,
-        "coverage": "‡"
-      },
-      {
-        "country": "Armenia",
-        "iso3": "ARM",
-        "caution": false,
-        "assess_ai_output": 75.94875,
-        "assess_ai_output_se": 1.35536,
-        "coverage": "‡"
-      },
-      {
-        "country": "Australia",
-        "iso3": "AUS",
-        "caution": false,
-        "assess_ai_output": 68.32206,
-        "assess_ai_output_se": 0.60462,
-        "coverage": null
-      },
-      {
-        "country": "Austria",
-        "iso3": "AUT",
-        "caution": false,
-        "assess_ai_output": 62.77661,
-        "assess_ai_output_se": 0.83467,
-        "coverage": null
-      },
-      {
-        "country": "Azerbaijan",
-        "iso3": "AZE",
-        "caution": false,
-        "assess_ai_output": 76.09321,
-        "assess_ai_output_se": 0.78228,
-        "coverage": "†"
-      },
-      {
-        "country": "Belgium",
-        "iso3": "BEL",
-        "caution": false,
-        "assess_ai_output": 58.56818,
-        "assess_ai_output_se": 0.86941,
-        "coverage": null
-      },
-      {
-        "country": "Brazil",
-        "iso3": "BRA",
-        "caution": false,
-        "assess_ai_output": 51.23016,
-        "assess_ai_output_se": 0.63383,
-        "coverage": "†"
-      },
-      {
-        "country": "Brunei Darussalam",
-        "iso3": "BRN",
-        "caution": false,
-        "assess_ai_output": 73.44237,
-        "assess_ai_output_se": 0.61084,
-        "coverage": null
-      },
-      {
-        "country": "B-S-J-Z (China)",
-        "iso3": "CHN",
-        "caution": false,
-        "assess_ai_output": 44.63599,
-        "assess_ai_output_se": 0.77645,
-        "coverage": null
-      },
-      {
-        "country": "Bulgaria",
-        "iso3": "BGR",
-        "caution": false,
-        "assess_ai_output": 71.26589,
-        "assess_ai_output_se": 0.91191,
-        "coverage": "†"
-      },
-      {
-        "country": "Cambodia",
-        "iso3": "KHM",
-        "caution": false,
-        "assess_ai_output": null,
-        "assess_ai_output_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Canada",
-        "iso3": "CAN",
-        "caution": true,
-        "assess_ai_output": 56.21539,
-        "assess_ai_output_se": 0.57027,
-        "coverage": "†"
-      },
-      {
-        "country": "Chile",
-        "iso3": "CHL",
-        "caution": false,
-        "assess_ai_output": 61.53592,
-        "assess_ai_output_se": 0.79446,
-        "coverage": "†"
-      },
-      {
-        "country": "Colombia",
-        "iso3": "COL",
-        "caution": false,
-        "assess_ai_output": 63.52712,
-        "assess_ai_output_se": 0.84118,
-        "coverage": null
-      },
-      {
-        "country": "Costa Rica",
-        "iso3": "CRI",
-        "caution": false,
-        "assess_ai_output": 66.1426,
-        "assess_ai_output_se": 0.76353,
-        "coverage": "†"
-      },
-      {
-        "country": "Croatia",
-        "iso3": "HRV",
-        "caution": false,
-        "assess_ai_output": 69.22285,
-        "assess_ai_output_se": 0.74139,
-        "coverage": null
-      },
-      {
-        "country": "Cyprus",
-        "iso3": "CYP",
-        "caution": false,
-        "assess_ai_output": 67.63936,
-        "assess_ai_output_se": 0.86891,
-        "coverage": "†"
-      },
-      {
-        "country": "Czechia",
-        "iso3": "CZE",
-        "caution": false,
-        "assess_ai_output": 70.04108,
-        "assess_ai_output_se": 0.75616,
-        "coverage": null
-      },
-      {
-        "country": "Denmark",
-        "iso3": "DNK",
-        "caution": false,
-        "assess_ai_output": 69.05977,
-        "assess_ai_output_se": 1.1059,
-        "coverage": null
-      },
-      {
-        "country": "Dominican Republic",
-        "iso3": "DOM",
-        "caution": false,
-        "assess_ai_output": 64.69256,
-        "assess_ai_output_se": 0.92716,
-        "coverage": "†"
-      },
-      {
-        "country": "Dushanbe (Tajikistan)",
-        "iso3": "TJK",
-        "caution": false,
-        "assess_ai_output": null,
-        "assess_ai_output_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Ecuador",
-        "iso3": "ECU",
-        "caution": false,
-        "assess_ai_output": 61.20637,
-        "assess_ai_output_se": 0.65914,
-        "coverage": null
-      },
-      {
-        "country": "El Salvador",
-        "iso3": "SLV",
-        "caution": false,
-        "assess_ai_output": 60.53484,
-        "assess_ai_output_se": 0.93333,
-        "coverage": "†"
-      },
-      {
-        "country": "Estonia",
-        "iso3": "EST",
-        "caution": false,
-        "assess_ai_output": 72.5108,
-        "assess_ai_output_se": 0.76119,
-        "coverage": null
-      },
-      {
-        "country": "Finland",
-        "iso3": "FIN",
-        "caution": false,
-        "assess_ai_output": 60.97051,
-        "assess_ai_output_se": 0.68698,
-        "coverage": null
-      },
-      {
-        "country": "France",
-        "iso3": "FRA",
-        "caution": false,
-        "assess_ai_output": 46.84149,
-        "assess_ai_output_se": 0.88181,
-        "coverage": "†"
-      },
-      {
-        "country": "Georgia",
-        "iso3": "GEO",
-        "caution": false,
-        "assess_ai_output": 69.32696,
-        "assess_ai_output_se": 0.79125,
-        "coverage": "†"
-      },
-      {
-        "country": "Germany",
-        "iso3": "DEU",
-        "caution": false,
-        "assess_ai_output": 59.33892,
-        "assess_ai_output_se": 0.896,
-        "coverage": null
-      },
-      {
-        "country": "Greece",
-        "iso3": "GRC",
-        "caution": false,
-        "assess_ai_output": 60.74082,
-        "assess_ai_output_se": 0.7795,
-        "coverage": null
-      },
-      {
-        "country": "Guatemala",
-        "iso3": "GTM",
-        "caution": false,
-        "assess_ai_output": 52.55018,
-        "assess_ai_output_se": 0.80058,
-        "coverage": "†"
-      },
-      {
-        "country": "Hong Kong (China)",
-        "iso3": "HKG",
-        "caution": false,
-        "assess_ai_output": 69.33678,
-        "assess_ai_output_se": 0.84518,
-        "coverage": null
-      },
-      {
-        "country": "Hungary",
-        "iso3": "HUN",
-        "caution": false,
-        "assess_ai_output": 60.9787,
-        "assess_ai_output_se": 1.13239,
-        "coverage": null
-      },
-      {
-        "country": "Iceland",
-        "iso3": "ISL",
-        "caution": false,
-        "assess_ai_output": 72.84294,
-        "assess_ai_output_se": 0.84197,
-        "coverage": null
-      },
-      {
-        "country": "Indonesia",
-        "iso3": "IDN",
-        "caution": false,
-        "assess_ai_output": 73.16651,
-        "assess_ai_output_se": 0.86086,
-        "coverage": null
-      },
-      {
-        "country": "Ireland",
-        "iso3": "IRL",
-        "caution": false,
-        "assess_ai_output": 47.18393,
-        "assess_ai_output_se": 0.85623,
-        "coverage": null
-      },
-      {
-        "country": "Israel",
-        "iso3": "ISR",
-        "caution": false,
-        "assess_ai_output": 63.01207,
-        "assess_ai_output_se": 0.8385,
-        "coverage": "‡"
-      },
-      {
-        "country": "Italy",
-        "iso3": "ITA",
-        "caution": false,
-        "assess_ai_output": 73.66831,
-        "assess_ai_output_se": 0.7259,
-        "coverage": null
-      },
-      {
-        "country": "Japan",
-        "iso3": "JPN",
-        "caution": false,
-        "assess_ai_output": 31.16206,
-        "assess_ai_output_se": 1.28187,
-        "coverage": null
-      },
-      {
-        "country": "Jordan",
-        "iso3": "JOR",
-        "caution": false,
-        "assess_ai_output": 59.17116,
-        "assess_ai_output_se": 0.96116,
-        "coverage": "†"
-      },
-      {
-        "country": "Kazakhstan",
-        "iso3": "KAZ",
-        "caution": false,
-        "assess_ai_output": 80.18606,
-        "assess_ai_output_se": 0.48727,
-        "coverage": null
-      },
-      {
-        "country": "Kenya",
-        "iso3": "KEN",
-        "caution": false,
-        "assess_ai_output": 55.51239,
-        "assess_ai_output_se": 1.39395,
-        "coverage": "†"
-      },
-      {
-        "country": "Korea",
-        "iso3": "KOR",
-        "caution": false,
-        "assess_ai_output": 66.5166,
-        "assess_ai_output_se": 1.34659,
-        "coverage": null
-      },
-      {
-        "country": "Kosovo",
-        "iso3": "XKX",
-        "caution": false,
-        "assess_ai_output": 76.65283,
-        "assess_ai_output_se": 0.77479,
-        "coverage": "†"
-      },
-      {
-        "country": "Kurdistan Region (Iraq)",
-        "iso3": "IRQ",
-        "caution": false,
-        "assess_ai_output": null,
-        "assess_ai_output_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Kyrgyzstan",
-        "iso3": "KGZ",
-        "caution": false,
-        "assess_ai_output": 74.84989,
-        "assess_ai_output_se": 0.68589,
-        "coverage": "†"
-      },
-      {
-        "country": "Latvia",
-        "iso3": "LVA",
-        "caution": false,
-        "assess_ai_output": 79.11005,
-        "assess_ai_output_se": 0.58575,
-        "coverage": null
-      },
-      {
-        "country": "Lebanon",
-        "iso3": "LBN",
-        "caution": false,
-        "assess_ai_output": 73.66061,
-        "assess_ai_output_se": 1.22757,
-        "coverage": "‡"
-      },
-      {
-        "country": "Lithuania",
-        "iso3": "LTU",
-        "caution": false,
-        "assess_ai_output": 73.93757,
-        "assess_ai_output_se": 0.69109,
-        "coverage": null
-      },
-      {
-        "country": "Luxembourg",
-        "iso3": "LUX",
-        "caution": false,
-        "assess_ai_output": 65.79555,
-        "assess_ai_output_se": 0.55068,
-        "coverage": null
-      },
-      {
-        "country": "Macao (China)",
-        "iso3": "MAC",
-        "caution": false,
-        "assess_ai_output": 74.53961,
-        "assess_ai_output_se": 0.56608,
-        "coverage": null
-      },
-      {
-        "country": "Malaysia",
-        "iso3": "MYS",
-        "caution": false,
-        "assess_ai_output": 70.81136,
-        "assess_ai_output_se": 0.78207,
-        "coverage": null
-      },
-      {
-        "country": "Malta",
-        "iso3": "MLT",
-        "caution": false,
-        "assess_ai_output": 61.93543,
-        "assess_ai_output_se": 0.93165,
-        "coverage": "†"
-      },
-      {
-        "country": "Mauritius",
-        "iso3": "MUS",
-        "caution": false,
-        "assess_ai_output": null,
-        "assess_ai_output_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Mexico",
-        "iso3": "MEX",
-        "caution": false,
-        "assess_ai_output": 59.24912,
-        "assess_ai_output_se": 0.80443,
-        "coverage": null
-      },
-      {
-        "country": "Moldova",
-        "iso3": "MDA",
-        "caution": false,
-        "assess_ai_output": 74.2183,
-        "assess_ai_output_se": 0.79418,
-        "coverage": null
-      },
-      {
-        "country": "Mongolia",
-        "iso3": "MNG",
-        "caution": false,
-        "assess_ai_output": 74.26744,
-        "assess_ai_output_se": 0.58519,
-        "coverage": null
-      },
-      {
-        "country": "Montenegro",
-        "iso3": "MNE",
-        "caution": false,
-        "assess_ai_output": 57.90232,
-        "assess_ai_output_se": 0.88189,
-        "coverage": "†"
-      },
-      {
-        "country": "Morocco",
-        "iso3": "MAR",
-        "caution": false,
-        "assess_ai_output": 52.71764,
-        "assess_ai_output_se": 0.9431,
-        "coverage": "†"
-      },
-      {
-        "country": "Netherlands",
-        "iso3": "NLD",
-        "caution": true,
-        "assess_ai_output": 55.38697,
-        "assess_ai_output_se": 0.87579,
-        "coverage": null
-      },
-      {
-        "country": "New Zealand",
-        "iso3": "NZL",
-        "caution": true,
-        "assess_ai_output": 64.55915,
-        "assess_ai_output_se": 0.8875,
-        "coverage": null
-      },
-      {
-        "country": "North Macedonia",
-        "iso3": "MKD",
-        "caution": false,
-        "assess_ai_output": 75.4692,
-        "assess_ai_output_se": 0.86025,
-        "coverage": "†"
-      },
-      {
-        "country": "Norway",
-        "iso3": "NOR",
-        "caution": true,
-        "assess_ai_output": 74.32094,
-        "assess_ai_output_se": 0.6928,
-        "coverage": null
-      },
-      {
-        "country": "Palestinian Authority",
-        "iso3": "PSE",
-        "caution": false,
-        "assess_ai_output": 61.37049,
-        "assess_ai_output_se": 0.76502,
-        "coverage": "†"
-      },
-      {
-        "country": "Paraguay",
-        "iso3": "PRY",
-        "caution": false,
-        "assess_ai_output": 53.72527,
-        "assess_ai_output_se": 1.10486,
-        "coverage": "‡"
-      },
-      {
-        "country": "Peru",
-        "iso3": "PER",
-        "caution": false,
-        "assess_ai_output": 55.33279,
-        "assess_ai_output_se": 1.09026,
-        "coverage": "†"
-      },
-      {
-        "country": "Philippines",
-        "iso3": "PHL",
-        "caution": false,
-        "assess_ai_output": 70.79601,
-        "assess_ai_output_se": 0.65231,
-        "coverage": null
-      },
-      {
-        "country": "Poland",
-        "iso3": "POL",
-        "caution": false,
-        "assess_ai_output": 62.40198,
-        "assess_ai_output_se": 0.7088,
-        "coverage": null
-      },
-      {
-        "country": "Portugal",
-        "iso3": "PRT",
-        "caution": false,
-        "assess_ai_output": 57.40324,
-        "assess_ai_output_se": 0.78169,
-        "coverage": null
-      },
-      {
-        "country": "Qatar",
-        "iso3": "QAT",
-        "caution": false,
-        "assess_ai_output": 68.59977,
-        "assess_ai_output_se": 0.86917,
-        "coverage": "†"
-      },
-      {
-        "country": "Romania",
-        "iso3": "ROU",
-        "caution": false,
-        "assess_ai_output": 72.62725,
-        "assess_ai_output_se": 0.70826,
-        "coverage": null
-      },
-      {
-        "country": "Rwanda",
-        "iso3": "RWA",
-        "caution": false,
-        "assess_ai_output": null,
-        "assess_ai_output_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Saudi Arabia",
-        "iso3": "SAU",
-        "caution": false,
-        "assess_ai_output": 74.84838,
-        "assess_ai_output_se": 0.79667,
-        "coverage": "†"
-      },
-      {
-        "country": "Serbia",
-        "iso3": "SRB",
-        "caution": false,
-        "assess_ai_output": 61.60964,
-        "assess_ai_output_se": 0.8738,
-        "coverage": "†"
-      },
-      {
-        "country": "Singapore",
-        "iso3": "SGP",
-        "caution": false,
-        "assess_ai_output": 81.02528,
-        "assess_ai_output_se": 0.47295,
-        "coverage": null
-      },
-      {
-        "country": "Slovak Republic",
-        "iso3": "SVK",
-        "caution": false,
-        "assess_ai_output": 71.11274,
-        "assess_ai_output_se": 0.80493,
-        "coverage": null
-      },
-      {
-        "country": "Slovenia",
-        "iso3": "SVN",
-        "caution": false,
-        "assess_ai_output": 63.70648,
-        "assess_ai_output_se": 0.75701,
-        "coverage": null
-      },
-      {
-        "country": "Spain",
-        "iso3": "ESP",
-        "caution": false,
-        "assess_ai_output": 59.52722,
-        "assess_ai_output_se": 0.65549,
-        "coverage": null
-      },
-      {
-        "country": "Sweden",
-        "iso3": "SWE",
-        "caution": false,
-        "assess_ai_output": 64.89844,
-        "assess_ai_output_se": 0.93737,
-        "coverage": null
-      },
-      {
-        "country": "Switzerland",
-        "iso3": "CHE",
-        "caution": false,
-        "assess_ai_output": 69.01845,
-        "assess_ai_output_se": 0.75197,
-        "coverage": null
-      },
-      {
-        "country": "Chinese Taipei",
-        "iso3": "TWN",
-        "caution": false,
-        "assess_ai_output": 65.86668,
-        "assess_ai_output_se": 0.83172,
-        "coverage": null
-      },
-      {
-        "country": "Thailand",
-        "iso3": "THA",
-        "caution": false,
-        "assess_ai_output": 68.87644,
-        "assess_ai_output_se": 0.81558,
-        "coverage": null
-      },
-      {
-        "country": "Türkiye",
-        "iso3": "TUR",
-        "caution": false,
-        "assess_ai_output": 68.05768,
-        "assess_ai_output_se": 0.8321,
-        "coverage": null
-      },
-      {
-        "country": "Ukrainian regions (17 of 27)",
-        "iso3": "UKR",
-        "caution": false,
-        "assess_ai_output": 77.70708,
-        "assess_ai_output_se": 0.55316,
-        "coverage": null
-      },
-      {
-        "country": "United Arab Emirates",
-        "iso3": "ARE",
-        "caution": false,
-        "assess_ai_output": 81.71536,
-        "assess_ai_output_se": 0.32855,
-        "coverage": null
-      },
-      {
-        "country": "United Kingdom",
-        "iso3": "GBR",
-        "caution": false,
-        "assess_ai_output": 42.38162,
-        "assess_ai_output_se": 0.85256,
-        "coverage": null
-      },
-      {
-        "country": "Uruguay",
-        "iso3": "URY",
-        "caution": false,
-        "assess_ai_output": 65.3059,
-        "assess_ai_output_se": 0.86644,
-        "coverage": "†"
-      },
-      {
-        "country": "Uzbekistan",
-        "iso3": "UZB",
-        "caution": false,
-        "assess_ai_output": 80.57594,
-        "assess_ai_output_se": 0.77091,
-        "coverage": null
-      },
-      {
-        "country": "Viet Nam",
-        "iso3": "VNM",
-        "caution": false,
-        "assess_ai_output": 69.95105,
-        "assess_ai_output_se": 0.78501,
-        "coverage": null
-      },
-      {
-        "country": "Zambia",
-        "iso3": "ZMB",
-        "caution": false,
-        "assess_ai_output": null,
-        "assess_ai_output_se": null,
-        "coverage": null
-      },
-      {
-        "country": "Albania",
-        "iso3": "ALB",
-        "caution": true,
-        "assess_ai_output": 81.5578,
-        "assess_ai_output_se": 0.64068,
-        "coverage": null
-      },
-      {
-        "country": "United States",
-        "iso3": "USA",
-        "caution": true,
-        "assess_ai_output": 56.33204,
-        "assess_ai_output_se": 1.34396,
-        "coverage": "†"
+  "VARIABLES": {
+    "AIUSESCH": {
+      "label": "Index of students' AI use for schoolwork",
+      "source": {
+        "table": "Table I.B1.4.53",
+        "statlink": "https://stat.link/xmra2f"
+      },
+      "oecd_average": {
+        "value": -0.00124,
+        "se": 0.00296
+      },
+      "countries": {
+        "ARG": {
+          "value": 0.23737,
+          "se": 0.02188,
+          "coverage": "†"
+        },
+        "ARM": {
+          "value": 0.20773,
+          "se": 0.02396,
+          "coverage": "‡"
+        },
+        "AUS": {
+          "value": 0.02533,
+          "se": 0.01546
+        },
+        "AUT": {
+          "value": 0.10681,
+          "se": 0.01693
+        },
+        "AZE": {
+          "value": 0.19569,
+          "se": 0.01442
+        },
+        "BEL": {
+          "value": -0.04883,
+          "se": 0.01489
+        },
+        "BRA": {
+          "value": 0.09178,
+          "se": 0.01077
+        },
+        "BRN": {
+          "value": 0.19858,
+          "se": 0.01052
+        },
+        "CHN": {
+          "value": -0.27618,
+          "se": 0.01423
+        },
+        "BGR": {
+          "value": 0.03877,
+          "se": 0.01808,
+          "coverage": "†"
+        },
+        "KHM": {
+          "value": null,
+          "se": null
+        },
+        "CAN": {
+          "value": -0.30282,
+          "se": 0.01274
+        },
+        "CHL": {
+          "value": 0.21233,
+          "se": 0.01665
+        },
+        "COL": {
+          "value": 0.33904,
+          "se": 0.01786
+        },
+        "CRI": {
+          "value": 0.19505,
+          "se": 0.01528
+        },
+        "HRV": {
+          "value": 0.10036,
+          "se": 0.01404
+        },
+        "CYP": {
+          "value": 0.00205,
+          "se": 0.01435,
+          "coverage": "†"
+        },
+        "CZE": {
+          "value": 0.01567,
+          "se": 0.01763
+        },
+        "DNK": {
+          "value": 0.00546,
+          "se": 0.02779
+        },
+        "DOM": {
+          "value": 0.30427,
+          "se": 0.01851
+        },
+        "TJK": {
+          "value": null,
+          "se": null
+        },
+        "ECU": {
+          "value": 0.27526,
+          "se": 0.0139
+        },
+        "SLV": {
+          "value": 0.06218,
+          "se": 0.01556
+        },
+        "EST": {
+          "value": 0.01608,
+          "se": 0.01387
+        },
+        "FIN": {
+          "value": -0.35225,
+          "se": 0.0171
+        },
+        "FRA": {
+          "value": -0.13184,
+          "se": 0.01669
+        },
+        "GEO": {
+          "value": 0.02198,
+          "se": 0.01492
+        },
+        "DEU": {
+          "value": 0.09814,
+          "se": 0.0218
+        },
+        "GRC": {
+          "value": -0.13853,
+          "se": 0.0139
+        },
+        "GTM": {
+          "value": 0.20245,
+          "se": 0.01625
+        },
+        "HKG": {
+          "value": 0.23944,
+          "se": 0.01507
+        },
+        "HUN": {
+          "value": -0.13466,
+          "se": 0.01783
+        },
+        "ISL": {
+          "value": -0.09431,
+          "se": 0.01969
+        },
+        "IDN": {
+          "value": 0.12899,
+          "se": 0.01607
+        },
+        "IRL": {
+          "value": -0.47694,
+          "se": 0.01777
+        },
+        "ISR": {
+          "value": 0.2012,
+          "se": 0.02277,
+          "coverage": "†"
+        },
+        "ITA": {
+          "value": 0.14606,
+          "se": 0.01845
+        },
+        "JPN": {
+          "value": -0.69136,
+          "se": 0.02212
+        },
+        "JOR": {
+          "value": 0.05184,
+          "se": 0.01733
+        },
+        "KAZ": {
+          "value": 0.22726,
+          "se": 0.00911
+        },
+        "KEN": {
+          "value": 0.09825,
+          "se": 0.01956
+        },
+        "KOR": {
+          "value": 0.17365,
+          "se": 0.02973
+        },
+        "XKX": {
+          "value": 0.20347,
+          "se": 0.0152,
+          "coverage": "†"
+        },
+        "IRQ": {
+          "value": null,
+          "se": null
+        },
+        "KGZ": {
+          "value": 0.27537,
+          "se": 0.0171
+        },
+        "LVA": {
+          "value": 0.12609,
+          "se": 0.01274
+        },
+        "LBN": {
+          "value": 0.2176,
+          "se": 0.01841,
+          "coverage": "†"
+        },
+        "LTU": {
+          "value": 0.14494,
+          "se": 0.01351
+        },
+        "LUX": {
+          "value": 0.04753,
+          "se": 0.01222
+        },
+        "MAC": {
+          "value": 0.31735,
+          "se": 0.01189
+        },
+        "MYS": {
+          "value": 0.23737,
+          "se": 0.01707
+        },
+        "MLT": {
+          "value": 0.22889,
+          "se": 0.01919
+        },
+        "MUS": {
+          "value": null,
+          "se": null
+        },
+        "MEX": {
+          "value": 0.16459,
+          "se": 0.01315
+        },
+        "MDA": {
+          "value": 0.17123,
+          "se": 0.01643
+        },
+        "MNG": {
+          "value": 0.23544,
+          "se": 0.0124
+        },
+        "MNE": {
+          "value": 0.01338,
+          "se": 0.0151
+        },
+        "MAR": {
+          "value": 0.05122,
+          "se": 0.01464
+        },
+        "NLD": {
+          "value": -0.09622,
+          "se": 0.01892
+        },
+        "NZL": {
+          "value": -0.07289,
+          "se": 0.01955
+        },
+        "MKD": {
+          "value": 0.12786,
+          "se": 0.01618,
+          "coverage": "†"
+        },
+        "NOR": {
+          "value": 0.05777,
+          "se": 0.01548
+        },
+        "PSE": {
+          "value": 0.11375,
+          "se": 0.01848
+        },
+        "PRY": {
+          "value": 0.12184,
+          "se": 0.01679,
+          "coverage": "†"
+        },
+        "PER": {
+          "value": 0.28434,
+          "se": 0.01316
+        },
+        "PHL": {
+          "value": 0.29665,
+          "se": 0.0142
+        },
+        "POL": {
+          "value": 0.21818,
+          "se": 0.01642
+        },
+        "PRT": {
+          "value": 0.1572,
+          "se": 0.01423
+        },
+        "QAT": {
+          "value": 0.13992,
+          "se": 0.01809
+        },
+        "ROU": {
+          "value": 0.12387,
+          "se": 0.01466
+        },
+        "RWA": {
+          "value": null,
+          "se": null
+        },
+        "SAU": {
+          "value": 0.39352,
+          "se": 0.0194
+        },
+        "SRB": {
+          "value": 0.21232,
+          "se": 0.02038
+        },
+        "SGP": {
+          "value": 0.37449,
+          "se": 0.01126
+        },
+        "SVK": {
+          "value": 0.07296,
+          "se": 0.0185
+        },
+        "SVN": {
+          "value": 0.08443,
+          "se": 0.01565
+        },
+        "ESP": {
+          "value": 0.2206,
+          "se": 0.01034
+        },
+        "SWE": {
+          "value": -0.08899,
+          "se": 0.02123
+        },
+        "CHE": {
+          "value": 0.21173,
+          "se": 0.02175
+        },
+        "TWN": {
+          "value": -0.19737,
+          "se": 0.0163
+        },
+        "THA": {
+          "value": 0.38024,
+          "se": 0.02147
+        },
+        "TUR": {
+          "value": 0.3059,
+          "se": 0.01388
+        },
+        "UKR": {
+          "value": 0.30609,
+          "se": 0.01773
+        },
+        "ARE": {
+          "value": 0.5538,
+          "se": 0.01059
+        },
+        "GBR": {
+          "value": -0.4662,
+          "se": 0.01577
+        },
+        "URY": {
+          "value": 0.3222,
+          "se": 0.01584,
+          "coverage": "†"
+        },
+        "UZB": {
+          "value": 0.29376,
+          "se": 0.02034
+        },
+        "VNM": {
+          "value": 0.42835,
+          "se": 0.01476
+        },
+        "ZMB": {
+          "value": null,
+          "se": null
+        },
+        "ALB": {
+          "value": 0.26209,
+          "se": 0.01569
+        },
+        "USA": {
+          "value": -0.29806,
+          "se": 0.03154,
+          "coverage": "†"
+        }
       }
-    ]
-  },
-  "SCIENCE_SCORES": {
-    "oecd_average": {
-      "science_score": 481.90834000000007,
-      "science_score_se": 0.43835
     },
-    "countries": [
-      {
-        "country": "Albania",
-        "iso3": "ALB",
-        "caution": true,
-        "science_score": 434.62710000000004,
-        "science_score_se": 2.7101200000000003,
-        "coverage": null
-      },
-      {
-        "country": "Argentina",
-        "iso3": "ARG",
-        "caution": false,
-        "science_score": 392.93391,
-        "science_score_se": 2.9888000000000003,
-        "coverage": null
-      },
-      {
-        "country": "Armenia",
-        "iso3": "ARM",
-        "caution": false,
-        "science_score": 368.63314,
-        "science_score_se": 1.7763300000000002,
-        "coverage": null
-      },
-      {
-        "country": "Australia",
-        "iso3": "AUS",
-        "caution": false,
-        "science_score": 509.10633,
-        "science_score_se": 1.88528,
-        "coverage": null
-      },
-      {
-        "country": "Austria",
-        "iso3": "AUT",
-        "caution": false,
-        "science_score": 496.91267000000005,
-        "science_score_se": 2.7242400000000004,
-        "coverage": null
-      },
-      {
-        "country": "Azerbaijan",
-        "iso3": "AZE",
-        "caution": false,
-        "science_score": 408.56354000000005,
-        "science_score_se": 3.2037700000000005,
-        "coverage": null
-      },
-      {
-        "country": "Belgium",
-        "iso3": "BEL",
-        "caution": false,
-        "science_score": 489.70971000000003,
-        "science_score_se": 2.8550500000000003,
-        "coverage": null
-      },
-      {
-        "country": "Brazil",
-        "iso3": "BRA",
-        "caution": false,
-        "science_score": 408.54046000000005,
-        "science_score_se": 1.93317,
-        "coverage": null
-      },
-      {
-        "country": "Brunei Darussalam",
-        "iso3": "BRN",
-        "caution": false,
-        "science_score": 439.45387000000005,
-        "science_score_se": 0.8198900000000001,
-        "coverage": null
-      },
-      {
-        "country": "B-S-J-Z (China)",
-        "iso3": "CHN",
-        "caution": false,
-        "science_score": 597.0437900000001,
-        "science_score_se": 2.15606,
-        "coverage": null
-      },
-      {
-        "country": "Bulgaria",
-        "iso3": "BGR",
-        "caution": false,
-        "science_score": 420.79373000000004,
-        "science_score_se": 4.053330000000001,
-        "coverage": null
-      },
-      {
-        "country": "Cambodia",
-        "iso3": "KHM",
-        "caution": false,
-        "science_score": 381.93511,
-        "science_score_se": 1.6906200000000002,
-        "coverage": null
-      },
-      {
-        "country": "Canada",
-        "iso3": "CAN",
-        "caution": true,
-        "science_score": 510.05482000000006,
-        "science_score_se": 1.78909,
-        "coverage": null
-      },
-      {
-        "country": "Chile",
-        "iso3": "CHL",
-        "caution": false,
-        "science_score": 442.36060000000003,
-        "science_score_se": 2.49519,
-        "coverage": null
-      },
-      {
-        "country": "Colombia",
-        "iso3": "COL",
-        "caution": false,
-        "science_score": 413.73094000000003,
-        "science_score_se": 3.29367,
-        "coverage": null
-      },
-      {
-        "country": "Costa Rica",
-        "iso3": "CRI",
-        "caution": false,
-        "science_score": 423.96958,
-        "science_score_se": 2.5696600000000003,
-        "coverage": null
-      },
-      {
-        "country": "Croatia",
-        "iso3": "HRV",
-        "caution": false,
-        "science_score": 476.30089000000004,
-        "science_score_se": 1.7672100000000002,
-        "coverage": null
-      },
-      {
-        "country": "Cyprus",
-        "iso3": "CYP",
-        "caution": false,
-        "science_score": 411.18474000000003,
-        "science_score_se": 1.4657900000000001,
-        "coverage": null
-      },
-      {
-        "country": "Czechia",
-        "iso3": "CZE",
-        "caution": false,
-        "science_score": 490.27834,
-        "science_score_se": 2.58609,
-        "coverage": null
-      },
-      {
-        "country": "Denmark",
-        "iso3": "DNK",
-        "caution": false,
-        "science_score": 477.54101,
-        "science_score_se": 2.3902900000000002,
-        "coverage": null
-      },
-      {
-        "country": "Dominican Republic",
-        "iso3": "DOM",
-        "caution": false,
-        "science_score": 360.8466,
-        "science_score_se": 2.32246,
-        "coverage": null
-      },
-      {
-        "country": "Dushanbe (Tajikistan)",
-        "iso3": "TJK",
-        "caution": false,
-        "science_score": 333.76479,
-        "science_score_se": 1.4187400000000001,
-        "coverage": null
-      },
-      {
-        "country": "Ecuador",
-        "iso3": "ECU",
-        "caution": false,
-        "science_score": 393.42125000000004,
-        "science_score_se": 2.1619,
-        "coverage": null
-      },
-      {
-        "country": "El Salvador",
-        "iso3": "SLV",
-        "caution": false,
-        "science_score": 384.6732,
-        "science_score_se": 2.17614,
-        "coverage": null
-      },
-      {
-        "country": "Estonia",
-        "iso3": "EST",
-        "caution": false,
-        "science_score": 527.11708,
-        "science_score_se": 2.33436,
-        "coverage": null
-      },
-      {
-        "country": "Finland",
-        "iso3": "FIN",
-        "caution": false,
-        "science_score": 504.37245,
-        "science_score_se": 2.26064,
-        "coverage": null
-      },
-      {
-        "country": "France",
-        "iso3": "FRA",
-        "caution": false,
-        "science_score": 483.42120000000006,
-        "science_score_se": 3.2059400000000005,
-        "coverage": null
-      },
-      {
-        "country": "Georgia",
-        "iso3": "GEO",
-        "caution": false,
-        "science_score": 422.11866000000003,
-        "science_score_se": 2.6520300000000003,
-        "coverage": null
-      },
-      {
-        "country": "Germany",
-        "iso3": "DEU",
-        "caution": false,
-        "science_score": 485.52144000000004,
-        "science_score_se": 3.5211200000000002,
-        "coverage": null
-      },
-      {
-        "country": "Greece",
-        "iso3": "GRC",
-        "caution": false,
-        "science_score": 434.28491,
-        "science_score_se": 2.9383800000000004,
-        "coverage": null
-      },
-      {
-        "country": "Guatemala",
-        "iso3": "GTM",
-        "caution": false,
-        "science_score": 351.23403,
-        "science_score_se": 2.5258900000000004,
-        "coverage": null
-      },
-      {
-        "country": "Hong Kong (China)",
-        "iso3": "HKG",
-        "caution": false,
-        "science_score": 495.62666,
-        "science_score_se": 3.0470200000000003,
-        "coverage": null
-      },
-      {
-        "country": "Hungary",
-        "iso3": "HUN",
-        "caution": false,
-        "science_score": 479.91184000000004,
-        "science_score_se": 2.4439800000000003,
-        "coverage": null
-      },
-      {
-        "country": "Iceland",
-        "iso3": "ISL",
-        "caution": false,
-        "science_score": 441.38044,
-        "science_score_se": 1.64969,
-        "coverage": null
-      },
-      {
-        "country": "Indonesia",
-        "iso3": "IDN",
-        "caution": false,
-        "science_score": 388.67379000000005,
-        "science_score_se": 2.3186500000000003,
-        "coverage": null
-      },
-      {
-        "country": "Ireland",
-        "iso3": "IRL",
-        "caution": false,
-        "science_score": 499.59669,
-        "science_score_se": 2.1706800000000004,
-        "coverage": null
-      },
-      {
-        "country": "Israel",
-        "iso3": "ISR",
-        "caution": false,
-        "science_score": 442.00883000000005,
-        "science_score_se": 3.3512800000000005,
-        "coverage": null
-      },
-      {
-        "country": "Italy",
-        "iso3": "ITA",
-        "caution": false,
-        "science_score": 482.98206000000005,
-        "science_score_se": 2.4788200000000002,
-        "coverage": null
-      },
-      {
-        "country": "Japan",
-        "iso3": "JPN",
-        "caution": false,
-        "science_score": 537.5862400000001,
-        "science_score_se": 3.8059200000000004,
-        "coverage": null
-      },
-      {
-        "country": "Jordan",
-        "iso3": "JOR",
-        "caution": false,
-        "science_score": 406.93542,
-        "science_score_se": 2.4789000000000003,
-        "coverage": null
-      },
-      {
-        "country": "Kazakhstan",
-        "iso3": "KAZ",
-        "caution": false,
-        "science_score": 419.54755000000006,
-        "science_score_se": 1.59427,
-        "coverage": null
-      },
-      {
-        "country": "Kenya",
-        "iso3": "KEN",
-        "caution": false,
-        "science_score": 334.94936,
-        "science_score_se": 2.92172,
-        "coverage": null
-      },
-      {
-        "country": "Korea",
-        "iso3": "KOR",
-        "caution": false,
-        "science_score": 526.10531,
-        "science_score_se": 3.3696400000000004,
-        "coverage": null
-      },
-      {
-        "country": "Kosovo",
-        "iso3": "XKX",
-        "caution": false,
-        "science_score": 357.01476,
-        "science_score_se": 1.2990400000000002,
-        "coverage": null
-      },
-      {
-        "country": "Kurdistan Region (Iraq)",
-        "iso3": "IRQ",
-        "caution": false,
-        "science_score": 352.19140000000004,
-        "science_score_se": 1.7890400000000002,
-        "coverage": null
-      },
-      {
-        "country": "Kyrgyzstan",
-        "iso3": "KGZ",
-        "caution": false,
-        "science_score": 362.52939000000003,
-        "science_score_se": 2.1803500000000002,
-        "coverage": null
-      },
-      {
-        "country": "Latvia",
-        "iso3": "LVA",
-        "caution": false,
-        "science_score": 468.36741000000006,
-        "science_score_se": 2.05396,
-        "coverage": null
-      },
-      {
-        "country": "Lebanon",
-        "iso3": "LBN",
-        "caution": false,
-        "science_score": 372.00568000000004,
-        "science_score_se": 3.4527600000000005,
-        "coverage": null
-      },
-      {
-        "country": "Lithuania",
-        "iso3": "LTU",
-        "caution": false,
-        "science_score": 487.73903,
-        "science_score_se": 1.7807600000000001,
-        "coverage": null
-      },
-      {
-        "country": "Luxembourg",
-        "iso3": "LUX",
-        "caution": false,
-        "science_score": 473.77035000000006,
-        "science_score_se": 1.05451,
-        "coverage": null
-      },
-      {
-        "country": "Macao (China)",
-        "iso3": "MAC",
-        "caution": false,
-        "science_score": 540.8138600000001,
-        "science_score_se": 1.1273600000000001,
-        "coverage": null
-      },
-      {
-        "country": "Malaysia",
-        "iso3": "MYS",
-        "caution": false,
-        "science_score": 419.20273000000003,
-        "science_score_se": 2.15916,
-        "coverage": null
-      },
-      {
-        "country": "Malta",
-        "iso3": "MLT",
-        "caution": false,
-        "science_score": 452.52701,
-        "science_score_se": 1.54688,
-        "coverage": null
-      },
-      {
-        "country": "Mauritius",
-        "iso3": "MUS",
-        "caution": false,
-        "science_score": 438.16395000000006,
-        "science_score_se": 4.19413,
-        "coverage": null
-      },
-      {
-        "country": "Mexico",
-        "iso3": "MEX",
-        "caution": false,
-        "science_score": 413.56537000000003,
-        "science_score_se": 2.00143,
-        "coverage": null
-      },
-      {
-        "country": "Moldova",
-        "iso3": "MDA",
-        "caution": false,
-        "science_score": 421.94704,
-        "science_score_se": 2.8449400000000002,
-        "coverage": null
-      },
-      {
-        "country": "Mongolia",
-        "iso3": "MNG",
-        "caution": false,
-        "science_score": 424.03375000000005,
-        "science_score_se": 2.12886,
-        "coverage": null
-      },
-      {
-        "country": "Montenegro",
-        "iso3": "MNE",
-        "caution": false,
-        "science_score": 435.18445,
-        "science_score_se": 1.31231,
-        "coverage": null
-      },
-      {
-        "country": "Morocco",
-        "iso3": "MAR",
-        "caution": false,
-        "science_score": 357.97978,
-        "science_score_se": 3.3258400000000004,
-        "coverage": null
-      },
-      {
-        "country": "Netherlands",
-        "iso3": "NLD",
-        "caution": true,
-        "science_score": 485.45141000000007,
-        "science_score_se": 2.82147,
-        "coverage": null
-      },
-      {
-        "country": "New Zealand",
-        "iso3": "NZL",
-        "caution": true,
-        "science_score": 509.39792000000006,
-        "science_score_se": 2.31097,
-        "coverage": null
-      },
-      {
-        "country": "North Macedonia",
-        "iso3": "MKD",
-        "caution": false,
-        "science_score": 378.49815,
-        "science_score_se": 1.03898,
-        "coverage": null
-      },
-      {
-        "country": "Norway",
-        "iso3": "NOR",
-        "caution": true,
-        "science_score": 470.21226,
-        "science_score_se": 2.0224900000000003,
-        "coverage": null
-      },
-      {
-        "country": "Palestinian Authority",
-        "iso3": "PSE",
-        "caution": false,
-        "science_score": 358.73953,
-        "science_score_se": 1.94727,
-        "coverage": null
-      },
-      {
-        "country": "Paraguay",
-        "iso3": "PRY",
-        "caution": false,
-        "science_score": 355.24408000000005,
-        "science_score_se": 1.9713100000000001,
-        "coverage": null
-      },
-      {
-        "country": "Peru",
-        "iso3": "PER",
-        "caution": false,
-        "science_score": 405.60048000000006,
-        "science_score_se": 2.52937,
-        "coverage": null
-      },
-      {
-        "country": "Philippines",
-        "iso3": "PHL",
-        "caution": false,
-        "science_score": 373.31850000000003,
-        "science_score_se": 2.28703,
-        "coverage": null
-      },
-      {
-        "country": "Poland",
-        "iso3": "POL",
-        "caution": false,
-        "science_score": 495.06703000000005,
-        "science_score_se": 2.7425,
-        "coverage": null
-      },
-      {
-        "country": "Portugal",
-        "iso3": "PRT",
-        "caution": false,
-        "science_score": 481.71602,
-        "science_score_se": 3.5177300000000002,
-        "coverage": null
-      },
-      {
-        "country": "Qatar",
-        "iso3": "QAT",
-        "caution": false,
-        "science_score": 434.39970000000005,
-        "science_score_se": 1.34026,
-        "coverage": null
-      },
-      {
-        "country": "Romania",
-        "iso3": "ROU",
-        "caution": false,
-        "science_score": 424.70915,
-        "science_score_se": 4.15019,
-        "coverage": null
-      },
-      {
-        "country": "Rwanda",
-        "iso3": "RWA",
-        "caution": false,
-        "science_score": 317.28649,
-        "science_score_se": 3.4961,
-        "coverage": null
-      },
-      {
-        "country": "Saudi Arabia",
-        "iso3": "SAU",
-        "caution": false,
-        "science_score": 413.43007000000006,
-        "science_score_se": 2.6454600000000004,
-        "coverage": null
-      },
-      {
-        "country": "Serbia",
-        "iso3": "SRB",
-        "caution": false,
-        "science_score": 428.99464000000006,
-        "science_score_se": 2.92876,
-        "coverage": null
-      },
-      {
-        "country": "Singapore",
-        "iso3": "SGP",
-        "caution": false,
-        "science_score": 559.8505600000001,
-        "science_score_se": 1.7129,
-        "coverage": null
-      },
-      {
-        "country": "Slovak Republic",
-        "iso3": "SVK",
-        "caution": false,
-        "science_score": 474.87211,
-        "science_score_se": 2.5045800000000003,
-        "coverage": null
-      },
-      {
-        "country": "Slovenia",
-        "iso3": "SVN",
-        "caution": false,
-        "science_score": 483.72204000000005,
-        "science_score_se": 1.2773500000000002,
-        "coverage": null
-      },
-      {
-        "country": "Spain",
-        "iso3": "ESP",
-        "caution": false,
-        "science_score": 477.12730000000005,
-        "science_score_se": 1.9043100000000002,
-        "coverage": null
-      },
-      {
-        "country": "Sweden",
-        "iso3": "SWE",
-        "caution": false,
-        "science_score": 485.11066000000005,
-        "science_score_se": 2.9938700000000003,
-        "coverage": null
-      },
-      {
-        "country": "Switzerland",
-        "iso3": "CHE",
-        "caution": false,
-        "science_score": 501.23764000000006,
-        "science_score_se": 2.59131,
-        "coverage": null
-      },
-      {
-        "country": "Chinese Taipei",
-        "iso3": "TWN",
-        "caution": false,
-        "science_score": 539.7016900000001,
-        "science_score_se": 3.00803,
-        "coverage": null
-      },
-      {
-        "country": "Thailand",
-        "iso3": "THA",
-        "caution": false,
-        "science_score": 432.24049,
-        "science_score_se": 3.1885800000000004,
-        "coverage": null
-      },
-      {
-        "country": "Türkiye",
-        "iso3": "TUR",
-        "caution": false,
-        "science_score": 494.26907000000006,
-        "science_score_se": 2.3050200000000003,
-        "coverage": null
-      },
-      {
-        "country": "Ukrainian regions (17 of 27)",
-        "iso3": "UKR",
-        "caution": false,
-        "science_score": 448.08230000000003,
-        "science_score_se": 2.49101,
-        "coverage": null
-      },
-      {
-        "country": "United Arab Emirates",
-        "iso3": "ARE",
-        "caution": false,
-        "science_score": 458.06699000000003,
-        "science_score_se": 1.9743800000000002,
-        "coverage": null
-      },
-      {
-        "country": "United Kingdom",
-        "iso3": "GBR",
-        "caution": false,
-        "science_score": 511.35575000000006,
-        "science_score_se": 2.10211,
-        "coverage": null
-      },
-      {
-        "country": "United States",
-        "iso3": "USA",
-        "caution": true,
-        "science_score": 501.58324000000005,
-        "science_score_se": 5.816520000000001,
-        "coverage": null
-      },
-      {
-        "country": "Uruguay",
-        "iso3": "URY",
-        "caution": false,
-        "science_score": 444.54929000000004,
-        "science_score_se": 1.8163200000000002,
-        "coverage": null
-      },
-      {
-        "country": "Uzbekistan",
-        "iso3": "UZB",
-        "caution": false,
-        "science_score": 437.59697000000006,
-        "science_score_se": 2.72601,
-        "coverage": null
+    "ASSESS_AI_OUTPUT": {
+      "label": "Students who assess the quality of AI output in lessons (%)",
+      "source": {
+        "table": "Table I.B1.4.68",
+        "statlink": "https://stat.link/xmra2f"
+      },
+      "oecd_average": {
+        "value": 62.60935,
+        "se": 0.13863
+      },
+      "countries": {
+        "ARG": {
+          "value": 60.70915,
+          "se": 0.90294,
+          "coverage": "‡"
+        },
+        "ARM": {
+          "value": 75.94875,
+          "se": 1.35536,
+          "coverage": "‡"
+        },
+        "AUS": {
+          "value": 68.32206,
+          "se": 0.60462
+        },
+        "AUT": {
+          "value": 62.77661,
+          "se": 0.83467
+        },
+        "AZE": {
+          "value": 76.09321,
+          "se": 0.78228,
+          "coverage": "†"
+        },
+        "BEL": {
+          "value": 58.56818,
+          "se": 0.86941
+        },
+        "BRA": {
+          "value": 51.23016,
+          "se": 0.63383,
+          "coverage": "†"
+        },
+        "BRN": {
+          "value": 73.44237,
+          "se": 0.61084
+        },
+        "CHN": {
+          "value": 44.63599,
+          "se": 0.77645
+        },
+        "BGR": {
+          "value": 71.26589,
+          "se": 0.91191,
+          "coverage": "†"
+        },
+        "KHM": {
+          "value": null,
+          "se": null
+        },
+        "CAN": {
+          "value": 56.21539,
+          "se": 0.57027,
+          "coverage": "†"
+        },
+        "CHL": {
+          "value": 61.53592,
+          "se": 0.79446,
+          "coverage": "†"
+        },
+        "COL": {
+          "value": 63.52712,
+          "se": 0.84118
+        },
+        "CRI": {
+          "value": 66.1426,
+          "se": 0.76353,
+          "coverage": "†"
+        },
+        "HRV": {
+          "value": 69.22285,
+          "se": 0.74139
+        },
+        "CYP": {
+          "value": 67.63936,
+          "se": 0.86891,
+          "coverage": "†"
+        },
+        "CZE": {
+          "value": 70.04108,
+          "se": 0.75616
+        },
+        "DNK": {
+          "value": 69.05977,
+          "se": 1.1059
+        },
+        "DOM": {
+          "value": 64.69256,
+          "se": 0.92716,
+          "coverage": "†"
+        },
+        "TJK": {
+          "value": null,
+          "se": null
+        },
+        "ECU": {
+          "value": 61.20637,
+          "se": 0.65914
+        },
+        "SLV": {
+          "value": 60.53484,
+          "se": 0.93333,
+          "coverage": "†"
+        },
+        "EST": {
+          "value": 72.5108,
+          "se": 0.76119
+        },
+        "FIN": {
+          "value": 60.97051,
+          "se": 0.68698
+        },
+        "FRA": {
+          "value": 46.84149,
+          "se": 0.88181,
+          "coverage": "†"
+        },
+        "GEO": {
+          "value": 69.32696,
+          "se": 0.79125,
+          "coverage": "†"
+        },
+        "DEU": {
+          "value": 59.33892,
+          "se": 0.896
+        },
+        "GRC": {
+          "value": 60.74082,
+          "se": 0.7795
+        },
+        "GTM": {
+          "value": 52.55018,
+          "se": 0.80058,
+          "coverage": "†"
+        },
+        "HKG": {
+          "value": 69.33678,
+          "se": 0.84518
+        },
+        "HUN": {
+          "value": 60.9787,
+          "se": 1.13239
+        },
+        "ISL": {
+          "value": 72.84294,
+          "se": 0.84197
+        },
+        "IDN": {
+          "value": 73.16651,
+          "se": 0.86086
+        },
+        "IRL": {
+          "value": 47.18393,
+          "se": 0.85623
+        },
+        "ISR": {
+          "value": 63.01207,
+          "se": 0.8385,
+          "coverage": "‡"
+        },
+        "ITA": {
+          "value": 73.66831,
+          "se": 0.7259
+        },
+        "JPN": {
+          "value": 31.16206,
+          "se": 1.28187
+        },
+        "JOR": {
+          "value": 59.17116,
+          "se": 0.96116,
+          "coverage": "†"
+        },
+        "KAZ": {
+          "value": 80.18606,
+          "se": 0.48727
+        },
+        "KEN": {
+          "value": 55.51239,
+          "se": 1.39395,
+          "coverage": "†"
+        },
+        "KOR": {
+          "value": 66.5166,
+          "se": 1.34659
+        },
+        "XKX": {
+          "value": 76.65283,
+          "se": 0.77479,
+          "coverage": "†"
+        },
+        "IRQ": {
+          "value": null,
+          "se": null
+        },
+        "KGZ": {
+          "value": 74.84989,
+          "se": 0.68589,
+          "coverage": "†"
+        },
+        "LVA": {
+          "value": 79.11005,
+          "se": 0.58575
+        },
+        "LBN": {
+          "value": 73.66061,
+          "se": 1.22757,
+          "coverage": "‡"
+        },
+        "LTU": {
+          "value": 73.93757,
+          "se": 0.69109
+        },
+        "LUX": {
+          "value": 65.79555,
+          "se": 0.55068
+        },
+        "MAC": {
+          "value": 74.53961,
+          "se": 0.56608
+        },
+        "MYS": {
+          "value": 70.81136,
+          "se": 0.78207
+        },
+        "MLT": {
+          "value": 61.93543,
+          "se": 0.93165,
+          "coverage": "†"
+        },
+        "MUS": {
+          "value": null,
+          "se": null
+        },
+        "MEX": {
+          "value": 59.24912,
+          "se": 0.80443
+        },
+        "MDA": {
+          "value": 74.2183,
+          "se": 0.79418
+        },
+        "MNG": {
+          "value": 74.26744,
+          "se": 0.58519
+        },
+        "MNE": {
+          "value": 57.90232,
+          "se": 0.88189,
+          "coverage": "†"
+        },
+        "MAR": {
+          "value": 52.71764,
+          "se": 0.9431,
+          "coverage": "†"
+        },
+        "NLD": {
+          "value": 55.38697,
+          "se": 0.87579
+        },
+        "NZL": {
+          "value": 64.55915,
+          "se": 0.8875
+        },
+        "MKD": {
+          "value": 75.4692,
+          "se": 0.86025,
+          "coverage": "†"
+        },
+        "NOR": {
+          "value": 74.32094,
+          "se": 0.6928
+        },
+        "PSE": {
+          "value": 61.37049,
+          "se": 0.76502,
+          "coverage": "†"
+        },
+        "PRY": {
+          "value": 53.72527,
+          "se": 1.10486,
+          "coverage": "‡"
+        },
+        "PER": {
+          "value": 55.33279,
+          "se": 1.09026,
+          "coverage": "†"
+        },
+        "PHL": {
+          "value": 70.79601,
+          "se": 0.65231
+        },
+        "POL": {
+          "value": 62.40198,
+          "se": 0.7088
+        },
+        "PRT": {
+          "value": 57.40324,
+          "se": 0.78169
+        },
+        "QAT": {
+          "value": 68.59977,
+          "se": 0.86917,
+          "coverage": "†"
+        },
+        "ROU": {
+          "value": 72.62725,
+          "se": 0.70826
+        },
+        "RWA": {
+          "value": null,
+          "se": null
+        },
+        "SAU": {
+          "value": 74.84838,
+          "se": 0.79667,
+          "coverage": "†"
+        },
+        "SRB": {
+          "value": 61.60964,
+          "se": 0.8738,
+          "coverage": "†"
+        },
+        "SGP": {
+          "value": 81.02528,
+          "se": 0.47295
+        },
+        "SVK": {
+          "value": 71.11274,
+          "se": 0.80493
+        },
+        "SVN": {
+          "value": 63.70648,
+          "se": 0.75701
+        },
+        "ESP": {
+          "value": 59.52722,
+          "se": 0.65549
+        },
+        "SWE": {
+          "value": 64.89844,
+          "se": 0.93737
+        },
+        "CHE": {
+          "value": 69.01845,
+          "se": 0.75197
+        },
+        "TWN": {
+          "value": 65.86668,
+          "se": 0.83172
+        },
+        "THA": {
+          "value": 68.87644,
+          "se": 0.81558
+        },
+        "TUR": {
+          "value": 68.05768,
+          "se": 0.8321
+        },
+        "UKR": {
+          "value": 77.70708,
+          "se": 0.55316
+        },
+        "ARE": {
+          "value": 81.71536,
+          "se": 0.32855
+        },
+        "GBR": {
+          "value": 42.38162,
+          "se": 0.85256
+        },
+        "URY": {
+          "value": 65.3059,
+          "se": 0.86644,
+          "coverage": "†"
+        },
+        "UZB": {
+          "value": 80.57594,
+          "se": 0.77091
+        },
+        "VNM": {
+          "value": 69.95105,
+          "se": 0.78501
+        },
+        "ZMB": {
+          "value": null,
+          "se": null
+        },
+        "ALB": {
+          "value": 81.5578,
+          "se": 0.64068
+        },
+        "USA": {
+          "value": 56.33204,
+          "se": 1.34396,
+          "coverage": "†"
+        }
       }
-    ]
+    },
+    "SCIENCE_SCORES": {
+      "label": "Mean score in science",
+      "source": {
+        "table": "Table I.B1.2a.1",
+        "statlink": "https://stat.link/mrq53f"
+      },
+      "oecd_average": {
+        "value": 481.90834000000007,
+        "se": 0.43835
+      },
+      "countries": {
+        "ALB": {
+          "value": 434.62710000000004,
+          "se": 2.7101200000000003
+        },
+        "ARG": {
+          "value": 392.93391,
+          "se": 2.9888000000000003
+        },
+        "ARM": {
+          "value": 368.63314,
+          "se": 1.7763300000000002
+        },
+        "AUS": {
+          "value": 509.10633,
+          "se": 1.88528
+        },
+        "AUT": {
+          "value": 496.91267000000005,
+          "se": 2.7242400000000004
+        },
+        "AZE": {
+          "value": 408.56354000000005,
+          "se": 3.2037700000000005
+        },
+        "BEL": {
+          "value": 489.70971000000003,
+          "se": 2.8550500000000003
+        },
+        "BRA": {
+          "value": 408.54046000000005,
+          "se": 1.93317
+        },
+        "BRN": {
+          "value": 439.45387000000005,
+          "se": 0.8198900000000001
+        },
+        "CHN": {
+          "value": 597.0437900000001,
+          "se": 2.15606
+        },
+        "BGR": {
+          "value": 420.79373000000004,
+          "se": 4.053330000000001
+        },
+        "KHM": {
+          "value": 381.93511,
+          "se": 1.6906200000000002
+        },
+        "CAN": {
+          "value": 510.05482000000006,
+          "se": 1.78909
+        },
+        "CHL": {
+          "value": 442.36060000000003,
+          "se": 2.49519
+        },
+        "COL": {
+          "value": 413.73094000000003,
+          "se": 3.29367
+        },
+        "CRI": {
+          "value": 423.96958,
+          "se": 2.5696600000000003
+        },
+        "HRV": {
+          "value": 476.30089000000004,
+          "se": 1.7672100000000002
+        },
+        "CYP": {
+          "value": 411.18474000000003,
+          "se": 1.4657900000000001
+        },
+        "CZE": {
+          "value": 490.27834,
+          "se": 2.58609
+        },
+        "DNK": {
+          "value": 477.54101,
+          "se": 2.3902900000000002
+        },
+        "DOM": {
+          "value": 360.8466,
+          "se": 2.32246
+        },
+        "TJK": {
+          "value": 333.76479,
+          "se": 1.4187400000000001
+        },
+        "ECU": {
+          "value": 393.42125000000004,
+          "se": 2.1619
+        },
+        "SLV": {
+          "value": 384.6732,
+          "se": 2.17614
+        },
+        "EST": {
+          "value": 527.11708,
+          "se": 2.33436
+        },
+        "FIN": {
+          "value": 504.37245,
+          "se": 2.26064
+        },
+        "FRA": {
+          "value": 483.42120000000006,
+          "se": 3.2059400000000005
+        },
+        "GEO": {
+          "value": 422.11866000000003,
+          "se": 2.6520300000000003
+        },
+        "DEU": {
+          "value": 485.52144000000004,
+          "se": 3.5211200000000002
+        },
+        "GRC": {
+          "value": 434.28491,
+          "se": 2.9383800000000004
+        },
+        "GTM": {
+          "value": 351.23403,
+          "se": 2.5258900000000004
+        },
+        "HKG": {
+          "value": 495.62666,
+          "se": 3.0470200000000003
+        },
+        "HUN": {
+          "value": 479.91184000000004,
+          "se": 2.4439800000000003
+        },
+        "ISL": {
+          "value": 441.38044,
+          "se": 1.64969
+        },
+        "IDN": {
+          "value": 388.67379000000005,
+          "se": 2.3186500000000003
+        },
+        "IRL": {
+          "value": 499.59669,
+          "se": 2.1706800000000004
+        },
+        "ISR": {
+          "value": 442.00883000000005,
+          "se": 3.3512800000000005
+        },
+        "ITA": {
+          "value": 482.98206000000005,
+          "se": 2.4788200000000002
+        },
+        "JPN": {
+          "value": 537.5862400000001,
+          "se": 3.8059200000000004
+        },
+        "JOR": {
+          "value": 406.93542,
+          "se": 2.4789000000000003
+        },
+        "KAZ": {
+          "value": 419.54755000000006,
+          "se": 1.59427
+        },
+        "KEN": {
+          "value": 334.94936,
+          "se": 2.92172
+        },
+        "KOR": {
+          "value": 526.10531,
+          "se": 3.3696400000000004
+        },
+        "XKX": {
+          "value": 357.01476,
+          "se": 1.2990400000000002
+        },
+        "IRQ": {
+          "value": 352.19140000000004,
+          "se": 1.7890400000000002
+        },
+        "KGZ": {
+          "value": 362.52939000000003,
+          "se": 2.1803500000000002
+        },
+        "LVA": {
+          "value": 468.36741000000006,
+          "se": 2.05396
+        },
+        "LBN": {
+          "value": 372.00568000000004,
+          "se": 3.4527600000000005
+        },
+        "LTU": {
+          "value": 487.73903,
+          "se": 1.7807600000000001
+        },
+        "LUX": {
+          "value": 473.77035000000006,
+          "se": 1.05451
+        },
+        "MAC": {
+          "value": 540.8138600000001,
+          "se": 1.1273600000000001
+        },
+        "MYS": {
+          "value": 419.20273000000003,
+          "se": 2.15916
+        },
+        "MLT": {
+          "value": 452.52701,
+          "se": 1.54688
+        },
+        "MUS": {
+          "value": 438.16395000000006,
+          "se": 4.19413
+        },
+        "MEX": {
+          "value": 413.56537000000003,
+          "se": 2.00143
+        },
+        "MDA": {
+          "value": 421.94704,
+          "se": 2.8449400000000002
+        },
+        "MNG": {
+          "value": 424.03375000000005,
+          "se": 2.12886
+        },
+        "MNE": {
+          "value": 435.18445,
+          "se": 1.31231
+        },
+        "MAR": {
+          "value": 357.97978,
+          "se": 3.3258400000000004
+        },
+        "NLD": {
+          "value": 485.45141000000007,
+          "se": 2.82147
+        },
+        "NZL": {
+          "value": 509.39792000000006,
+          "se": 2.31097
+        },
+        "MKD": {
+          "value": 378.49815,
+          "se": 1.03898
+        },
+        "NOR": {
+          "value": 470.21226,
+          "se": 2.0224900000000003
+        },
+        "PSE": {
+          "value": 358.73953,
+          "se": 1.94727
+        },
+        "PRY": {
+          "value": 355.24408000000005,
+          "se": 1.9713100000000001
+        },
+        "PER": {
+          "value": 405.60048000000006,
+          "se": 2.52937
+        },
+        "PHL": {
+          "value": 373.31850000000003,
+          "se": 2.28703
+        },
+        "POL": {
+          "value": 495.06703000000005,
+          "se": 2.7425
+        },
+        "PRT": {
+          "value": 481.71602,
+          "se": 3.5177300000000002
+        },
+        "QAT": {
+          "value": 434.39970000000005,
+          "se": 1.34026
+        },
+        "ROU": {
+          "value": 424.70915,
+          "se": 4.15019
+        },
+        "RWA": {
+          "value": 317.28649,
+          "se": 3.4961
+        },
+        "SAU": {
+          "value": 413.43007000000006,
+          "se": 2.6454600000000004
+        },
+        "SRB": {
+          "value": 428.99464000000006,
+          "se": 2.92876
+        },
+        "SGP": {
+          "value": 559.8505600000001,
+          "se": 1.7129
+        },
+        "SVK": {
+          "value": 474.87211,
+          "se": 2.5045800000000003
+        },
+        "SVN": {
+          "value": 483.72204000000005,
+          "se": 1.2773500000000002
+        },
+        "ESP": {
+          "value": 477.12730000000005,
+          "se": 1.9043100000000002
+        },
+        "SWE": {
+          "value": 485.11066000000005,
+          "se": 2.9938700000000003
+        },
+        "CHE": {
+          "value": 501.23764000000006,
+          "se": 2.59131
+        },
+        "TWN": {
+          "value": 539.7016900000001,
+          "se": 3.00803
+        },
+        "THA": {
+          "value": 432.24049,
+          "se": 3.1885800000000004
+        },
+        "TUR": {
+          "value": 494.26907000000006,
+          "se": 2.3050200000000003
+        },
+        "UKR": {
+          "value": 448.08230000000003,
+          "se": 2.49101
+        },
+        "ARE": {
+          "value": 458.06699000000003,
+          "se": 1.9743800000000002
+        },
+        "GBR": {
+          "value": 511.35575000000006,
+          "se": 2.10211
+        },
+        "USA": {
+          "value": 501.58324000000005,
+          "se": 5.816520000000001
+        },
+        "URY": {
+          "value": 444.54929000000004,
+          "se": 1.8163200000000002
+        },
+        "UZB": {
+          "value": 437.59697000000006,
+          "se": 2.72601
+        },
+        "VNM": {
+          "value": 457.42088,
+          "se": 3.92831
+        },
+        "ZMB": {
+          "value": 336.95473000000004,
+          "se": 10.99202
+        }
+      }
+    }
   }
 }

@@ -31,14 +31,37 @@ type ScienceScoreEntry = {
   coverage: string | null;
 };
 
-const AIUseEntries: AIUseEntry[] = PisaData.AIUSESCH.countries;
-const ScienceScoreEntries: ScienceScoreEntry[] = PisaData.SCIENCE_SCORES.countries;
+/* pisa_data.json keys participants and each variable's values by iso3.
+These rebuild the lists of entries used below. */
+type Estimate = { value: number | null; se: number | null; coverage?: string };
+const Participants: Record<string, { name: string; caution: boolean }> = PisaData.PARTICIPANTS;
+const AIUse: Record<string, Estimate> = PisaData.VARIABLES.AIUSESCH.countries;
+const ScienceScores: Record<string, Estimate> = PisaData.VARIABLES.SCIENCE_SCORES.countries;
+
+const ParticipantList = Object.entries(Participants).map(([iso3, { name }]) => ({ country: name, iso3 }));
+
+const AIUseEntries: AIUseEntry[] = Object.entries(AIUse).map(([iso3, { value, se, coverage }]) => ({
+  country: Participants[iso3].name,
+  iso3,
+  caution: Participants[iso3].caution,
+  coverage: coverage ?? null,
+  aiusesch: value,
+  aiusesch_se: se,
+}));
+const ScienceScoreEntries: ScienceScoreEntry[] = Object.entries(ScienceScores).map(([iso3, { value, se, coverage }]) => ({
+  country: Participants[iso3].name,
+  iso3,
+  caution: Participants[iso3].caution,
+  coverage: coverage ?? null,
+  science_score: value,
+  science_score_se: se,
+}));
 const joinedData = (ScienceScoreEntries
   .map(science => {
-    const ai = PisaData.AIUSESCH.countries.find(a => a.iso3 === science.iso3);
+    const ai = AIUseEntries.find(a => a.iso3 === science.iso3);
     return ai ? { ...science, ...ai } : null;
   })
-  .filter(d => d !== null && d?.science_score !== null && d?.aiusesch !== null)) as Array<ScienceScoreEntry & typeof PisaData.AIUSESCH.countries[0]>;
+  .filter(d => d !== null && d?.science_score !== null && d?.aiusesch !== null)) as Array<ScienceScoreEntry & AIUseEntry>;
 
   const reg = linearRegression(joinedData.map(d => [d.aiusesch!, d.science_score!]));
   const line = linearRegressionLine(reg);
@@ -507,7 +530,7 @@ function App() {
       </header>
       <div className="map-controls">
         <CountrySearch
-          participants={PisaData.PARTICIPANTS}
+          participants={ParticipantList}
           onSelectCountry={handleSelectCountry}
         />
         <div className="filter-group">

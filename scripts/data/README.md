@@ -7,4 +7,37 @@
 | `xmra2f.xlsx` | <https://stat.link/xmra2f> | PISA 2025 Results (Volume I), Annex B1, Chapter 4 tables |
 | `mrq53f.xlsx`| <https://stat.link/mrq53f> | PISA 2025 Results (Volume I, Annex B1, Chapter 2 tables |
 
-After running the build, commit the generated `src/pisa_data.json`. If you want to add a new spreadsheet to use, add a row for it here and add its file name to `SPREADSHEETS` in `scripts/build-data.ts`.
+After running the build, commit the generated `src/pisa_data.json`. To add a new spreadsheet and parse its variables:
+1. Add a row for it in the table above.
+2. Define a spreadsheet for it and how to parse its variables in `scripts/build-data.ts`.
+3. Add it to `SPREADSHEETS`.
+
+For example, to import mean science scores by country which is located in file `mrq53f.xlsx`:
+```
+const CHAPTER_2: Spreadsheet = {
+  file: "mrq53f.xlsx",
+  sheets: [
+    {
+      sheet_name: "Table I.B1.2a.1",
+      parse: rows => {
+        const average_row = findRow(rows, "OECD average")
+        const country_rows = findCountryRows(rows)
+
+        /* A country's average science score */
+        const science = (row: Row) => ({
+          value: num(row.B),        // country mean
+          se: num(row.C),           // its standard error
+        })
+
+        return {
+          SCIENCE_SCORES: {
+            label: "Mean score in science",
+            oecd_average: science(average_row),
+            countries: mapRows(country_rows, science),
+          },
+        }
+      },
+    },
+  ],
+}
+```
