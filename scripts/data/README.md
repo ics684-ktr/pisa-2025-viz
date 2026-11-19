@@ -9,12 +9,12 @@
 
 After running the build, commit the generated `src/pisa_data.json`.
 
-# Adding spreadsheets and variables
-To add a new spreadsheet and parse its variables:
+# Adding spreadsheets and indicators
+To add a new spreadsheet and parse its indicators:
 1. Add a row for it in the table above.
-2. Define a spreadsheet for it and how to parse its variables in `scripts/build-data.ts`.
+2. Define a spreadsheet for it and how to parse its indicators in `scripts/build-data.ts`.
 3. Add it to `SPREADSHEETS`.
-4. Run `npm run build:data` and use the new variables in the source code.
+4. Run `npm run build:data` and use the new indicators in the source code.
 
 For example, to import mean science scores by country which is located in file `mrq53f.xlsx`:
 ```

@@ -31,12 +31,12 @@ type ScienceScoreEntry = {
   coverage: string | null;
 };
 
-/* pisa_data.json keys participants and each variable's values by iso3.
+/* pisa_data.json keys participants and each indicator's values by iso3.
 These rebuild the lists of entries used below. */
 type Estimate = { value: number | null; se: number | null; coverage?: string };
 const Participants: Record<string, { name: string; caution: boolean }> = PisaData.PARTICIPANTS;
-const AIUse: Record<string, Estimate> = PisaData.VARIABLES.AIUSESCH.countries;
-const ScienceScores: Record<string, Estimate> = PisaData.VARIABLES.SCIENCE_SCORES.countries;
+const AIUse: Record<string, Estimate> = PisaData.INDICATORS.AIUSESCH.countries;
+const ScienceScores: Record<string, Estimate> = PisaData.INDICATORS.SCIENCE_SCORES.countries;
 
 const ParticipantList = Object.entries(Participants).map(([iso3, { name }]) => ({ country: name, iso3 }));
 

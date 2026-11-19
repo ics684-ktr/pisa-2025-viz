@@ -18,7 +18,7 @@ npm run dev
 3. Check the diff of `src/pisa_data.json`, update any code that uses it, then commit it. If some numbers changed, it may mean your spreadsheet versions were different than the ones used to generate the previous one (this may be intended).
 
 ### Structure of `pisa_data.json`
-The file has `PARTICIPANTS` and `VARIABLES`. `PARTICIPANTS` is a list of all 91 participants, each keyed by its ISO3 code. `VARIABLES` consists of every variable the site uses, read directly from OECD's tables provided in the full report.
+The file has `PARTICIPANTS` and `INDICATORS`. `PARTICIPANTS` is a list of all 91 participants, each keyed by its ISO3 code. `INDICATORS` consists of every indicator the site uses, read directly from OECD's tables provided in the full report.
 
 ```json
 {
@@ -27,7 +27,7 @@ The file has `PARTICIPANTS` and `VARIABLES`. `PARTICIPANTS` is a list of all 91 
     "ARG": { "name": "Argentina", "caution": false },
     ...
   },
-  "VARIABLES": {
+  "INDICATORS": {
     "AIUSESCH": {
       "label": "Index of students' AI use for schoolwork",
       "source": { "table": "Table I.B1.4.53", "statlink": "https://stat.link/xmra2f" },
@@ -47,10 +47,10 @@ The file has `PARTICIPANTS` and `VARIABLES`. `PARTICIPANTS` is a list of all 91 
 - `name`: the name the OECD uses, e.g. "Hong Kong (China)".
 - `caution`: `true` for the 6 participants that didn't meet PISA's sampling standards: Albania, Canada, the Netherlands, New Zealand, Norway and the United States.
 
-**Each variable in `VARIABLES`** has:
+**Each indicator in `INDICATORS`** has:
 - `label`: human-readable label.
 - `source`: its source spreadsheet and the link to it.
-- `oecd_average`: the OECD average for this variable.
+- `oecd_average`: the OECD average for this indicator.
 - `countries`: the values for each participant, keyed by ISO3.
 
 **Each participant's values** are usually:
@@ -59,7 +59,7 @@ The file has `PARTICIPANTS` and `VARIABLES`. `PARTICIPANTS` is a list of all 91 
 - `coverage`: `"†"` if the estimate covers 50–75% of the population, `"‡"` if under 50%. Only present when the table marks it.
 
 Things to keep in mind:
-- **Missing vs. `null`:** a participant missing from a variable's `countries` means that country wasn't in that table. One with `null` values was in the table but has no data.
+- **Missing vs. `null`:** a participant missing from an indicator's `countries` means that country wasn't in that table. One with `null` values was in the table but has no data.
 - **ISO3 codes are the map's codes,** not always PISA's: 7 PISA codes are swapped so Plotly can place them (see [Gaps/caveats](#gapscaveats)).
 
 ## About PISA

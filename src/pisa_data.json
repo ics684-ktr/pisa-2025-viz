@@ -365,7 +365,7 @@
       "caution": false
     }
   },
-  "VARIABLES": {
+  "INDICATORS": {
     "AIUSESCH": {
       "label": "Index of students' AI use for schoolwork",
       "source": {

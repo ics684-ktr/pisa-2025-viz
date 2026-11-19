@@ -18,7 +18,7 @@ type Row = Record<string, unknown>      // one spreadsheet row, keyed by column 
 type CountryRows = {                    // each participant's row, keyed by iso3
   [iso3: string]: Row,
 }
-type Variable = {
+type Indicator = {
   label: string,                        // what the site calls it
   oecd_average: object | null,          // null if the sheet has no OECD average
   countries: {
@@ -28,7 +28,7 @@ type Variable = {
 type Sheet = {
   sheet_name: string,
   parse: (rows: Row[]) => {
-    [variable: string]: Variable,
+    [indicator: string]: Indicator,
   },
 }
 type Spreadsheet = {
@@ -236,9 +236,9 @@ const ISO3_BY_NAME = new Map(Object.entries(PARTICIPANTS).map(([iso3, { name }])
 
 /* ---------- Building the JSON ---------- */
 
-/* Checks what a sheet returned for one variable, whatever its layout: stops on a country code
+/* Checks what a sheet returned for one indicator, whatever its layout: stops on a country code
 that isn't a participant, and logs the OECD average and missing participants. */
-function checkVariable({ oecd_average, countries }: Variable) {
+function checkIndicator({ oecd_average, countries }: Indicator) {
   const unknown = Object.keys(countries).filter(iso3 => !(iso3 in PARTICIPANTS))
   if (unknown.length > 0) fail(`Not participants' iso3 codes: ${unknown.join(", ")}.`)
 
@@ -274,7 +274,7 @@ function main() {
 
   console.log(`Found spreadsheets in ${DATA_DIR}/: ${files.join(", ")}`)
 
-  const all_variables: Record<string, unknown> = {}
+  const all_indicators: Record<string, unknown> = {}
 
   for (const spreadsheet of SPREADSHEETS) {
     console.log(`Reading ${spreadsheet.file}`)
@@ -287,23 +287,23 @@ function main() {
       const worksheet = workbook.Sheets[sheet_name]
       if (!worksheet) fail(`Sheet "${sheet_name}" not found. Check its name in SPREADSHEETS.`)
       const rows = XLSX.utils.sheet_to_json<Row>(worksheet, { header: "A" })
-      const variables = parse(rows)
+      const indicators = parse(rows)
 
-      for (const [name, variable] of Object.entries(variables)) {
-        if (name in all_variables) fail(`Duplicated variable: ${name}.`)
+      for (const [name, indicator] of Object.entries(indicators)) {
+        if (name in all_indicators) fail(`Duplicated indicator: ${name}.`)
         console.log(`    ${name}`)
-        checkVariable(variable)
-        all_variables[name] = {
-          label: variable.label,
+        checkIndicator(indicator)
+        all_indicators[name] = {
+          label: indicator.label,
           source: { table: sheet_name, statlink: statLink(spreadsheet.file) },
-          oecd_average: variable.oecd_average,
-          countries: variable.countries,
+          oecd_average: indicator.oecd_average,
+          countries: indicator.countries,
         }
       }
     }
   }
 
-  const pisa_data = { PARTICIPANTS, VARIABLES: all_variables }
+  const pisa_data = { PARTICIPANTS, INDICATORS: all_indicators }
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(pisa_data, null, 2), "utf-8")
   console.log(`Wrote ${OUTPUT_FILE}`)
 }
