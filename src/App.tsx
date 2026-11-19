@@ -392,8 +392,12 @@ function App() {
 
   //Update the selected country and smoothly move and zoom the map to it.
   function handleSelectCountry(country: { country: string; iso3: string }) {
-    //store the country name 
-    setSelectedCountry(country);
+    const aiEntry = AIUseEntries.find((entry) => entry.iso3 === country.iso3);
+    const scienceEntry = ScienceScoreEntries.find(
+      (entry) => entry.iso3 === country.iso3
+    );
+    
+    setSelectedCountry({ ...scienceEntry, ...aiEntry, ...country });
     
     //find the coordinate of the country that users selected
     const coordinates = getCountryCoordinates(country.iso3);
